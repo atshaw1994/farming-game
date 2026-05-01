@@ -70,10 +70,11 @@ label_settings = SubResource("LabelSettings_dpyoq")
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 all_tabs_in_front = true
 
 [node name="Buy" type="MarginContainer" parent="MainContainer/TabContainer" unique_id=327503812]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -154,7 +155,6 @@ layout_mode = 2
 text = "Buy"
 
 [node name="Sell" type="MarginContainer" parent="MainContainer/TabContainer" unique_id=937771297]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -162,12 +162,25 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 metadata/_tab_index = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MainContainer/TabContainer/Sell" unique_id=1148180753]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/TabContainer/Sell" unique_id=1584954179]
 layout_mode = 2
 
-[node name="SellItemsList" type="VBoxContainer" parent="MainContainer/TabContainer/Sell/ScrollContainer" unique_id=335155831]
+[node name="ScrollContainer" type="ScrollContainer" parent="MainContainer/TabContainer/Sell/VBoxContainer" unique_id=1148180753]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SellItemsList" type="VBoxContainer" parent="MainContainer/TabContainer/Sell/VBoxContainer/ScrollContainer" unique_id=335155831]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/TabContainer/Sell/VBoxContainer" unique_id=1338413255]
+layout_mode = 2
+
+[node name="SellAllButton" type="Button" parent="MainContainer/TabContainer/Sell/VBoxContainer/MarginContainer" unique_id=136483285]
+custom_minimum_size = Vector2(74, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "Sell All"
 
 [node name="LabelContainer" type="MarginContainer" parent="." unique_id=1643599054]
 layout_mode = 2
@@ -202,4 +215,5 @@ text = "x"
 [connection signal="tab_changed" from="MainContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="tab_changed" from="MainContainer/TabContainer/Buy/TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="pressed" from="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer/GridContainer/BuyHoeButton" to="." method="_on_buy_hoe_button_pressed"]
+[connection signal="pressed" from="MainContainer/TabContainer/Sell/VBoxContainer/MarginContainer/SellAllButton" to="." method="_on_sell_all_button_pressed"]
 [connection signal="pressed" from="CloseButtonContainer/CloseShopButton" to="." method="_on_close_shop_button_pressed"]

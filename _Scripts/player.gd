@@ -98,5 +98,29 @@ func remove_seed(crop_seed_to_remove:String):
 	seeds.remove_at(seeds.find(crop_seed_to_remove))
 
 func show_popup(message:String):
-	popup.text = message
-	popup.show()
+	var label = Label.new()
+	label.text = message
+	label.add_theme_font_size_override("font_size", 8)
+	label.add_theme_color_override("font_shadow_color", Color.BLACK)
+	label.add_theme_constant_override("shadow_offset_x", 1)
+	label.add_theme_constant_override("shadow_offset_y", 1)
+	label.texture_filter = 1
+	
+	# Basic styling
+	label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	# Position it slightly above the player's head
+	label.position = Vector2(-20, 0) 
+	
+	add_child(label)
+	
+	# The "Rise and Fade" Animation
+	var tween = create_tween()
+	
+	# Rise up by 30 pixels
+	tween.tween_property(label, "position:y", label.position.y - 20, 0.5)
+	# Fade to transparent
+	tween.tween_property(label, "modulate:a", 0.0, 1.0)
+	
+	# Kill the label node once the animation is done to keep memory clean
+	tween.chain().tween_callback(label.queue_free)

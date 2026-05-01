@@ -1,12 +1,12 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1777659902
+::res://::1777661078
 icon.svg::CompressedTexture2D::9167869998845956274::1777256890::1777256897::1::::<><><>0<>0<>31dcd3327380fdb9efcd8bc1757d062d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://_audio/::1777660468
+::res://_audio/::1777660472
 button_click.wav::AudioStreamWAV::3230200068773191982::1777659769::1777659797::1::::<><><>0<>0<>d7726a9fdbf0c91b8baadc37f4ece95c<>res://.godot/imported/button_click.wav-cd907d0f8b89f38a4ac487c216f0a5d1.sample::
 harvest.wav::AudioStreamWAV::4185258553923977982::1777659570::1777659797::1::::<><><>0<>0<>33dea7266838960a67a3ac4a50e31e8a<>res://.godot/imported/harvest.wav-44ca870e7b7249522415541ea096cabd.sample::
 hoe.wav::AudioStreamWAV::4995102833501842155::1777659477::1777659797::1::::<><><>0<>0<>bd057fab9c7b7695c008c7fee23df819<>res://.godot/imported/hoe.wav-dade44bcebd4c61799730d3eb71b5d95.sample::
 plant_seed.wav::AudioStreamWAV::3201424229017018410::1777660468::1777660472::1::::<><><>0<>0<>ca2c50dfec250bef500c8814fa983a8a<>res://.godot/imported/plant_seed.wav-99d6295363e5effd793ac89559a4bee8.sample::
-purchase.wav::AudioStreamWAV::6737832418501777798::1777659650::1777659797::1::::<><><>0<>0<>691c1d3142dd505210fdedf043a055b6<>res://.godot/imported/purchase.wav-a2b2dbd5680839c7c9346292b830a19a.sample::
+purchase.wav::AudioStreamWAV::6737832418501777798::1777661062::1777661078::1::::<><><>0<>0<>691c1d3142dd505210fdedf043a055b6<>res://.godot/imported/purchase.wav-a2b2dbd5680839c7c9346292b830a19a.sample::
 sell.wav::AudioStreamWAV::7567250428516698363::1777659729::1777659797::1::::<><><>0<>0<>eb5cf99ce710c8ff71f823523d72a0f2<>res://.godot/imported/sell.wav-96659765131a13a4f579c64328adc1de.sample::
 ::res://_Prefabs/::1777660251
 character.tscn::PackedScene::3731487232013385604::1777495476::0::1::::<><><>0<>0<><>::uid://bq3e1mu5i5epb::::res://_Scripts/player.gd<>uid://bhlxvho1t3kmq::::res://_Sprites/characters/main character/walk and idle.png
@@ -20,17 +20,17 @@ Wheat.tscn::PackedScene::1150668636671725898::1777423450::0::1::::<><><>0<>0<><>
 ::res://_Scenes/::1777660057
 Main.tscn::PackedScene::1940744568049388738::1777660057::0::1::::<><><>0<>0<><>::uid://btftbxi5jiirs::::res://_Prefabs/character.tscn<>uid://jeoufwighocq::::res://_Prefabs/crop_plot.tscn<>uid://b0crde23iyc6n::::res://_Scripts/main.gd<>uid://bqaietjmoy0h8::::res://_Prefabs/inventory.tscn<>uid://0jicf3f3aaqx::::res://_Scripts/tile_map_layer.gd<>uid://bpc3j22yhfat6::::res://_Prefabs/shop_container.tscn<>uid://cudymd1h47qp3::::res://tilesheets/Tiles_Simple_Plains.png<>uid://bhhlsyxulnw7p::::res://_Sprites/Hoe/CopperHoe.png
 main_menu.tscn::PackedScene::8092688323548626682::1777267185::0::1::::<><><>0<>0<><>::uid://bfnvcwkgqwrvc::::res://_Scripts/main_menu.gd<>uid://2wd1rdb2mqic::::res://_Scenes/Main.tscn
-::res://_Scripts/::1777660377
+::res://_Scripts/::1777660507
+AudioManager.gd::GDScript::7280389529496186222::1777660507::0::1::::<>Node<><>0<>0<><>::
 crop_growth.gd::GDScript::8268470164067050451::1777497849::0::1::::<>StaticBody2D<><>0<>0<><>::
 crop_plot.gd::GDScript::7577696285124413283::1777660057::0::1::::<>StaticBody2D<><>0<>0<><>::
 crop_tab.gd::GDScript::7425604233859109048::1777660158::0::1::::<>MarginContainer<><>0<>0<><>::
 crop_values.gd::GDScript::3752120107262011770::1777395782::0::1::::<>Node<><>0<>0<><>::
 GameManager.gd::GDScript::9147967513289687375::1777660057::0::1::::<>Node<><>0<>0<><>::
-inventory.gd::GDScript::8966073965785881241::1777660377::0::1::::<>CanvasLayer<><>0<>0<><>::
+inventory.gd::GDScript::8966073965785881241::1777660507::0::1::::<>CanvasLayer<><>0<>0<><>::
 main.gd::GDScript::4146308329497723827::1777660347::0::1::::<>Node2D<><>0<>0<><>::
 main_menu.gd::GDScript::2765481612378571904::1777269695::0::1::::<>Control<><>0<>0<><>::
 player.gd::GDScript::3567534720179113791::1777503806::0::1::::<>CharacterBody2D<><>0<>0<><>::
-AudioManager.gd::GDScript::7280389529496186222::1777659894::0::1::::<>Node<><>0<>0<><>::
 shop_container.gd::GDScript::8690337851115294601::1777660249::0::1::::<>MarginContainer<><>0<>0<><>::
 tile_map_layer.gd::GDScript::1773790104403158551::1777460608::0::1::::<>TileMapLayer<><>0<>0<><>::
 ::res://_Sprites/::1777307814
@@ -111,6 +111,6 @@ git_plugin.gdextension::GDExtension::1024287411611316776::1777358011::0::1::::<>
 THIRDPARTY.md::TextFile::-1::1777358011::0::1::::<><><>0<>0<><>::
 ::res://addons/godot-git-plugin/linux/::1777358011
 ::res://addons/godot-git-plugin/macos/::1777358011
-::res://addons/godot-git-plugin/windows/::1777659792
+::res://addons/godot-git-plugin/windows/::1777661076
 ::res://tilesheets/::1777420735
 Tiles_Simple_Plains.png::CompressedTexture2D::6184290208855326730::1777420735::1777420735::1::::<><><>0<>0<>989b5d4cce731fc1687febd910587f26<>res://.godot/imported/Tiles_Simple_Plains.png-bc31cc1a278775bf13b8f14ce0431bae.ctex::

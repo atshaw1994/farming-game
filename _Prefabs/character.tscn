@@ -182,11 +182,3 @@ frame_progress = 0.9957845
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1892766394]
 position = Vector2(0, 8.25)
 shape = SubResource("RectangleShape2D_5jxua")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1769504426]
-
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=821589999]
-visible = false
-offset_right = 40.0
-offset_bottom = 23.0
-text = "No seeds."
