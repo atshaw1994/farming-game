@@ -6,7 +6,6 @@ extends Node2D
 @onready var crop_tile_map_layer: TileMapLayer = $CropPlotTileMapLayer
 @onready var decoration_tile_map_layer: TileMapLayer = $DecorationTileMapLayer
 
-
 func _ready() -> void:
 	# Connect global signals for hoe status
 	GameManager.hoe_broken.connect(_on_hoe_broken)

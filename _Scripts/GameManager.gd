@@ -49,7 +49,6 @@ func flip_hoe_mode() -> void:
 func flip_map_edit_mode() -> void:
 	map_edit_mode_active = !map_edit_mode_active
 	map_edit_mode_switched.emit()
-	print("map_edit_mode_active: " + str(map_edit_mode_active))
 
 func set_shop_open(value: bool):
 	if value:
