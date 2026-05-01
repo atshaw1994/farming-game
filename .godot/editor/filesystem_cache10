@@ -1,0 +1,116 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1777659902
+icon.svg::CompressedTexture2D::9167869998845956274::1777256890::1777256897::1::::<><><>0<>0<>31dcd3327380fdb9efcd8bc1757d062d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://_audio/::1777660468
+button_click.wav::AudioStreamWAV::3230200068773191982::1777659769::1777659797::1::::<><><>0<>0<>d7726a9fdbf0c91b8baadc37f4ece95c<>res://.godot/imported/button_click.wav-cd907d0f8b89f38a4ac487c216f0a5d1.sample::
+harvest.wav::AudioStreamWAV::4185258553923977982::1777659570::1777659797::1::::<><><>0<>0<>33dea7266838960a67a3ac4a50e31e8a<>res://.godot/imported/harvest.wav-44ca870e7b7249522415541ea096cabd.sample::
+hoe.wav::AudioStreamWAV::4995102833501842155::1777659477::1777659797::1::::<><><>0<>0<>bd057fab9c7b7695c008c7fee23df819<>res://.godot/imported/hoe.wav-dade44bcebd4c61799730d3eb71b5d95.sample::
+plant_seed.wav::AudioStreamWAV::3201424229017018410::1777660468::1777660472::1::::<><><>0<>0<>ca2c50dfec250bef500c8814fa983a8a<>res://.godot/imported/plant_seed.wav-99d6295363e5effd793ac89559a4bee8.sample::
+purchase.wav::AudioStreamWAV::6737832418501777798::1777659650::1777659797::1::::<><><>0<>0<>691c1d3142dd505210fdedf043a055b6<>res://.godot/imported/purchase.wav-a2b2dbd5680839c7c9346292b830a19a.sample::
+sell.wav::AudioStreamWAV::7567250428516698363::1777659729::1777659797::1::::<><><>0<>0<>eb5cf99ce710c8ff71f823523d72a0f2<>res://.godot/imported/sell.wav-96659765131a13a4f579c64328adc1de.sample::
+::res://_Prefabs/::1777660251
+character.tscn::PackedScene::3731487232013385604::1777495476::0::1::::<><><>0<>0<><>::uid://bq3e1mu5i5epb::::res://_Scripts/player.gd<>uid://bhlxvho1t3kmq::::res://_Sprites/characters/main character/walk and idle.png
+crop_plot.tscn::PackedScene::640843154509599652::1777428079::0::1::::<><><>0<>0<><>::uid://df7xsyu0gsnt0::::res://_Scripts/crop_plot.gd<>uid://qnnlybufxjkk::::res://_Prefabs/Wheat.tscn<>uid://cmorkhwncbvut::::res://_Prefabs/Potato.tscn<>uid://bhp8vnat5nfla::::res://_Prefabs/Tomato.tscn<>uid://cudymd1h47qp3::::res://tilesheets/Tiles_Simple_Plains.png
+crop_tab_template.tscn::PackedScene::4414908588165755310::1777501943::0::1::::<><><>0<>0<><>::uid://dd2au8cf5onxg::::res://_Scripts/crop_tab.gd<>uid://d4llmroi4f5ia::::res://_Sprites/Wheat/6 - Wheat Inventory.png
+inventory.tscn::PackedScene::3509936073431169235::1777462351::0::1::::<><><>0<>0<><>::uid://d00h6tcg3onhh::::res://_Scripts/inventory.gd
+Potato.tscn::PackedScene::5645059228658052055::1777497868::0::1::::<><><>0<>0<><>::uid://dp2kq34vpew1x::::res://_Scripts/crop_growth.gd<>uid://1301wt04alno::::res://_Sprites/Potato/2 - Potato Sprout.png<>uid://qj8asuakxktk::::res://_Sprites/Potato/3 - Potato Mid.png<>uid://b6cptjxss6cv::::res://_Sprites/Potato/4 - Potato Full.png<>uid://bnpx6g7ori6xy::::res://_Sprites/Potato/5 - Potato Wilt.png
+shop_container.tscn::PackedScene::3445099702654486269::1777660251::0::1::::<><><>0<>0<><>::uid://dv2wuhrn7e1t2::::res://_Scripts/shop_container.gd<>uid://bhhlsyxulnw7p::::res://_Sprites/Hoe/CopperHoe.png
+Tomato.tscn::PackedScene::2910750101610952626::1777497868::0::1::::<><><>0<>0<><>::uid://dp2kq34vpew1x::::res://_Scripts/crop_growth.gd<>uid://dckgqfiv6bguh::::res://_Sprites/Tomato/2 - Tomato Sprout.png<>uid://doaf7rpeekjo2::::res://_Sprites/Tomato/3 - Tomato Mid.png<>uid://5x0ef6p0rkh8::::res://_Sprites/Tomato/4 - Tomato Full.png<>uid://boq8lnbutpxjf::::res://_Sprites/Tomato/5 - Tomato Wilt.png
+Wheat.tscn::PackedScene::1150668636671725898::1777423450::0::1::::<><><>0<>0<><>::uid://dp2kq34vpew1x::::res://_Scripts/crop_growth.gd<>uid://bhghgffcbicyh::::res://_Sprites/Wheat/2 - Wheat Sprout.png<>uid://b70bfjmd3lubq::::res://_Sprites/Wheat/3 - Wheat Mid.png<>uid://427h7u12h81w::::res://_Sprites/Wheat/4 - Wheat Full.png<>uid://cfojqu2mwcg6x::::res://_Sprites/Wheat/5 - Wheat Wilt.png
+::res://_Scenes/::1777660057
+Main.tscn::PackedScene::1940744568049388738::1777660057::0::1::::<><><>0<>0<><>::uid://btftbxi5jiirs::::res://_Prefabs/character.tscn<>uid://jeoufwighocq::::res://_Prefabs/crop_plot.tscn<>uid://b0crde23iyc6n::::res://_Scripts/main.gd<>uid://bqaietjmoy0h8::::res://_Prefabs/inventory.tscn<>uid://0jicf3f3aaqx::::res://_Scripts/tile_map_layer.gd<>uid://bpc3j22yhfat6::::res://_Prefabs/shop_container.tscn<>uid://cudymd1h47qp3::::res://tilesheets/Tiles_Simple_Plains.png<>uid://bhhlsyxulnw7p::::res://_Sprites/Hoe/CopperHoe.png
+main_menu.tscn::PackedScene::8092688323548626682::1777267185::0::1::::<><><>0<>0<><>::uid://bfnvcwkgqwrvc::::res://_Scripts/main_menu.gd<>uid://2wd1rdb2mqic::::res://_Scenes/Main.tscn
+::res://_Scripts/::1777660377
+crop_growth.gd::GDScript::8268470164067050451::1777497849::0::1::::<>StaticBody2D<><>0<>0<><>::
+crop_plot.gd::GDScript::7577696285124413283::1777660057::0::1::::<>StaticBody2D<><>0<>0<><>::
+crop_tab.gd::GDScript::7425604233859109048::1777660158::0::1::::<>MarginContainer<><>0<>0<><>::
+crop_values.gd::GDScript::3752120107262011770::1777395782::0::1::::<>Node<><>0<>0<><>::
+GameManager.gd::GDScript::9147967513289687375::1777660057::0::1::::<>Node<><>0<>0<><>::
+inventory.gd::GDScript::8966073965785881241::1777660377::0::1::::<>CanvasLayer<><>0<>0<><>::
+main.gd::GDScript::4146308329497723827::1777660347::0::1::::<>Node2D<><>0<>0<><>::
+main_menu.gd::GDScript::2765481612378571904::1777269695::0::1::::<>Control<><>0<>0<><>::
+player.gd::GDScript::3567534720179113791::1777503806::0::1::::<>CharacterBody2D<><>0<>0<><>::
+AudioManager.gd::GDScript::7280389529496186222::1777659894::0::1::::<>Node<><>0<>0<><>::
+shop_container.gd::GDScript::8690337851115294601::1777660249::0::1::::<>MarginContainer<><>0<>0<><>::
+tile_map_layer.gd::GDScript::1773790104403158551::1777460608::0::1::::<>TileMapLayer<><>0<>0<><>::
+::res://_Sprites/::1777307814
+::res://_Sprites/characters/::1777256579
+::res://_Sprites/characters/main character/::1777257051
+portrait female.png::CompressedTexture2D::1055567127610189156::1777256579::1777257051::1::::<><><>0<>0<>40e1cfdcdcfed3a2b6e1e5d4dc3b0ab8<>res://.godot/imported/portrait female.png-dda3683c35ed5e56cc6b8df96488048c.ctex::
+portrait male.png::CompressedTexture2D::3164389155598347494::1777256579::1777257051::1::::<><><>0<>0<>733a328c6020f7c2bbbad449820ab07c<>res://.godot/imported/portrait male.png-96fa9a44b81dd344c0c86e2d50df0795.ctex::
+walk and idle.png::CompressedTexture2D::2901885127458153504::1777256579::1777257051::1::::<><><>0<>0<>29884be54f7ff208bf056902936746a3<>res://.godot/imported/walk and idle.png-6c734fba28cd6f86f9234c1979c13928.ctex::
+::res://_Sprites/characters/main character old/::1777257051
+portrait female.png::CompressedTexture2D::372209487477618017::1777256579::1777257051::1::::<><><>0<>0<>900444e2b644fb503de20726be1cd688<>res://.godot/imported/portrait female.png-cbaa9ac877e2f4bbf56ace24d776e6a7.ctex::
+portrait male.png::CompressedTexture2D::4011545759581241664::1777256579::1777257051::1::::<><><>0<>0<>37804107c9ef8683cde49b1bfa7f1834<>res://.godot/imported/portrait male.png-8466c7522d70dbebe34b3960244ce53d.ctex::
+walk and idle.png::CompressedTexture2D::3492765973912862330::1777256579::1777257051::1::::<><><>0<>0<>2cffc7626af144d8e629f4bd81f4f0e7<>res://.godot/imported/walk and idle.png-5ffa54d995e2d4be5f45d066b7156ca4.ctex::
+::res://_Sprites/Grass/::1777303332
+tiles 5.png::CompressedTexture2D::2326435876138692479::1777303331::1777303332::1::::<><><>0<>0<>ecd3ccbf90ec3f259312b87fa143eab3<>res://.godot/imported/tiles 5.png-8430780f630e943d0f9f0e58ea9737bf.ctex::
+::res://_Sprites/Hoe/::1777267523
+CopperHoe.png::CompressedTexture2D::2892894561663316095::1777267523::1777267523::1::::<><><>0<>0<>7989bfa53eab627ab8b4937d0e41650c<>res://.godot/imported/CopperHoe.png-b024d6b781332cb2311d465b9149597f.ctex::
+GoldHoe.png::CompressedTexture2D::6127366781145457677::1777267523::1777267523::1::::<><><>0<>0<>682ed8e07af94859667c04e66f37686b<>res://.godot/imported/GoldHoe.png-66adf550a23454a42a9c06b5aef2b9d3.ctex::
+Hoe.png::CompressedTexture2D::7271311024527905762::1777267523::1777267523::1::::<><><>0<>0<>b0e1dceaecd7c88b5cbf5464e1d46018<>res://.godot/imported/Hoe.png-879487fbb704cebe721ed07f53be6369.ctex::
+MystrileHoe.png::CompressedTexture2D::5657073786288383868::1777267523::1777267523::1::::<><><>0<>0<>d5e0c0206b5e0d3d5227b1660e33b3df<>res://.godot/imported/MystrileHoe.png-f3a3fe835f0be92ea4bd1aa24c9a1c5c.ctex::
+SilverHoe.png::CompressedTexture2D::2594677150627958072::1777267523::1777267523::1::::<><><>0<>0<>90f8ac66fcb44c694dd59d16b709c7d6<>res://.godot/imported/SilverHoe.png-1f6b189851a9b66c93a712220be2bf1a.ctex::
+::res://_Sprites/Potato/::1777428341
+1 - Potato Seed.png::CompressedTexture2D::1073832666627799145::1777257180::1777257213::1::::<><><>0<>0<>5fc5b510bc6859f4eb5dc2656d757840<>res://.godot/imported/1 - Potato Seed.png-6ba647e3d74c7c9beaf4ff9b14ae2fa0.ctex::
+2 - Potato Sprout.png::CompressedTexture2D::1884278053202844196::1777428338::1777428341::1::::<><><>0<>0<>a71f6b55b26b3c4f1775694e910bd57c<>res://.godot/imported/2 - Potato Sprout.png-b980b3cd6126aabea94a81512bccf18d.ctex::
+3 - Potato Mid.png::CompressedTexture2D::1143605535087019920::1777428206::1777428291::1::::<><><>0<>0<>fa6a5f9d7588077cb2163516573ea456<>res://.godot/imported/3 - Potato Mid.png-795047f6aed4d7deffc8686e1d3db38c.ctex::
+4 - Potato Full.png::CompressedTexture2D::134333787824696485::1777263067::1777263070::1::::<><><>0<>0<>4841aa49feb9040dd1ef4b89713c6bc2<>res://.godot/imported/4 - Potato Full.png-bdd8c1131e174bcc597df613832dc2f6.ctex::
+5 - Potato Wilt.png::CompressedTexture2D::3331293532976106034::1777262988::1777263070::1::::<><><>0<>0<>bdc8b3e65c9062dfe69896804ae947ed<>res://.godot/imported/5 - Potato Wilt.png-e1c7d92882c2c1b8f41314a89d5560f0.ctex::
+6 - Potato Inventory Outline.png::CompressedTexture2D::7448941750916493142::1777257180::1777257213::1::::<><><>0<>0<>024811ba88974be7d60e331e3c821fa5<>res://.godot/imported/6 - Potato Inventory Outline.png-c3a19f3fd8cd3e4fdf74305dc6d11b42.ctex::
+6 - Potato Inventory.png::CompressedTexture2D::6682743310686316370::1777257180::1777257213::1::::<><><>0<>0<>f40283411c06b32d86d5db96a88c42ce<>res://.godot/imported/6 - Potato Inventory.png-9bd7750e204520db21b798912ddf2057.ctex::
+7 - Potato Pouch Outline.png::CompressedTexture2D::9100957904564029661::1777257180::1777257213::1::::<><><>0<>0<>ba44efa05f151087daf57a2f530c3751<>res://.godot/imported/7 - Potato Pouch Outline.png-96234bf7fbb014a09515afe0d11b6631.ctex::
+7 - Potato Pouch.png::CompressedTexture2D::4359730655889882041::1777257180::1777257213::1::::<><><>0<>0<>13e49638a5adc56234890fb03a183637<>res://.godot/imported/7 - Potato Pouch.png-ddfe3a83c9e3e87b5fb17dfa4b6c7f2c.ctex::
+8 - Potato Sign.png::CompressedTexture2D::8182356490031565010::1777257180::1777257213::1::::<><><>0<>0<>bf784f3e5100224b836b51f69f516b86<>res://.godot/imported/8 - Potato Sign.png-f0c88a1db9181500a2090f291a26a7af.ctex::
+::res://_Sprites/Pumpkin/::1777257213
+1 - Pumpkin Seed.png::CompressedTexture2D::8690725678791926481::1777257180::1777257213::1::::<><><>0<>0<>9ccd045210e62d071482591d3e738e5d<>res://.godot/imported/1 - Pumpkin Seed.png-076f164c1ffc368381b6600882b20ceb.ctex::
+2 - Pumpkin Sprout.png::CompressedTexture2D::3951851125744172774::1777257180::1777257213::1::::<><><>0<>0<>d84df20b0a95557a6a6409cb1013bce8<>res://.godot/imported/2 - Pumpkin Sprout.png-ad84e90cf62db01e93792b0595f10ec7.ctex::
+3 - Pumpkin Mid.png::CompressedTexture2D::740925730302885211::1777257180::1777257213::1::::<><><>0<>0<>b53c348dc6c1349ca66779de83ffc8a4<>res://.godot/imported/3 - Pumpkin Mid.png-2248acc95b61595113f8922932d73dcf.ctex::
+4 - Pumpkin Full.png::CompressedTexture2D::4947349245325394379::1777257180::1777257213::1::::<><><>0<>0<>53bdde6901685b12223285016fa31ab3<>res://.godot/imported/4 - Pumpkin Full.png-9513df6322a56df28139cdbe945ff4a3.ctex::
+5 - Pumpkin Wilt.png::CompressedTexture2D::9111932023825768285::1777257180::1777257213::1::::<><><>0<>0<>e0955f3f2ace70fc4a5d5f7abf78d8af<>res://.godot/imported/5 - Pumpkin Wilt.png-8fde930cffdd302a2751ec9504759e7f.ctex::
+6 - Pumpkin Inventory Outline.png::CompressedTexture2D::3736684998778294888::1777257180::1777257213::1::::<><><>0<>0<>73acbbe7cb58eae6b43b9d1f1d419dc2<>res://.godot/imported/6 - Pumpkin Inventory Outline.png-32b5993821bb922eef38f7bce622b8e5.ctex::
+6 - Pumpkin Inventory.png::CompressedTexture2D::8117036787208143172::1777257180::1777257213::1::::<><><>0<>0<>0ad262851beb200bfede143d48cbc199<>res://.godot/imported/6 - Pumpkin Inventory.png-eb0ff466d511b44db031f2b110a6a9b6.ctex::
+7 - Pumpkin Pouch Outline.png::CompressedTexture2D::7105294052691496127::1777257180::1777257213::1::::<><><>0<>0<>fbcc60b2c927ebd0cf63fc6611dd6ff1<>res://.godot/imported/7 - Pumpkin Pouch Outline.png-2523a74b75a43330fed72c5031864e67.ctex::
+7 - Pumpkin Pouch.png::CompressedTexture2D::2617632514771579888::1777257180::1777257213::1::::<><><>0<>0<>2cf195f2d73b7100ff189b8e0512327a<>res://.godot/imported/7 - Pumpkin Pouch.png-798ebc00bec9f4ce80a28dca400d2e40.ctex::
+8 - Pumpkin Sign.png::CompressedTexture2D::7309305220675165484::1777257180::1777257213::1::::<><><>0<>0<>9fe4ceaac755a1c747a606279db05b77<>res://.godot/imported/8 - Pumpkin Sign.png-47523aa9a0ca58d9dbafaaaa6154e166.ctex::
+::res://_Sprites/tilemaps/::1777257051
+farm bridges free.png::CompressedTexture2D::5571391339045854537::1777256579::1777257051::1::::<><><>0<>0<>b4276c49c56367ad536f0f15d0dd19b2<>res://.godot/imported/farm bridges free.png-5e8c6aa44a538f8435fe7798cce31c57.ctex::
+farm inside free.png::CompressedTexture2D::5077694744600299390::1777256579::1777257051::1::::<><><>0<>0<>56abc58550f2236bebc98d60bf5644e8<>res://.godot/imported/farm inside free.png-7d5edb574df5dc5323b5d84200d33dbc.ctex::
+spring farm tilemap.png::CompressedTexture2D::3968756437081477894::1777256579::1777257051::1::::<><><>0<>0<>7cd107833a9777f8dd2f7f76c4ebce2a<>res://.godot/imported/spring farm tilemap.png-4dff5346b98943f4a000f714066998cf.ctex::
+::res://_Sprites/Tomato/::1777428291
+1 - Tomato Seed.png::CompressedTexture2D::1139462929700967828::1777257180::1777257213::1::::<><><>0<>0<>cac15bbf440d31d3ebbffc97fbb08c11<>res://.godot/imported/1 - Tomato Seed.png-ccd9af36e85922fe80972f0c492eb5ef.ctex::
+2 - Tomato Sprout.png::CompressedTexture2D::7320676666525846111::1777428266::1777428291::1::::<><><>0<>0<>52496f8d284c69b1ef9123074f7bcd73<>res://.godot/imported/2 - Tomato Sprout.png-4bc59e2f3dda815d7828a6db9d24a1c0.ctex::
+3 - Tomato Mid.png::CompressedTexture2D::8142267508637055211::1777428286::1777428291::1::::<><><>0<>0<>a61492be77d8ae046f6361dbc2a43a13<>res://.godot/imported/3 - Tomato Mid.png-4ec9ae7d78e0ce76a082c1b2417c983b.ctex::
+4 - Tomato Full.png::CompressedTexture2D::2154671376700434927::1777303929::1777303934::1::::<><><>0<>0<>e484e382ac485fe23dff55a64e8020c5<>res://.godot/imported/4 - Tomato Full.png-a353be8666b45312448771a8a29b084e.ctex::
+5 - Tomato Wilt.png::CompressedTexture2D::3404118528467829627::1777353954::1777353959::1::::<><><>0<>0<>ab15f1ad806805a5df2b9a5715acd1b4<>res://.godot/imported/5 - Tomato Wilt.png-2ed7fd4d8d6fb2306d13ff37017f7715.ctex::
+6 - Tomato Inventory Outline.png::CompressedTexture2D::1329920111911065784::1777257180::1777257213::1::::<><><>0<>0<>080dc3609d392e23d6e1acd7d17d1155<>res://.godot/imported/6 - Tomato Inventory Outline.png-6805a6f2674f8df1e68658c9215c58df.ctex::
+6 - Tomato Inventory.png::CompressedTexture2D::8397352316965307550::1777257180::1777257213::1::::<><><>0<>0<>3bd3420e19055902aaa03afaab7bb1b9<>res://.godot/imported/6 - Tomato Inventory.png-c5bd2ce675a5cdd8e6e18bb7aa9039e8.ctex::
+7 - Tomato Pouch Outline.png::CompressedTexture2D::5213936057233051613::1777257180::1777257213::1::::<><><>0<>0<>e3d1487bde171899a6bbbdf268d801de<>res://.godot/imported/7 - Tomato Pouch Outline.png-dbfb4e413e14a3d0745b42451f81ac24.ctex::
+7 - Tomato Pouch.png::CompressedTexture2D::8250784594403770104::1777257180::1777257213::1::::<><><>0<>0<>39ab5067ca9066e623d6c5a8bde17917<>res://.godot/imported/7 - Tomato Pouch.png-661f3edce93338dc32e3b4b64e356e4d.ctex::
+8 - Tomato Sign.png::CompressedTexture2D::5511365591129698647::1777257180::1777257213::1::::<><><>0<>0<>9617e069a967aaa775851cce7f19f5bf<>res://.godot/imported/8 - Tomato Sign.png-27b03c8ca761ef5e53a4fc2ec5d10e9f.ctex::
+::res://_Sprites/WateringCan/::1777267523
+CopperWateringcan.png::CompressedTexture2D::460888055534701854::1777267523::1777267523::1::::<><><>0<>0<>0476f849b87a766e8ad11040c7488745<>res://.godot/imported/CopperWateringcan.png-21ba57a3aca85653bb7f0a9b678b2a9c.ctex::
+GoldWateringcan.png::CompressedTexture2D::7190968558398358104::1777267523::1777267523::1::::<><><>0<>0<>e0af09efe08004e7936ee1e6b9197fe0<>res://.godot/imported/GoldWateringcan.png-a76b9403b547b53bc007f587a28e9ea1.ctex::
+MystrileWateringcan.png::CompressedTexture2D::1684954587155862131::1777267523::1777267523::1::::<><><>0<>0<>88ac30dbfb9d626ecf18a86059ddf13e<>res://.godot/imported/MystrileWateringcan.png-d87bdfaf4461343ccdc5b8f43e967ccb.ctex::
+SilverWateringcan.png::CompressedTexture2D::8694424535987213168::1777267523::1777267523::1::::<><><>0<>0<>e3a0aa225a3ed31eb4c68d7fc3dff507<>res://.godot/imported/SilverWateringcan.png-a32283581442e1f4a6af2a27d17d7b1c.ctex::
+Wateringcan.png::CompressedTexture2D::8844408592528977572::1777267523::1777267523::1::::<><><>0<>0<>368b129a9b7c4ff889e834e2a4caf697<>res://.godot/imported/Wateringcan.png-f0f46b165d61d7f8d181857ffcfe88a0.ctex::
+::res://_Sprites/Wheat/::1777423279
+1 - Wheat Seed.png::CompressedTexture2D::6183841541878936984::1777257180::1777257213::1::::<><><>0<>0<>e2d6bb3654a0772d8b8265e10c7dee27<>res://.godot/imported/1 - Wheat Seed.png-4df9f74e7ab8c62b9118e5bb0faa7aa7.ctex::
+2 - Wheat Sprout.png::CompressedTexture2D::2890564859829778575::1777423250::1777423279::1::::<><><>0<>0<>60d2ac117d798d7c8d6eca01d930872e<>res://.godot/imported/2 - Wheat Sprout.png-57fee3b8c3237659cc34a595967aa919.ctex::
+3 - Wheat Mid.png::CompressedTexture2D::4684143261345906170::1777423275::1777423279::1::::<><><>0<>0<>97ef62bb285fddf45e6a3f57f554bc0f<>res://.godot/imported/3 - Wheat Mid.png-a05b2202d65a46b6de9319df6df346ce.ctex::
+4 - Wheat Full.png::CompressedTexture2D::2093171822049423414::1777261194::1777261198::1::::<><><>0<>0<>89524a2823c2b4757098ff238a4a1c63<>res://.godot/imported/4 - Wheat Full.png-db68633f1844a0a76ff3b560a5699ca7.ctex::
+5 - Wheat Wilt.png::CompressedTexture2D::5153262992522010621::1777353859::1777353863::1::::<><><>0<>0<>610b74f72277c77445aa2042afc62fa3<>res://.godot/imported/5 - Wheat Wilt.png-cf5b58f23bbd96c47d1aa9c501e208bc.ctex::
+6 - Wheat Inventory Outline.png::CompressedTexture2D::1639365905634230455::1777257180::1777257213::1::::<><><>0<>0<>db2445ca6744396c01d2931114e7d4fd<>res://.godot/imported/6 - Wheat Inventory Outline.png-b2cedee31e3fd51ca09c1409c3670173.ctex::
+6 - Wheat Inventory.png::CompressedTexture2D::9218136903250872576::1777257180::1777257213::1::::<><><>0<>0<>f17fb97eb0b976c2d88ea7b6fff40351<>res://.godot/imported/6 - Wheat Inventory.png-ffe28f0f5d64cc97418379521838f5c7.ctex::
+7 - Wheat Pouch Outline.png::CompressedTexture2D::80574502316303091::1777257180::1777257213::1::::<><><>0<>0<>7da648b76597d87b154884c3c722e64c<>res://.godot/imported/7 - Wheat Pouch Outline.png-c1ea79b6008a426798e2b50039148757.ctex::
+7 - Wheat Pouch.png::CompressedTexture2D::7935886406183618080::1777257180::1777257213::1::::<><><>0<>0<>03ef6d1313ad12ccf88b6b538f1c88e9<>res://.godot/imported/7 - Wheat Pouch.png-4d4aede633c5f1bddcdc58515a7bced5.ctex::
+8 - Wheat Sign.png::CompressedTexture2D::2199362314502816853::1777257181::1777257213::1::::<><><>0<>0<>ec87723f290af6e405cd910ab101b38e<>res://.godot/imported/8 - Wheat Sign.png-dac9f2886f4afccde3e5ad2948bba6d8.ctex::
+::res://addons/::1777358011
+::res://addons/godot-git-plugin/::1777358011
+git_plugin.gdextension::GDExtension::1024287411611316776::1777358011::0::1::::<><><>0<>0<><>::
+THIRDPARTY.md::TextFile::-1::1777358011::0::1::::<><><>0<>0<><>::
+::res://addons/godot-git-plugin/linux/::1777358011
+::res://addons/godot-git-plugin/macos/::1777358011
+::res://addons/godot-git-plugin/windows/::1777659792
+::res://tilesheets/::1777420735
+Tiles_Simple_Plains.png::CompressedTexture2D::6184290208855326730::1777420735::1777420735::1::::<><><>0<>0<>989b5d4cce731fc1687febd910587f26<>res://.godot/imported/Tiles_Simple_Plains.png-bc31cc1a278775bf13b8f14ce0431bae.ctex::

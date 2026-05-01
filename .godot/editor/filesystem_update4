@@ -1,0 +1,9 @@
+res://_Scripts/AudioManager.gd
+res://_Scenes/Main.tscn
+res://_Scripts/crop_plot.gd
+res://_Scripts/GameManager.gd
+res://_Scripts/main.gd
+res://_Scripts/shop_container.gd
+res://_Scripts/crop_tab.gd
+res://_Prefabs/shop_container.tscn
+res://_Scripts/inventory.gd
