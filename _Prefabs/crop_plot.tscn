@@ -18,7 +18,6 @@ tomato_scene = ExtResource("4_6f4ju")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1192896705]
 texture_filter = 1
 texture = ExtResource("5_6f4ju")
-offset = Vector2(0, -32)
 region_enabled = true
 region_rect = Rect2(128, 1024, 128, 64)
 

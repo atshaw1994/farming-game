@@ -1,6 +1,7 @@
 extends Node
 
 var hoe_mode_active: bool = false
+var map_edit_mode_active: bool = false
 var shop_open: bool = false
 var hoe_durability: int = 80
 var total_gold: int = 4:
@@ -36,6 +37,7 @@ var crop_data = {
 }
 
 signal hoe_mode_switched
+signal map_edit_mode_switched
 signal money_changed(new_amount)
 signal hoe_broken
 signal hoe_restored
@@ -44,11 +46,18 @@ func flip_hoe_mode() -> void:
 	hoe_mode_active = !hoe_mode_active
 	hoe_mode_switched.emit()
 
+func flip_map_edit_mode() -> void:
+	map_edit_mode_active = !map_edit_mode_active
+	map_edit_mode_switched.emit()
+	print("map_edit_mode_active: " + str(map_edit_mode_active))
+
 func set_shop_open(value: bool):
-	shop_open = value
 	if value:
+		shop_open = value
 		hoe_mode_active = false
-	hoe_mode_switched.emit()
+		map_edit_mode_active = false
+		hoe_mode_switched.emit()
+		map_edit_mode_switched.emit()
 
 func can_afford(amount: int) -> bool:
 	return total_gold >= amount

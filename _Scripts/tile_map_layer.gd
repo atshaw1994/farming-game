@@ -1,6 +1,6 @@
 extends TileMapLayer
 
-@export var crop_plot_scene: PackedScene 
+@export var crop_plot_scene: PackedScene
 var occupied_tiles = {} 
 var ghost_plot: Node2D 
 var currently_highlighted_plot: Node2D = null 

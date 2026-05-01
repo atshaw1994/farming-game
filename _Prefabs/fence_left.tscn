@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c2gwik42nfmlx"]
+
+[ext_resource type="Texture2D" uid="uid://d2x032vlddt77" path="res://_Sprites/Fences/oak_fence.png" id="1_ibuji"]
+
+[node name="Fence_Left" type="StaticBody2D" unique_id=788500995]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=155539880]
+texture_filter = 1
+texture = ExtResource("1_ibuji")
+offset = Vector2(-32, 0)
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=355445839]
+position = Vector2(2.9802322e-08, 0)
+scale = Vector2(3.1999998, 3.1999998)
+polygon = PackedVector2Array(-20, 0, -1.2499995, 10.000001, 4.7683716e-07, 9.375001, -18.125002, 0)

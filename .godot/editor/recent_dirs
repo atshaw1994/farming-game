@@ -1,8 +1,10 @@
-res://_Scenes/
+res://tilesets/
+res://tilesheets/
+res://_Prefabs/
 C:/Users/aaron/Godot/farming-game/bin/
+res://_Scenes/
 C:/Users/aaron/Godot/farming-game/
 res://_Scripts/
-res://_Prefabs/
 res://_Sprites/Grass/
 res://_Sprites/tilemaps/
 res://_Sprites/characters/main character/
