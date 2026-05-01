@@ -28,6 +28,7 @@ func _unhandled_input(event):
 				update_durability()
 				get_viewport().set_input_as_handled()
 	elif event.button_index == MOUSE_BUTTON_RIGHT:
+		AudioManager.play("button_click_reverse")
 		GameManager.flip_hoe_mode()
 
 func update_durability():
