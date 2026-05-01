@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dnkfnn33osv27"]
+
+[ext_resource type="Script" uid="uid://bfnvcwkgqwrvc" path="res://_Scripts/main_menu.gd" id="1_ob0vp"]
+[ext_resource type="PackedScene" uid="uid://2wd1rdb2mqic" path="res://_Scenes/Main.tscn" id="2_i4rf3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_i4rf3"]
+font_size = 72
+
+[node name="MainMenu" type="Control" unique_id=1994769108]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ob0vp")
+Level1 = ExtResource("2_i4rf3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=723448880]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=67219952]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer" unique_id=1936130089]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=1014423777]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Farming Game"
+label_settings = SubResource("LabelSettings_i4rf3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=713941640]
+custom_minimum_size = Vector2(512, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 8
+
+[node name="PlayButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1110439688]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+text = "Play"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1117432469]
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://jeoufwighocq"]
+
+[ext_resource type="Script" uid="uid://df7xsyu0gsnt0" path="res://_Scripts/crop_plot.gd" id="1_on1nb"]
+[ext_resource type="PackedScene" uid="uid://qnnlybufxjkk" path="res://_Prefabs/Wheat.tscn" id="2_jot6e"]
+[ext_resource type="PackedScene" uid="uid://cmorkhwncbvut" path="res://_Prefabs/Potato.tscn" id="3_jot6e"]
+[ext_resource type="PackedScene" uid="uid://bhp8vnat5nfla" path="res://_Prefabs/Tomato.tscn" id="4_6f4ju"]
+[ext_resource type="Texture2D" uid="uid://cudymd1h47qp3" path="res://tilesheets/Tiles_Simple_Plains.png" id="5_6f4ju"]
+
+[node name="Crop Plot" type="StaticBody2D" unique_id=698068622 groups=["Plots"]]
+collision_layer = 2
+collision_mask = 0
+input_pickable = true
+script = ExtResource("1_on1nb")
+wheat_scene = ExtResource("2_jot6e")
+potato_scene = ExtResource("3_jot6e")
+tomato_scene = ExtResource("4_6f4ju")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1192896705]
+texture_filter = 1
+texture = ExtResource("5_6f4ju")
+offset = Vector2(0, -32)
+region_enabled = true
+region_rect = Rect2(128, 1024, 128, 64)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=142469874]
+visible = false
+polygon = PackedVector2Array(0, 0, -63.5, -32.5, 0, -64.5, 63.5, -32.5)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
