@@ -13,11 +13,11 @@ func _ready() -> void:
 	# Initialize the durability bar UI 
 	hoe_durability_bar.value = (GameManager.hoe_durability / 80.0) * 100
 
-func _on_hoe_button_pressed():
+func _on_hoe_button_pressed() -> void:
 	AudioManager.play("button_click")
 	GameManager.flip_hoe_mode() 
 
-func _unhandled_input(event):
+func _unhandled_input(event) -> void:
 	if not (event is InputEventMouseButton and event.pressed): return
 	
 	if event.button_index == MOUSE_BUTTON_LEFT:
@@ -41,7 +41,7 @@ func _unhandled_input(event):
 			AudioManager.play("button_click_reverse")
 			GameManager.flip_map_edit_mode()
 
-func update_durability():
+func update_durability() -> void:
 	GameManager.lower_hoe_durability()
 	# Sync the UI bar with the new durability value [cite: 74]
 	hoe_durability_bar.value = (GameManager.hoe_durability / 80.0) * 100

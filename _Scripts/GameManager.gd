@@ -50,7 +50,7 @@ func flip_map_edit_mode() -> void:
 	map_edit_mode_active = !map_edit_mode_active
 	map_edit_mode_switched.emit()
 
-func set_shop_open(value: bool):
+func set_shop_open(value: bool) -> void:
 	if value:
 		shop_open = value
 		hoe_mode_active = false
@@ -61,12 +61,12 @@ func set_shop_open(value: bool):
 func can_afford(amount: int) -> bool:
 	return total_gold >= amount
 
-func spend_money(amount: int):
+func spend_money(amount: int) -> void:
 	if can_afford(amount):
 		total_gold -= amount
 		AudioManager.play("purchase")
 
-func lower_hoe_durability():
+func lower_hoe_durability() -> void:
 	hoe_durability -= 10
 	
 	if hoe_durability <= 0:
@@ -74,7 +74,7 @@ func lower_hoe_durability():
 		hoe_broken.emit()
 		hoe_mode_active = false
 
-func reset_hoe_durability():
+func reset_hoe_durability() -> void:
 	hoe_durability = 80
 	hoe_restored.emit()
 

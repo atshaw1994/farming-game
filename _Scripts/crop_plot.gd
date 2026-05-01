@@ -9,14 +9,14 @@ var inventory_ui = null
 var clicked_location = null
 var player = null
 
-func _ready():
+func _ready() -> void:
 	# 1. Find the player node in the scene tree
 	player = get_tree().root.find_child("Player", true, false)
 	if player:
 		# 2. Find the Inventory child inside the Player
 		inventory_ui = player.find_child("Inventory", true, false)
 
-func _on_input_event(_viewport, event, _shape_idx):
+func _on_input_event(_viewport, event, _shape_idx) -> void:
 	# 1. STOP if the Hoe is active. We don't want to plant while tilling.
 	if GameManager.hoe_mode_active: return
 	
@@ -38,7 +38,7 @@ func _on_input_event(_viewport, event, _shape_idx):
 						player.arrived_at_plot.disconnect(_open_ui_after_move)
 					player.arrived_at_plot.connect(_open_ui_after_move, CONNECT_ONE_SHOT)
 
-func _open_ui_after_move():
+func _open_ui_after_move() -> void:
 	if current_crop == null:
 		for connection in inventory_ui.seed_selected.get_connections():
 			inventory_ui.seed_selected.disconnect(connection.callable)
@@ -53,7 +53,7 @@ func _open_ui_after_move():
 		current_crop.queue_free()
 		current_crop = null
 
-func _on_seed_selected(type):
+func _on_seed_selected(type) -> void:
 	var new_crop = null
 	if type == "wheat":
 		new_crop = wheat_scene.instantiate()
@@ -68,12 +68,12 @@ func _on_seed_selected(type):
 		new_crop.name = type
 		plant_crop(new_crop)
 
-func plant_crop(new_crop):
+func plant_crop(new_crop) -> void:
 	new_crop.position.y = -48
 	add_child(new_crop)
 	current_crop = new_crop
 
-func harvest():
+func harvest() -> void:
 	if player and current_crop:
 		AudioManager.play("harvest")
 		player.harvest_crop(current_crop)

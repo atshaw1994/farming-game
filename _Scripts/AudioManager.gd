@@ -12,7 +12,7 @@ var sounds = {
 }
 
 # Pool of players to handle overlapping sounds (e.g., clicking fast)
-func play(sound_name: String):
+func play(sound_name: String) -> void:
 	if sounds.has(sound_name):
 		var player = AudioStreamPlayer.new()
 		add_child(player)

@@ -9,7 +9,7 @@ signal buy_requested(type: GameManager.CropType, quantity: int, total_cost: int)
 var crop_type: GameManager.CropType
 var unit_price: int = 0
 
-func setup(type: GameManager.CropType):
+func setup(type: GameManager.CropType) -> void:
 	var data = GameManager.crop_data[type]
 	crop_type = type
 	unit_price = data.buy_price
@@ -23,15 +23,15 @@ func setup(type: GameManager.CropType):
 	buy_btn.pressed.connect(_on_buy_pressed)
 	_update_ui()
 
-func _on_qty_changed(_value:int):
+func _on_qty_changed(_value:int) -> void:
 	AudioManager.play("button_click")
 	_update_ui()
 
-func _update_ui():
+func _update_ui() -> void:
 	var total = int(qty_spin.value) * unit_price
 	total_label.text = str(total)
 	buy_btn.disabled = qty_spin.value <= 0
 
-func _on_buy_pressed():
+func _on_buy_pressed() -> void:
 	buy_requested.emit(crop_type, int(qty_spin.value), int(total_label.text))
 	qty_spin.value = 0 # Reset after purchase

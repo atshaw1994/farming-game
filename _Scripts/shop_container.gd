@@ -8,7 +8,7 @@ extends MarginContainer
 
 var active_tabs = []
 
-func _ready():
+func _ready() -> void:
 	for btn in find_children("*", "Button", true):
 		btn.pressed.connect(func(): AudioManager.play("button_click"))
 	
@@ -28,7 +28,7 @@ func _ready():
 		tab.buy_requested.connect(_on_tab_buy_requested)
 		active_tabs.append(tab)
 
-func _process(_delta):
+func _process(_delta) -> void:
 	current_coins_label.text = str(GameManager.total_gold)
 	
 	for tab in active_tabs:
@@ -50,7 +50,7 @@ func open() -> void:
 	
 	show()
 
-func _create_sell_button(item: Node):
+func _create_sell_button(item: Node) -> void:
 	var new_sell_item = Button.new()
 	var data = GameManager.get_data_by_name(item.name)
 	new_sell_item.text = "{n} (value: {v})".format({"n": data.name, "v": data.sell_price})
@@ -63,7 +63,7 @@ func _create_sell_button(item: Node):
 	sell_items_list.add_child(new_sell_item)
 
 # Use this when clicking ONE button in the list
-func _sell_item(item: Node, button: Button):
+func _sell_item(item: Node, button: Button) -> void:
 	_process_item_sale(item)
 	button.queue_free()
 	AudioManager.play("sell")
@@ -73,13 +73,13 @@ func _sell_item(item: Node, button: Button):
 		sell_all_button.hide()
 
 # The core 'Industrial' logic shared by both sell methods
-func _process_item_sale(item: Node):
+func _process_item_sale(item: Node) -> void:
 	var data = GameManager.get_data_by_name(item.name)
 	GameManager.total_gold += data.sell_price
 	player.harvested_crops.erase(item)
 	item.queue_free()
 
-func _on_tab_buy_requested(type, qty, cost):
+func _on_tab_buy_requested(type, qty, cost) -> void:
 	if GameManager.can_afford(cost):
 		var crop_name = GameManager.crop_data[type].name
 		for i in range(qty):

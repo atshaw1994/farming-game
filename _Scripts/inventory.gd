@@ -6,11 +6,11 @@ signal seed_selected(type)
 @onready var seed_container: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/SeedContainer
 @onready var player: Node2D = $".."
 
-func _ready():
+func _ready() -> void:
 	hide()
 	panel_container.scale = Vector2.ZERO
 
-func show_at_position(plot_global_center: Vector2):
+func show_at_position(plot_global_center: Vector2) -> void:
 	if player.seeds.size() == 0:
 		player.show_popup("No seeds.")
 		return
@@ -25,7 +25,7 @@ func show_at_position(plot_global_center: Vector2):
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(panel_container, "scale", Vector2.ONE, 0.3).from(Vector2.ZERO)
 
-func _setup_buttons():
+func _setup_buttons() -> void:
 	# 1. Clear existing dynamic buttons to refresh the list
 	for child in seed_container.get_children():
 		child.queue_free()
@@ -41,7 +41,7 @@ func _setup_buttons():
 	for seed_type in seed_counts:
 		_create_seed_button(seed_type, seed_counts[seed_type])
 
-func _create_seed_button(picked_seed: String, count: int):
+func _create_seed_button(picked_seed: String, count: int) -> void:
 	# Create a Container to hold the button and the label
 	var wrapper = HBoxContainer.new()
 	
@@ -66,7 +66,7 @@ func _create_seed_button(picked_seed: String, count: int):
 	wrapper.add_child(lbl)
 	seed_container.add_child(wrapper)
 
-func _on_seed_picked(picked_seed: String):
+func _on_seed_picked(picked_seed: String) -> void:
 	AudioManager.play("plant_seed")
 	seed_selected.emit(picked_seed)
 	player.remove_seed(picked_seed)

@@ -15,16 +15,16 @@ var current_stage = Stage.SPROUT
 @onready var sprite = $Sprite2D
 @onready var timer = $GrowthTimer
 
-func _ready():
+func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	update_appearance()
 	start_growth_cycle()
 
-func start_growth_cycle():
+func start_growth_cycle() -> void:
 	var data = GameManager.crop_data[crop_type]
 	timer.start(data.growth_time / 3.0)
 
-func _on_timer_timeout():
+func _on_timer_timeout() -> void:
 	if current_stage < Stage.FULL:
 		current_stage = (current_stage + 1) as Stage
 		update_appearance()
@@ -35,7 +35,7 @@ func _on_timer_timeout():
 		current_stage = Stage.WILTED
 		update_appearance()
 
-func update_appearance():
+func update_appearance() -> void:
 	match current_stage:
 		Stage.SPROUT: sprite.texture = sprout_texture
 		Stage.MID:    sprite.texture = mid_texture

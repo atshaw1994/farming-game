@@ -5,7 +5,7 @@ var occupied_tiles = {}
 var ghost_plot: Node2D 
 var currently_highlighted_plot: Node2D = null 
 
-func _ready():
+func _ready() -> void:
 	if crop_plot_scene:
 		# Create the translucent "ghost" for the isometric cursor [cite: 79]
 		ghost_plot = crop_plot_scene.instantiate()
@@ -15,11 +15,11 @@ func _ready():
 	
 	GameManager.hoe_mode_switched.connect(_on_hoe_mode_switched)
 
-func _process(_delta):
+func _process(_delta) -> void:
 	if ghost_plot and GameManager.hoe_mode_active:
 		update_ghost_position()
 
-func update_ghost_position():
+func update_ghost_position() -> void:
 	var map_pos = local_to_map(get_local_mouse_position())
 	ghost_plot.position = map_to_local(map_pos)
 	
@@ -57,6 +57,6 @@ func handle_hoe_action(map_pos: Vector2i) -> bool:
 		occupied_tiles[map_pos] = new_crop
 		return true
 
-func _on_hoe_mode_switched():
+func _on_hoe_mode_switched() -> void:
 	if not GameManager.hoe_mode_active and ghost_plot:
 		ghost_plot.visible = false

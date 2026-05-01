@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 		if not GameManager.hoe_mode_active and not GameManager.shop_open:
 			update_movement_target()
 
-func _physics_process(_delta):
+func _physics_process(_delta) -> void:
 	if target_position:
 		# Calculate the current distance to the target center
 		var distance = global_position.distance_to(target_position)
@@ -51,7 +51,7 @@ func _physics_process(_delta):
 		move_and_slide()
 		update_animations(direction)
 
-func _unhandled_input(event):
+func _unhandled_input(event) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if not GameManager.hoe_mode_active and not GameManager.shop_open:
 			update_movement_target()
@@ -64,7 +64,7 @@ func _is_mouse_over_ui() -> bool:
 	return get_viewport().gui_get_focus_owner() != null or \
 	get_viewport().get_mouse_position() != get_local_mouse_position()
 
-func update_movement_target():
+func update_movement_target() -> void:
 	target_position = get_global_mouse_position()
 	target.show()
 	target.position = target_position - Vector2(8, 8)
@@ -76,7 +76,7 @@ func update_movement_target():
 	if arrived_at_plot.is_connected(_on_arrival_at_random_spot):
 		arrived_at_plot.disconnect(_on_arrival_at_random_spot)
 
-func update_animations(direction):
+func update_animations(direction) -> void:
 	if direction.length() > 0:
 		# We are moving
 		if direction.x != 0:
@@ -87,16 +87,16 @@ func update_animations(direction):
 		# We are standing still
 		animations.play("idle_" + last_direction)
 
-func _on_arrival_at_random_spot():
+func _on_arrival_at_random_spot() -> void:
 	pass 
 
-func harvest_crop(harvested_crop):
+func harvest_crop(harvested_crop) -> void:
 	harvested_crops.append(harvested_crop.duplicate())
 
-func remove_seed(crop_seed_to_remove:String):
+func remove_seed(crop_seed_to_remove:String) -> void:
 	seeds.remove_at(seeds.find(crop_seed_to_remove))
 
-func show_popup(message:String):
+func show_popup(message:String) -> void:
 	var label = Label.new()
 	label.text = message
 	label.add_theme_font_size_override("font_size", 8)

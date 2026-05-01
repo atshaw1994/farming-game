@@ -12,7 +12,7 @@ var ghost_fence: Node2D
 var currently_highlighted_plot: Node2D = null 
 var direction: String = "SW"
 
-func _ready():
+func _ready() -> void:
 	if fence_SW_scene:
 		# Create the translucent "ghost" for the isometric cursor
 		ghost_fence = fence_SW_scene.instantiate()
@@ -22,11 +22,11 @@ func _ready():
 	
 	GameManager.map_edit_mode_switched.connect(_on_map_edit_mode_switched)
 
-func _process(_delta):
+func _process(_delta) -> void:
 	if ghost_fence and GameManager.map_edit_mode_active:
 		update_ghost_position()
 
-func _unhandled_input(event: InputEvent):
+func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed:
 		if GameManager.map_edit_mode_active:
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
@@ -36,7 +36,7 @@ func _unhandled_input(event: InputEvent):
 					swap_orientation("dn")
 					get_viewport().set_input_as_handled()
 
-func swap_orientation(mouse_wheel_direction:String):
+func swap_orientation(mouse_wheel_direction:String) -> void:
 	if mouse_wheel_direction == "up":
 		if direction == "SW": direction = "SE"
 		elif direction == "SE": direction = "NE"
@@ -62,7 +62,7 @@ func swap_orientation(mouse_wheel_direction:String):
 	ghost_fence.modulate = Color(1, 1, 1, 0.5)
 	add_child(ghost_fence)
 
-func update_ghost_position():
+func update_ghost_position() -> void:
 	var map_pos = local_to_map(get_local_mouse_position())
 	ghost_fence.position = map_to_local(map_pos)
 	
@@ -105,7 +105,7 @@ func handle_fence_action(map_pos: Vector2i) -> bool:
 		occupied_tiles[map_pos] = new_fence
 		return true
 
-func _on_map_edit_mode_switched():
+func _on_map_edit_mode_switched() -> void:
 	if not GameManager.map_edit_mode_active and ghost_fence:
 		ghost_fence.visible = false
 	elif GameManager.map_edit_mode_active and ghost_fence:
