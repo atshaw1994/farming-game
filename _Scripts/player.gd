@@ -4,7 +4,6 @@ extends CharacterBody2D
 @onready var animations = $AnimatedSprite2D
 @onready var target: Panel = $"../CanvasLayer/Target"
 @onready var root_node: Node2D = $".."
-@onready var popup: Label = $CanvasLayer/Label
 
 var last_direction = "right"
 var target_position = null
