@@ -89,9 +89,10 @@ metadata/_tab_index = 0
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="Tools" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer" unique_id=682957682]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -174,7 +175,6 @@ layout_mode = 2
 text = "Buy"
 
 [node name="Decorations" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer" unique_id=1095506412]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -303,15 +303,15 @@ columns = 2
 layout_mode = 2
 text = "Cost:"
 
-[node name="HousePriceLabel" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/GridContainer" unique_id=384088205]
+[node name="FencePriceLabel" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/GridContainer" unique_id=384088205]
 layout_mode = 2
-text = "100"
+text = "10"
 horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/GridContainer" unique_id=683297723]
 layout_mode = 2
 
-[node name="BuyHouseButton" type="Button" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/GridContainer" unique_id=2104561913]
+[node name="BuyFenceButton" type="Button" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/GridContainer" unique_id=2104561913]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 text = "Buy"

@@ -5,6 +5,9 @@ extends Node2D
 @onready var hoe_broken_overlay: Label = $CanvasLayer/ActionButtonsContainer/VBoxContainer/HoeButton/HoeBrokenOverlay
 @onready var crop_tile_map_layer: TileMapLayer = $CropPlotTileMapLayer
 @onready var decoration_tile_map_layer: TileMapLayer = $DecorationTileMapLayer
+@onready var player_decoration_inventory: CanvasLayer = $Player/DecorationInventory
+@onready var decoration_button: Button = $CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton
+@onready var player: CharacterBody2D = $Player
 
 func _ready() -> void:
 	# Connect global signals for hoe status
@@ -12,10 +15,7 @@ func _ready() -> void:
 	GameManager.hoe_restored.connect(_on_hoe_restored)
 	# Initialize the durability bar UI 
 	hoe_durability_bar.value = (GameManager.hoe_durability / 80.0) * 100
-
-func _on_hoe_button_pressed() -> void:
-	AudioManager.play("button_click")
-	GameManager.flip_hoe_mode() 
+	player_decoration_inventory.item_selected.connect(_on_item_selected)
 
 func _unhandled_input(event) -> void:
 	if not (event is InputEventMouseButton and event.pressed): return
@@ -30,7 +30,7 @@ func _unhandled_input(event) -> void:
 					get_viewport().set_input_as_handled()
 		elif GameManager.map_edit_mode_active:
 			var map_pos = decoration_tile_map_layer.local_to_map(decoration_tile_map_layer.get_local_mouse_position()) 
-			if decoration_tile_map_layer.handle_fence_action(map_pos):
+			if decoration_tile_map_layer.handle_decoration_action(map_pos):
 					AudioManager.play("button_click")
 					get_viewport().set_input_as_handled()
 	elif event.button_index == MOUSE_BUTTON_RIGHT:
@@ -58,6 +58,20 @@ func _on_store_button_pressed() -> void:
 	GameManager.set_shop_open(true)
 	shop_container.open()
 
+func _on_hoe_button_pressed() -> void:
+	AudioManager.play("button_click")
+	GameManager.flip_hoe_mode() 
+
 func _on_decoration_button_pressed() -> void:
 	AudioManager.play("button_click")
-	GameManager.flip_map_edit_mode()
+	if player_decoration_inventory.visible:
+		player_decoration_inventory.hide()
+	else:
+		player_decoration_inventory.show_at_position(decoration_button.global_position)
+
+func _on_item_selected(selected_type: String) -> void:
+	decoration_tile_map_layer.type = selected_type
+
+func place_item(new_item) -> void:
+	new_item.position.y = -48
+	add_child(new_item)

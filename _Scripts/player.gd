@@ -10,12 +10,13 @@ var target_position = null
 var current_target_plot = null
 var harvested_crops = []
 var seeds = []
+var decoration_items = [ "House" ]
 
 signal arrived_at_plot
 
 func _ready() -> void:
-	var inventory_ui = find_child("Inventory", true, false)
-	inventory_ui.seed_selected.connect(func(type): remove_seed(type))
+	var crop_inventory = find_child("CropInventory", true, false)
+	crop_inventory.seed_selected.connect(func(type): remove_seed(type))
 
 func _process(_delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -95,6 +96,14 @@ func harvest_crop(harvested_crop) -> void:
 
 func remove_seed(crop_seed_to_remove:String) -> void:
 	seeds.remove_at(seeds.find(crop_seed_to_remove))
+
+func remove_decoration_item(item_to_remove:String) -> void:
+	print("*** remove_decoration_item(" + item_to_remove + ") ***")
+	var stack = get_stack()
+	if stack.size() > 1:
+		var caller = stack[1]
+		print("Method called by: ", caller.function, " in ", caller.source, " at line ", caller.line)
+	decoration_items.remove_at(decoration_items.find(item_to_remove))
 
 func show_popup(message:String) -> void:
 	var label = Label.new()

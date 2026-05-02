@@ -5,16 +5,17 @@ extends StaticBody2D
 @export var tomato_scene: PackedScene
 
 var current_crop = null
-var inventory_ui = null
 var clicked_location = null
 var player = null
+var player_crop_inventory = null
+var player_decoration_inventory = null
 
 func _ready() -> void:
 	# 1. Find the player node in the scene tree
 	player = get_tree().root.find_child("Player", true, false)
 	if player:
 		# 2. Find the Inventory child inside the Player
-		inventory_ui = player.find_child("Inventory", true, false)
+		player_crop_inventory = player.find_child("Inventory", true, false)
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
 	# 1. STOP if the Hoe is active. We don't want to plant while tilling.
@@ -26,7 +27,7 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 		
 		clicked_location = get_global_mouse_position()
 		
-		if inventory_ui and inventory_ui.visible: inventory_ui.hide()
+		if player_crop_inventory and player_crop_inventory.visible: player_crop_inventory.hide()
 		else:
 			if player:
 				# Use global_position since the plot is now a child of the TileMap
@@ -40,13 +41,13 @@ func _on_input_event(_viewport, event, _shape_idx) -> void:
 
 func _open_ui_after_move() -> void:
 	if current_crop == null:
-		for connection in inventory_ui.seed_selected.get_connections():
-			inventory_ui.seed_selected.disconnect(connection.callable)
+		for connection in player_crop_inventory.seed_selected.get_connections():
+			player_crop_inventory.seed_selected.disconnect(connection.callable)
 		# 1. Before showing the UI, connect the signal
 		# Use CONNECT_ONE_SHOT so it automatically disconnects after planting once
-		inventory_ui.seed_selected.connect(_on_seed_selected, CONNECT_ONE_SHOT)
+		player_crop_inventory.seed_selected.connect(_on_seed_selected, CONNECT_ONE_SHOT)
 		# 2. Show the UI as normal
-		inventory_ui.show_at_position(global_position)
+		player_crop_inventory.show_at_position(global_position)
 	elif current_crop.current_stage == current_crop.Stage.FULL:
 		harvest()
 	elif current_crop.current_stage == current_crop.Stage.WILTED:

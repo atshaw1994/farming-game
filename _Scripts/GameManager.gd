@@ -8,6 +8,7 @@ var total_gold: int = 4:
 	set(value):
 		total_gold = value
 		money_changed.emit(total_gold)
+
 enum CropType { WHEAT, POTATO, TOMATO }
 var crop_data = {
 	CropType.WHEAT: {
@@ -33,6 +34,21 @@ var crop_data = {
 		"growth_time": 60.0,
 		"wilt_time": 60.0,
 		"icon": preload("res://_Sprites/Tomato/6 - Tomato Inventory.png")
+	}
+}
+enum DecorationType { FENCE, HOUSE }
+var decoration_data = {
+	DecorationType.FENCE: {
+		"name": "Fence",
+		"buy_price": 10,
+		"sell_price": 8,
+		"icon": preload("res://_Sprites/Fences/oak_fence_right.png")
+	},
+	DecorationType.HOUSE: {
+		"name": "House",
+		"buy_price": 100,
+		"sell_price": 80,
+		"icon": preload("res://_Sprites/Buildings/house_icon.png")
 	}
 }
 
@@ -78,8 +94,11 @@ func reset_hoe_durability() -> void:
 	hoe_durability = 80
 	hoe_restored.emit()
 
-func get_data_by_name(crop_name: String) -> Dictionary:
+func get_data_by_name(data_name: String) -> Dictionary:
 	for type in crop_data:
-		if crop_data[type].name == crop_name:
+		if crop_data[type].name == data_name:
 			return crop_data[type]
+	for type in decoration_data:
+		if decoration_data[type].name == data_name:
+			return decoration_data[type]
 	return {}
