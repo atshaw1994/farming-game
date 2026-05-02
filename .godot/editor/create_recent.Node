@@ -1,3 +1,5 @@
+MarginContainer
+TabContainer
 Panel
 CanvasLayer
 Polygon2D
@@ -8,8 +10,5 @@ CollisionShape2D
 Sprite2D
 StaticBody2D
 Node2D
-MarginContainer
 VBoxContainer
 Label
-ScrollContainer
-ProgressBar

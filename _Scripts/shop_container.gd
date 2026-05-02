@@ -2,6 +2,7 @@ extends MarginContainer
 
 @export var player: Node2D
 @onready var tab_container: TabContainer = $MainContainer/TabContainer/Buy/TabContainer
+@onready var crops_tab: TabContainer = $MainContainer/TabContainer/Buy/TabContainer/Crops/CropsTab
 @onready var current_coins_label: Label = $MainContainer/MarginContainer/HBoxContainer/CurrentCoinsLabel
 @onready var sell_items_list: VBoxContainer = $MainContainer/TabContainer/Sell/VBoxContainer/ScrollContainer/SellItemsList
 @onready var sell_all_button: Button = $MainContainer/TabContainer/Sell/VBoxContainer/MarginContainer/SellAllButton
@@ -11,17 +12,14 @@ var active_tabs = []
 func _ready() -> void:
 	for btn in find_children("*", "Button", true):
 		btn.pressed.connect(func(): AudioManager.play("button_click"))
-	
-	for child in tab_container.get_children():
-		if child.name != "Hoe":  child.queue_free()
-	
+		
 	for type in GameManager.crop_data:
 		var data = GameManager.crop_data[type]
 		var tab = preload("res://_Prefabs/crop_tab_template.tscn").instantiate()
 		tab.name = data.name
-		tab_container.add_child(tab)
+		crops_tab.add_child(tab)
 		var tab_index = tab.get_index()
-		tab_container.set_tab_icon(tab_index, data.icon)
+		crops_tab.set_tab_icon(tab_index, data.icon)
 		
 		if tab.has_method("setup"): tab.setup(type)
 		
@@ -33,7 +31,7 @@ func _process(_delta) -> void:
 	
 	for tab in active_tabs:
 		var can_afford_one = GameManager.can_afford(tab.unit_price)
-		tab_container.set_tab_hidden(tab.get_index(), !can_afford_one)
+		crops_tab.set_tab_hidden(tab.get_index(), !can_afford_one)
 		
 		var total_needed = int(tab.total_label.text)
 		tab.buy_btn.disabled = total_needed <= 0 or !GameManager.can_afford(total_needed)
@@ -106,3 +104,6 @@ func _on_sell_all_button_pressed() -> void:
 	
 	sell_all_button.hide()
 	AudioManager.play("sell") # One big satisfying sound for the whole batch
+
+func _on_buy_house_button_pressed() -> void:
+	pass # Replace with function body.

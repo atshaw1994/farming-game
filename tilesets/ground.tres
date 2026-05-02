@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cudymd1h47qp3" path="res://tilesheets/Tiles_Simple_Plains.png" id="1_ekwrt"]
 [ext_resource type="Texture2D" uid="uid://d2x032vlddt77" path="res://_Sprites/Fences/oak_fence.png" id="2_0br14"]
+[ext_resource type="Texture2D" uid="uid://81kimima3d7j" path="res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png" id="2_ausgn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2y8yv"]
 texture = ExtResource("1_ekwrt")
@@ -255,6 +256,12 @@ texture_region_size = Vector2i(128, 64)
 2:50/0 = 0
 3:50/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rw4mf"]
+texture = ExtResource("2_ausgn")
+texture_region_size = Vector2i(128, 80)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 6)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b1akw"]
 texture = ExtResource("2_0br14")
 texture_region_size = Vector2i(64, 64)
@@ -271,3 +278,4 @@ terrain_set_0/terrain_0/name = "Grass"
 terrain_set_0/terrain_0/color = Color(0.5019608, 1, 0.2509804, 1)
 sources/0 = SubResource("TileSetAtlasSource_2y8yv")
 sources/8 = SubResource("TileSetAtlasSource_b1akw")
+sources/2 = SubResource("TileSetAtlasSource_rw4mf")

@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dv2wuhrn7e1t2" path="res://_Scripts/shop_container.gd" id="1_yxx3r"]
 [ext_resource type="Texture2D" uid="uid://bhhlsyxulnw7p" path="res://_Sprites/Hoe/CopperHoe.png" id="2_dpyoq"]
+[ext_resource type="Texture2D" uid="uid://dt1f57o7ghu2k" path="res://_Sprites/Buildings/house_icon.png" id="3_eg8ji"]
+[ext_resource type="Texture2D" uid="uid://bl6rts4r1df6x" path="res://_Sprites/Fences/oak_fence_icon.png" id="4_l7a58"]
+[ext_resource type="Texture2D" uid="uid://81kimima3d7j" path="res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png" id="5_t844k"]
+[ext_resource type="Texture2D" uid="uid://dfb7t8tu6icay" path="res://_Sprites/Fences/oak_fence_right.png" id="6_cdu17"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7chwe"]
 
@@ -70,11 +74,10 @@ label_settings = SubResource("LabelSettings_dpyoq")
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 all_tabs_in_front = true
 
 [node name="Buy" type="MarginContainer" parent="MainContainer/TabContainer" unique_id=327503812]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -87,9 +90,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 24
 tab_alignment = 1
 current_tab = 0
-tab_0/icon = ExtResource("2_dpyoq")
 
-[node name="Hoe" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer" unique_id=275859865]
+[node name="Tools" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer" unique_id=682957682]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -97,39 +99,56 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 metadata/_tab_index = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe" unique_id=968574532]
+[node name="ToolsTab" type="TabContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Tools" unique_id=291086231]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 0
+tab_0/icon = ExtResource("2_dpyoq")
+
+[node name="Hoe" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab" unique_id=275859865]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe" unique_id=968574532]
 layout_mode = 2
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer" unique_id=371399078]
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer" unique_id=768585973]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect2" type="TextureRect" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/MarginContainer" unique_id=371399078]
 texture_filter = 1
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
+size_flags_horizontal = 3
 texture = ExtResource("2_dpyoq")
 expand_mode = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer" unique_id=1316470562]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer" unique_id=1316470562]
 layout_mode = 2
 
-[node name="MarginContainer" type="VBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer" unique_id=1011636039]
+[node name="MarginContainer" type="VBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/VBoxContainer" unique_id=1011636039]
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="Label" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1846534894]
+[node name="Label" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1846534894]
 layout_mode = 2
 text = "Hoe Tool"
 label_settings = SubResource("LabelSettings_2y8yv")
 horizontal_alignment = 1
 uppercase = true
 
-[node name="Label2" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer/MarginContainer" unique_id=2127353942]
+[node name="Label2" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/VBoxContainer/MarginContainer" unique_id=2127353942]
 layout_mode = 2
 text = "Durability: 80"
 horizontal_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer" unique_id=2009908761]
+[node name="GridContainer" type="GridContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/VBoxContainer" unique_id=2009908761]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 10
@@ -137,24 +156,181 @@ theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 2
 
-[node name="CostLabel" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer/GridContainer" unique_id=1018476781]
+[node name="CostLabel" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/VBoxContainer/GridContainer" unique_id=1018476781]
 layout_mode = 2
 text = "Cost:"
 
-[node name="WheatSeedPriceLabel2" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer/GridContainer" unique_id=1509416436]
+[node name="HoePriceLabel" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/VBoxContainer/GridContainer" unique_id=1509416436]
 layout_mode = 2
 text = "16"
 horizontal_alignment = 1
 
-[node name="MarginContainer" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer/GridContainer" unique_id=18311522]
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/VBoxContainer/GridContainer" unique_id=18311522]
 layout_mode = 2
 
-[node name="BuyHoeButton" type="Button" parent="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer/GridContainer" unique_id=1587991978]
+[node name="BuyHoeButton" type="Button" parent="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/VBoxContainer/GridContainer" unique_id=1587991978]
 custom_minimum_size = Vector2(96, 0)
 layout_mode = 2
 text = "Buy"
 
+[node name="Decorations" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer" unique_id=1095506412]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 1
+
+[node name="DecorationsTab" type="TabContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations" unique_id=1546766235]
+layout_mode = 2
+tab_alignment = 1
+current_tab = 1
+tab_0/icon = ExtResource("3_eg8ji")
+tab_1/icon = ExtResource("4_l7a58")
+
+[node name="House" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab" unique_id=894578810]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House" unique_id=424086819]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer" unique_id=2121288438]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer/MarginContainer" unique_id=1985456189]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("5_t844k")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer" unique_id=971528351]
+layout_mode = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer/VBoxContainer" unique_id=2145592346]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer/VBoxContainer/MarginContainer" unique_id=878745683]
+layout_mode = 2
+text = "House"
+label_settings = SubResource("LabelSettings_2y8yv")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="GridContainer" type="GridContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer/VBoxContainer" unique_id=328084417]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="CostLabel" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer/VBoxContainer/GridContainer" unique_id=950282942]
+layout_mode = 2
+text = "Cost:"
+
+[node name="HousePriceLabel" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer/VBoxContainer/GridContainer" unique_id=124692338]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer/VBoxContainer/GridContainer" unique_id=460205925]
+layout_mode = 2
+
+[node name="BuyHouseButton" type="Button" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer/VBoxContainer/GridContainer" unique_id=2141004275]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Buy"
+
+[node name="Fence" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab" unique_id=808644130]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence" unique_id=2136860219]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer" unique_id=360178830]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/MarginContainer" unique_id=969965457]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("6_cdu17")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer" unique_id=268508728]
+layout_mode = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer" unique_id=715477989]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/MarginContainer" unique_id=1937223610]
+layout_mode = 2
+text = "Fence"
+label_settings = SubResource("LabelSettings_2y8yv")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="GridContainer" type="GridContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer" unique_id=645955123]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="CostLabel" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/GridContainer" unique_id=608982100]
+layout_mode = 2
+text = "Cost:"
+
+[node name="HousePriceLabel" type="Label" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/GridContainer" unique_id=384088205]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/GridContainer" unique_id=683297723]
+layout_mode = 2
+
+[node name="BuyHouseButton" type="Button" parent="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/Fence/HBoxContainer/VBoxContainer/GridContainer" unique_id=2104561913]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Buy"
+
+[node name="Crops" type="MarginContainer" parent="MainContainer/TabContainer/Buy/TabContainer" unique_id=683912649]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 2
+
+[node name="CropsTab" type="TabContainer" parent="MainContainer/TabContainer/Buy/TabContainer/Crops" unique_id=2111488573]
+layout_mode = 2
+tab_alignment = 1
+
 [node name="Sell" type="MarginContainer" parent="MainContainer/TabContainer" unique_id=937771297]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -214,6 +390,7 @@ text = "x"
 
 [connection signal="tab_changed" from="MainContainer/TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="tab_changed" from="MainContainer/TabContainer/Buy/TabContainer" to="." method="_on_tab_container_tab_changed"]
-[connection signal="pressed" from="MainContainer/TabContainer/Buy/TabContainer/Hoe/HBoxContainer/VBoxContainer/GridContainer/BuyHoeButton" to="." method="_on_buy_hoe_button_pressed"]
+[connection signal="pressed" from="MainContainer/TabContainer/Buy/TabContainer/Tools/ToolsTab/Hoe/HBoxContainer/VBoxContainer/GridContainer/BuyHoeButton" to="." method="_on_buy_hoe_button_pressed"]
+[connection signal="pressed" from="MainContainer/TabContainer/Buy/TabContainer/Decorations/DecorationsTab/House/HBoxContainer/VBoxContainer/GridContainer/BuyHouseButton" to="." method="_on_buy_house_button_pressed"]
 [connection signal="pressed" from="MainContainer/TabContainer/Sell/VBoxContainer/MarginContainer/SellAllButton" to="." method="_on_sell_all_button_pressed"]
 [connection signal="pressed" from="CloseButtonContainer/CloseShopButton" to="." method="_on_close_shop_button_pressed"]
