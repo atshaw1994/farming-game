@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dlu3g0f73eksf"]
+
+[ext_resource type="Texture2D" uid="uid://81kimima3d7j" path="res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png" id="1_ksqyw"]
+
+[node name="House_Right" type="StaticBody2D" unique_id=295100708]
+scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1674887083]
+position = Vector2(9.5, 0)
+build_mode = 1
+polygon = PackedVector2Array(-7.75, 45.5, -39, 34.75, -12.5, 26.25, 21.25, 36)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=636860375]
+texture_filter = 1
+position = Vector2(-34.000004, 6.5)
+scale = Vector2(0.5329241, 0.596875)
+texture = ExtResource("1_ksqyw")
+centered = false
+flip_h = true

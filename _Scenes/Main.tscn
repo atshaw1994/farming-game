@@ -3,20 +3,20 @@
 [ext_resource type="PackedScene" uid="uid://btftbxi5jiirs" path="res://_Prefabs/character.tscn" id="1_8u3td"]
 [ext_resource type="PackedScene" uid="uid://jeoufwighocq" path="res://_Prefabs/crop_plot.tscn" id="1_asnbu"]
 [ext_resource type="Script" uid="uid://b0crde23iyc6n" path="res://_Scripts/main.gd" id="1_ep2q6"]
-[ext_resource type="PackedScene" uid="uid://bauam4o53dp5m" path="res://_Prefabs/Decorations/House_left.tscn" id="2_7teev"]
-[ext_resource type="PackedScene" uid="uid://bqaietjmoy0h8" path="res://_Prefabs/Crop_inventory.tscn" id="3_7k0l4"]
+[ext_resource type="PackedScene" uid="uid://bauam4o53dp5m" path="res://_Prefabs/Decorations/House/House_left.tscn" id="2_7teev"]
+[ext_resource type="PackedScene" uid="uid://bqaietjmoy0h8" path="res://_Prefabs/UI/Crop_inventory.tscn" id="3_7k0l4"]
 [ext_resource type="Script" uid="uid://0jicf3f3aaqx" path="res://_Scripts/tile_map_layer.gd" id="3_bi17k"]
 [ext_resource type="FontFile" uid="uid://dvg5d2i7mayti" path="res://_fonts/MaterialIconsOutlined-Regular.otf" id="3_gc0ge"]
-[ext_resource type="PackedScene" uid="uid://bpc3j22yhfat6" path="res://_Prefabs/shop_container.tscn" id="4_7chwe"]
+[ext_resource type="PackedScene" uid="uid://bpc3j22yhfat6" path="res://_Prefabs/UI/shop_container.tscn" id="4_7chwe"]
 [ext_resource type="Texture2D" uid="uid://bhhlsyxulnw7p" path="res://_Sprites/Hoe/CopperHoe.png" id="5_0k82g"]
 [ext_resource type="TileSet" uid="uid://dk3wlecukov7m" path="res://tilesets/ground.tres" id="5_2y8yv"]
 [ext_resource type="Script" uid="uid://cr60myfldk1ew" path="res://_Scripts/decoration_tile_map_layer.gd" id="6_gtvrt"]
-[ext_resource type="PackedScene" uid="uid://c2gwik42nfmlx" path="res://_Prefabs/Decorations/fence_SW.tscn" id="7_lsnup"]
-[ext_resource type="PackedScene" uid="uid://pg4krqwg8f1u" path="res://_Prefabs/Decorations/fence_SE.tscn" id="8_ik8ss"]
-[ext_resource type="PackedScene" uid="uid://b85vsugp4j6d1" path="res://_Prefabs/Decorations/fence_NE.tscn" id="9_lsnup"]
-[ext_resource type="PackedScene" uid="uid://cv5hacs0gyt8c" path="res://_Prefabs/Decorations/fence_NW.tscn" id="10_ik8ss"]
-[ext_resource type="PackedScene" uid="uid://docscw5dlfs1f" path="res://_Prefabs/Decorations/House_Right.tscn" id="12_7teev"]
-[ext_resource type="PackedScene" uid="uid://70hyxbvxginm" path="res://_Prefabs/Decoration_inventory.tscn" id="15_ik8ss"]
+[ext_resource type="PackedScene" uid="uid://c2gwik42nfmlx" path="res://_Prefabs/Decorations/Fence/fence_SW.tscn" id="7_lsnup"]
+[ext_resource type="PackedScene" uid="uid://pg4krqwg8f1u" path="res://_Prefabs/Decorations/Fence/fence_SE.tscn" id="8_ik8ss"]
+[ext_resource type="PackedScene" uid="uid://b85vsugp4j6d1" path="res://_Prefabs/Decorations/Fence/fence_NE.tscn" id="9_lsnup"]
+[ext_resource type="PackedScene" uid="uid://cv5hacs0gyt8c" path="res://_Prefabs/Decorations/Fence/fence_NW.tscn" id="10_ik8ss"]
+[ext_resource type="PackedScene" uid="uid://dlu3g0f73eksf" path="res://_Prefabs/Decorations/House/House_Right.tscn" id="12_7teev"]
+[ext_resource type="PackedScene" uid="uid://70hyxbvxginm" path="res://_Prefabs/UI/Decoration_inventory.tscn" id="15_ik8ss"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi17k"]
 bg_color = Color(1, 1, 1, 0.47058824)
@@ -131,6 +131,16 @@ text = "X"
 label_settings = SubResource("LabelSettings_7chwe")
 horizontal_alignment = 1
 
+[node name="Player" parent="." unique_id=352858248 instance=ExtResource("1_8u3td")]
+y_sort_enabled = true
+position = Vector2(203, 104)
+scale = Vector2(4, 4)
+
+[node name="CropInventory" parent="Player" unique_id=705286552 instance=ExtResource("3_7k0l4")]
+visible = false
+
+[node name="DecorationInventory" parent="Player" unique_id=191064296 instance=ExtResource("15_ik8ss")]
+
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=1047951660]
 y_sort_enabled = true
 tile_set = ExtResource("5_2y8yv")
@@ -147,16 +157,6 @@ tile_map_data = PackedByteArray("AAAIABQAAAACAAoAAAAIABMAAAABAAoAAAAIABIAAAAAAAg
 tile_set = ExtResource("5_2y8yv")
 script = ExtResource("3_bi17k")
 crop_plot_scene = ExtResource("1_asnbu")
-
-[node name="Player" parent="." unique_id=352858248 instance=ExtResource("1_8u3td")]
-y_sort_enabled = true
-position = Vector2(203, 104)
-scale = Vector2(4, 4)
-
-[node name="CropInventory" parent="Player" unique_id=705286552 instance=ExtResource("3_7k0l4")]
-visible = false
-
-[node name="DecorationInventory" parent="Player" unique_id=191064296 instance=ExtResource("15_ik8ss")]
 
 [connection signal="pressed" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/StoreButton" to="." method="_on_store_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton" to="." method="_on_decoration_button_pressed"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cl67hf8lfm6w1"]
+
+[ext_resource type="Script" uid="uid://d1yev8kkjmybi" path="res://_Scripts/egg_count_display.gd" id="1_3rpoq"]
+[ext_resource type="Texture2D" uid="uid://dlpwenaveq60j" path="res://_Sprites/Egg/egg.png" id="1_oiurq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_3rpoq"]
+shadow_color = Color(0, 0, 0, 0.47058824)
+
+[node name="Egg" type="Node2D" unique_id=876831357]
+script = ExtResource("1_3rpoq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=842886759]
+texture_filter = 1
+position = Vector2(-1, -2)
+scale = Vector2(3, 3)
+texture = ExtResource("1_oiurq")
+
+[node name="EggCountLabel" type="Label" parent="." unique_id=1935545365]
+offset_left = 21.0
+offset_top = -13.0
+offset_right = 41.0
+offset_bottom = 10.0
+text = "0"
+label_settings = SubResource("LabelSettings_3rpoq")

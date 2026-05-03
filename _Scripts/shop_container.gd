@@ -15,7 +15,7 @@ func _ready() -> void:
 		
 	for type in GameManager.crop_data:
 		var data = GameManager.crop_data[type]
-		var tab = preload("res://_Prefabs/crop_tab_template.tscn").instantiate()
+		var tab = preload("res://_Prefabs/UI/crop_tab_template.tscn").instantiate()
 		tab.name = data.name
 		crops_tab.add_child(tab)
 		var tab_index = tab.get_index()

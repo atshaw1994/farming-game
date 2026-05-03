@@ -67,6 +67,8 @@ func swap_orientation(mouse_wheel_direction:String) -> void:
 		if direction == "Left": direction = "Right"
 		else: direction = "Left"
 	
+	print("type: " + type + ", direction: " + direction)
+	
 	if ghost_scene: ghost_scene.queue_free()
 	
 	var scene_to_use

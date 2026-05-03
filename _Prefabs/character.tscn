@@ -174,11 +174,11 @@ script = ExtResource("1_5jxua")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1395041956]
 texture_filter = 1
-position = Vector2(-1.5, -1.5)
+position = Vector2(0, -11)
 sprite_frames = SubResource("SpriteFrames_7852f")
 animation = &"idle_right"
 frame_progress = 0.9957845
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1892766394]
-position = Vector2(0, 8.25)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_5jxua")

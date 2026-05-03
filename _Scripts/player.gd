@@ -10,7 +10,7 @@ var target_position = null
 var current_target_plot = null
 var harvested_crops = []
 var seeds = []
-var decoration_items = [ "House" ]
+var decoration_items = [ "Fence", "Fence", "Fence", "Fence", "Fence", "Fence" ]
 
 signal arrived_at_plot
 
@@ -98,11 +98,6 @@ func remove_seed(crop_seed_to_remove:String) -> void:
 	seeds.remove_at(seeds.find(crop_seed_to_remove))
 
 func remove_decoration_item(item_to_remove:String) -> void:
-	print("*** remove_decoration_item(" + item_to_remove + ") ***")
-	var stack = get_stack()
-	if stack.size() > 1:
-		var caller = stack[1]
-		print("Method called by: ", caller.function, " in ", caller.source, " at line ", caller.line)
 	decoration_items.remove_at(decoration_items.find(item_to_remove))
 
 func show_popup(message:String) -> void:
@@ -122,13 +117,8 @@ func show_popup(message:String) -> void:
 	
 	add_child(label)
 	
-	# The "Rise and Fade" Animation
 	var tween = create_tween()
-	
-	# Rise up by 30 pixels
 	tween.tween_property(label, "position:y", label.position.y - 20, 0.5)
-	# Fade to transparent
 	tween.tween_property(label, "modulate:a", 0.0, 1.0)
-	
 	# Kill the label node once the animation is done to keep memory clean
 	tween.chain().tween_callback(label.queue_free)

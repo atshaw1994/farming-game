@@ -2,17 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://d2x032vlddt77" path="res://_Sprites/Fences/oak_fence.png" id="1_xh0uf"]
 
-[node name="Fence_Left" type="StaticBody2D" unique_id=788500995]
+[node name="Fence_NE" type="StaticBody2D" unique_id=788500995]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=155539880]
 texture_filter = 1
+position = Vector2(32, 0)
 texture = ExtResource("1_xh0uf")
-offset = Vector2(32, -32)
 region_enabled = true
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=355445839]
 z_index = 1
 position = Vector2(2.9802322e-08, 0)
-scale = Vector2(3.1999998, 3.1999998)
-polygon = PackedVector2Array(-9.313227e-09, -9.687501, 1.2500001, -10.000001, 20.000002, -0.31250003, 18.750002, 0)
+polygon = PackedVector2Array(-2.9802322e-08, 0, 4, 0, 64, 31, 60, 31)

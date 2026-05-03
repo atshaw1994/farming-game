@@ -2,14 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://81kimima3d7j" path="res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png" id="1_q6hwq"]
 
-[node name="Node2D" type="StaticBody2D" unique_id=295100708]
+[node name="House_Left" type="StaticBody2D" unique_id=295100708]
 scale = Vector2(4, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1765406724]
 texture_filter = 1
-position = Vector2(-8, -12)
-scale = Vector2(0.3125, 0.35)
+position = Vector2(-35.25, 10.75)
+scale = Vector2(0.5329241, 0.596875)
 texture = ExtResource("1_q6hwq")
 centered = false
 
-[node name="GrowthTimer" type="Timer" parent="." unique_id=252346122]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1509952126]
+position = Vector2(9.5, 0)
+build_mode = 1
+polygon = PackedVector2Array(-11, 49.75, -41.5, 40.25, -10, 32, 18.5, 38.75)
