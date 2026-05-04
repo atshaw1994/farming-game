@@ -47,13 +47,6 @@ func _on_hoe_button_pressed() -> void:
 	AudioManager.play("button_click")
 	GameManager.flip_hoe_mode() 
 
-func _on_decoration_button_pressed() -> void:
-	AudioManager.play("button_click")
-	if player_decoration_inventory.visible:
-		player_decoration_inventory.hide()
-	else:
-		player_decoration_inventory.show_at_position(decoration_button.global_position)
-
 func _on_item_selected(selected_type: String) -> void:
 	decoration_tile_map_layer.type = selected_type
 
@@ -61,8 +54,10 @@ func place_item(new_item) -> void:
 	new_item.position.y = -48
 	add_child(new_item)
 
-func _on_tools_button_pressed() -> void:
-	if tool_drawer.visible:
-		tool_drawer.hide()
-	else:
-		tool_drawer.show_at_position(tools_button.global_position)
+func _on_tools_button_toggled(toggled_on: bool) -> void:
+	if toggled_on: tool_drawer.show_at_position(tools_button.global_position)
+	else: tool_drawer.hide()
+
+func _on_decoration_button_toggled(toggled_on: bool) -> void:
+	if toggled_on: player_decoration_inventory.show_at_position(decoration_button.global_position)
+	else: player_decoration_inventory.hide()

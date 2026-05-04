@@ -78,6 +78,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_gc0ge")
 theme_override_font_sizes/font_size = 32
+toggle_mode = true
 text = "format_paint"
 
 [node name="ToolsButton" type="Button" parent="CanvasLayer/ActionButtonsContainer/VBoxContainer" unique_id=985997428]
@@ -85,6 +86,7 @@ custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_gc0ge")
 theme_override_font_sizes/font_size = 32
+toggle_mode = true
 text = "home_repair_service"
 
 [node name="Player" parent="." unique_id=352858248 instance=ExtResource("1_8u3td")]
@@ -116,5 +118,5 @@ script = ExtResource("3_bi17k")
 crop_plot_scene = ExtResource("1_asnbu")
 
 [connection signal="pressed" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/StoreButton" to="." method="_on_store_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton" to="." method="_on_decoration_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/ToolsButton" to="." method="_on_tools_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton" to="." method="_on_decoration_button_toggled"]
+[connection signal="toggled" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/ToolsButton" to="." method="_on_tools_button_toggled"]
