@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1ghhsb5fcflv"]
 
-[ext_resource type="Script" uid="uid://cy1d66yvvawll" path="res://_Scripts/chicken.gd" id="1_gihw1"]
+[ext_resource type="Script" uid="uid://cy1d66yvvawll" path="res://_Scripts/Animals/chicken.gd" id="1_gihw1"]
 [ext_resource type="Texture2D" uid="uid://dawxcbroeu81s" path="res://_Sprites/Chicken/Chicken_Sprite_Sheet.png" id="2_3dodr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jxji1"]

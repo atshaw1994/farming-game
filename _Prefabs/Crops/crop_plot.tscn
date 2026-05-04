@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jeoufwighocq"]
 
-[ext_resource type="Script" uid="uid://df7xsyu0gsnt0" path="res://_Scripts/crop_plot.gd" id="1_on1nb"]
+[ext_resource type="Script" uid="uid://df7xsyu0gsnt0" path="res://_Scripts/Crops/crop_plot.gd" id="1_on1nb"]
 [ext_resource type="PackedScene" uid="uid://qnnlybufxjkk" path="res://_Prefabs/Crops/Wheat.tscn" id="2_jot6e"]
 [ext_resource type="PackedScene" uid="uid://cmorkhwncbvut" path="res://_Prefabs/Crops/Potato.tscn" id="3_jot6e"]
 [ext_resource type="PackedScene" uid="uid://bhp8vnat5nfla" path="res://_Prefabs/Crops/Tomato.tscn" id="4_6f4ju"]

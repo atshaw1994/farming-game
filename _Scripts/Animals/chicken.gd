@@ -7,8 +7,7 @@ signal laid_egg
 
 func _ready() -> void:
 	egg_timer.timeout.connect(lay_egg)
-	# egg_timer.start(randi_range(60, 180)) # every 1min to 3min
-	egg_timer.start(10) # DEBUG: Remove this
+	egg_timer.start(randi_range(60, 180)) # every 1min to 3min
 	animations.play("idle")
 	print("egg timer set to " + str(egg_timer.wait_time) + "sec")
 

@@ -1,0 +1,169 @@
+[gd_scene format=3 uid="uid://rh5e648h7euo"]
+
+[ext_resource type="Script" uid="uid://ldmp577mxupw" path="res://_Scripts/UI/shop_cotainer_chicken.gd" id="1_c7pp3"]
+[ext_resource type="Texture2D" uid="uid://c33jo02waaot8" path="res://_Sprites/Chicken/chicken_coop_ui.png" id="1_dd0ja"]
+[ext_resource type="Texture2D" uid="uid://dawxcbroeu81s" path="res://_Sprites/Chicken/Chicken_Sprite_Sheet.png" id="2_c7pp3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2y8yv"]
+font_size = 32
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_reptg"]
+atlas = ExtResource("2_c7pp3")
+region = Rect2(0, 0, 32, 32)
+
+[node name="Chicken" type="MarginContainer" unique_id=1391393130]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_c7pp3")
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1684061764]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=390889070]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer" unique_id=144992620]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="ChickenCooopContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=1109365146]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer" unique_id=371776598]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer/MarginContainer" unique_id=1294772303]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("1_dd0ja")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer" unique_id=1659148279]
+layout_mode = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer/VBoxContainer" unique_id=1552347923]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer/VBoxContainer/MarginContainer" unique_id=783066160]
+layout_mode = 2
+text = "Chicken Coop"
+label_settings = SubResource("LabelSettings_2y8yv")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer/VBoxContainer/MarginContainer" unique_id=193501773]
+layout_mode = 2
+text = "Holds 3 Chickens"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer/VBoxContainer" unique_id=528596580]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="CostLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer/VBoxContainer/GridContainer" unique_id=1244546977]
+layout_mode = 2
+text = "Cost:"
+
+[node name="ChickenCoopPriceLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer/VBoxContainer/GridContainer" unique_id=572058094]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer/VBoxContainer/GridContainer" unique_id=118233197]
+layout_mode = 2
+
+[node name="BuyChickenCoopButton" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenCooopContainer/VBoxContainer/GridContainer" unique_id=87398809]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Buy"
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=301125638]
+layout_mode = 2
+
+[node name="ChickenContainer" type="HBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer" unique_id=996017110]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer" unique_id=1449639788]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect2" type="TextureRect" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer/MarginContainer" unique_id=1881525693]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 6
+texture = SubResource("AtlasTexture_reptg")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer" unique_id=940130826]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MarginContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer/VBoxContainer" unique_id=1049364987]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer/VBoxContainer/MarginContainer" unique_id=1985142850]
+layout_mode = 2
+text = "Chicken"
+label_settings = SubResource("LabelSettings_2y8yv")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer/VBoxContainer/MarginContainer" unique_id=1923830139]
+layout_mode = 2
+text = "Lays Eggs every 1min to 3min
+REQURIES CHICKEN COOP"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer/VBoxContainer" unique_id=489327928]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="CostLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer/VBoxContainer/GridContainer" unique_id=1796548335]
+layout_mode = 2
+text = "Cost:"
+
+[node name="ChickenCoopPriceLabel" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer/VBoxContainer/GridContainer" unique_id=772353120]
+layout_mode = 2
+text = "30"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer/VBoxContainer/GridContainer" unique_id=1707120880]
+layout_mode = 2
+
+[node name="BuyChickenButton" type="Button" parent="ScrollContainer/MarginContainer/VBoxContainer/ChickenContainer/VBoxContainer/GridContainer" unique_id=1516003599]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Buy"
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2028297794]

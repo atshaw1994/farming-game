@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b35u5ty3qycok"]
 
-[ext_resource type="Script" uid="uid://dd2au8cf5onxg" path="res://_Scripts/crop_tab.gd" id="1_5x7vb"]
+[ext_resource type="Script" uid="uid://dd2au8cf5onxg" path="res://_Scripts/UI/crop_tab.gd" id="1_5x7vb"]
 [ext_resource type="Texture2D" uid="uid://d4llmroi4f5ia" path="res://_Sprites/Wheat/6 - Wheat Inventory.png" id="1_ear7r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2y8yv"]

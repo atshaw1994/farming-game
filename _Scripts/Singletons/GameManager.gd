@@ -36,7 +36,7 @@ var crop_data = {
 		"icon": preload("res://_Sprites/Tomato/6 - Tomato Inventory.png")
 	}
 }
-enum DecorationType { FENCE, HOUSE }
+enum DecorationType { FENCE, HOUSE, CHICKEN_COOP }
 var decoration_data = {
 	DecorationType.FENCE: {
 		"name": "Fence",

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cl67hf8lfm6w1"]
 
-[ext_resource type="Script" uid="uid://d1yev8kkjmybi" path="res://_Scripts/egg_count_display.gd" id="1_3rpoq"]
+[ext_resource type="Script" uid="uid://d1yev8kkjmybi" path="res://_Scripts/Animals/egg_count_display.gd" id="1_3rpoq"]
 [ext_resource type="Texture2D" uid="uid://dlpwenaveq60j" path="res://_Sprites/Egg/egg.png" id="1_oiurq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_3rpoq"]

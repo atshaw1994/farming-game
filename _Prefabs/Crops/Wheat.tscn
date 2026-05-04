@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://qnnlybufxjkk"]
 
-[ext_resource type="Script" uid="uid://dp2kq34vpew1x" path="res://_Scripts/crop_growth.gd" id="1_8ybud"]
+[ext_resource type="Script" uid="uid://dp2kq34vpew1x" path="res://_Scripts/Crops/crop_growth.gd" id="1_8ybud"]
 [ext_resource type="Texture2D" uid="uid://bhghgffcbicyh" path="res://_Sprites/Wheat/2 - Wheat Sprout.png" id="2_fv8dl"]
 [ext_resource type="Texture2D" uid="uid://b70bfjmd3lubq" path="res://_Sprites/Wheat/3 - Wheat Mid.png" id="3_x7n66"]
 [ext_resource type="Texture2D" uid="uid://427h7u12h81w" path="res://_Sprites/Wheat/4 - Wheat Full.png" id="4_qbl5l"]

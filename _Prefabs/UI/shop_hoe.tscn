@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c8a26opysu1u4"]
+
+[ext_resource type="Texture2D" uid="uid://bhhlsyxulnw7p" path="res://_Sprites/Hoe/CopperHoe.png" id="1_kkcpc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2y8yv"]
+font_size = 32
+
+[node name="Hoe" type="MarginContainer" unique_id=2021801444]
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1944299453]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=491261935]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/MarginContainer" unique_id=876159527]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_kkcpc")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=802767698]
+layout_mode = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=574791101]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=1590182139]
+layout_mode = 2
+text = "Hoe Tool"
+label_settings = SubResource("LabelSettings_2y8yv")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=29612068]
+layout_mode = 2
+text = "Durability: 80"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer" unique_id=564527472]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="CostLabel" type="Label" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1284646663]
+layout_mode = 2
+text = "Cost:"
+
+[node name="HoePriceLabel" type="Label" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1863405109]
+layout_mode = 2
+text = "16"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1474805690]
+layout_mode = 2
+
+[node name="BuyHoeButton" type="Button" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=504608687]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Buy"

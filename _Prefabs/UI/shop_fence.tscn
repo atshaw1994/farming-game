@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dhrvgsfp14pny"]
+
+[ext_resource type="Texture2D" uid="uid://dfb7t8tu6icay" path="res://_Sprites/Fences/oak_fence_right.png" id="1_ghhux"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2y8yv"]
+font_size = 32
+
+[node name="Fence" type="MarginContainer" unique_id=1573777732]
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=548078267]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=909734473]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer" unique_id=1870501726]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_ghhux")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1544141544]
+layout_mode = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=1583127440]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=409098913]
+layout_mode = 2
+text = "Fence"
+label_settings = SubResource("LabelSettings_2y8yv")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer" unique_id=214406878]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="CostLabel" type="Label" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=419570154]
+layout_mode = 2
+text = "Cost:"
+
+[node name="FencePriceLabel" type="Label" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=564468297]
+layout_mode = 2
+text = "10"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=2071194230]
+layout_mode = 2
+
+[node name="BuyFenceButton" type="Button" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=391952499]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Buy"

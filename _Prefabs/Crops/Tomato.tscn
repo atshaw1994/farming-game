@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhp8vnat5nfla"]
 
-[ext_resource type="Script" uid="uid://dp2kq34vpew1x" path="res://_Scripts/crop_growth.gd" id="1_123xi"]
+[ext_resource type="Script" uid="uid://dp2kq34vpew1x" path="res://_Scripts/Crops/crop_growth.gd" id="1_123xi"]
 [ext_resource type="Texture2D" uid="uid://dckgqfiv6bguh" path="res://_Sprites/Tomato/2 - Tomato Sprout.png" id="2_nex2y"]
 [ext_resource type="Texture2D" uid="uid://doaf7rpeekjo2" path="res://_Sprites/Tomato/3 - Tomato Mid.png" id="3_sdo41"]
 [ext_resource type="Texture2D" uid="uid://5x0ef6p0rkh8" path="res://_Sprites/Tomato/4 - Tomato Full.png" id="4_vcian"]

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dbo4d7remp2f4"]
+
+[ext_resource type="Texture2D" uid="uid://81kimima3d7j" path="res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png" id="1_kdxh0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2y8yv"]
+font_size = 32
+
+[node name="House" type="MarginContainer" unique_id=1858929198]
+visible = false
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=322231221]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=124147871]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer" unique_id=530803244]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_kdxh0")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1007711733]
+layout_mode = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=469225831]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=2018348025]
+layout_mode = 2
+text = "House"
+label_settings = SubResource("LabelSettings_2y8yv")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer" unique_id=1151059073]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="CostLabel" type="Label" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1240801252]
+layout_mode = 2
+text = "Cost:"
+
+[node name="HousePriceLabel" type="Label" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=352786526]
+layout_mode = 2
+text = "100"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=798570828]
+layout_mode = 2
+
+[node name="BuyHouseButton" type="Button" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=902472767]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Buy"

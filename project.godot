@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://d3llxn2h4m2pv"
-CropValues="*uid://btps4txq54igg"
 AudioManager="*uid://dbyw7mmnujbjq"
 
 [editor]
