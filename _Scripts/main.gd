@@ -1,20 +1,17 @@
 extends Node2D
 
 @onready var shop_container: MarginContainer = $CanvasLayer/ShopContainer
-@onready var hoe_durability_bar: ProgressBar = $CanvasLayer/ActionButtonsContainer/VBoxContainer/HoeButton/HoeDurabilityBar
-@onready var hoe_broken_overlay: Label = $CanvasLayer/ActionButtonsContainer/VBoxContainer/HoeButton/HoeBrokenOverlay
 @onready var crop_tile_map_layer: TileMapLayer = $CropPlotTileMapLayer
 @onready var decoration_tile_map_layer: TileMapLayer = $DecorationTileMapLayer
 @onready var player_decoration_inventory: CanvasLayer = $Player/DecorationInventory
 @onready var decoration_button: Button = $CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton
 @onready var player: CharacterBody2D = $Player
+@onready var tool_drawer: CanvasLayer = $ToolDrawer
+@onready var tools_button: Button = $CanvasLayer/ActionButtonsContainer/VBoxContainer/ToolsButton
+
+signal plot_hoed
 
 func _ready() -> void:
-	# Connect global signals for hoe status
-	GameManager.hoe_broken.connect(_on_hoe_broken)
-	GameManager.hoe_restored.connect(_on_hoe_restored)
-	# Initialize the durability bar UI 
-	hoe_durability_bar.value = (GameManager.hoe_durability / 80.0) * 100
 	player_decoration_inventory.item_selected.connect(_on_item_selected)
 
 func _unhandled_input(event) -> void:
@@ -26,7 +23,7 @@ func _unhandled_input(event) -> void:
 				var map_pos = crop_tile_map_layer.local_to_map(crop_tile_map_layer.get_local_mouse_position()) 
 				if crop_tile_map_layer.handle_hoe_action(map_pos):
 					AudioManager.play("hoe")
-					update_durability()
+					plot_hoed.emit()
 					get_viewport().set_input_as_handled()
 		elif GameManager.map_edit_mode_active:
 			var map_pos = decoration_tile_map_layer.local_to_map(decoration_tile_map_layer.get_local_mouse_position()) 
@@ -40,18 +37,6 @@ func _unhandled_input(event) -> void:
 		elif GameManager.map_edit_mode_active:
 			AudioManager.play("button_click_reverse")
 			GameManager.flip_map_edit_mode()
-
-func update_durability() -> void:
-	GameManager.lower_hoe_durability()
-	# Sync the UI bar with the new durability value [cite: 74]
-	hoe_durability_bar.value = (GameManager.hoe_durability / 80.0) * 100
-
-func _on_hoe_broken() -> void:
-	hoe_broken_overlay.show()
-
-func _on_hoe_restored() -> void:
-	hoe_broken_overlay.hide()
-	hoe_durability_bar.value = 100
 
 func _on_store_button_pressed() -> void:
 	AudioManager.play("button_click")
@@ -75,3 +60,9 @@ func _on_item_selected(selected_type: String) -> void:
 func place_item(new_item) -> void:
 	new_item.position.y = -48
 	add_child(new_item)
+
+func _on_tools_button_pressed() -> void:
+	if tool_drawer.visible:
+		tool_drawer.hide()
+	else:
+		tool_drawer.show_at_position(tools_button.global_position)

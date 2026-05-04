@@ -2,15 +2,17 @@
 
 [ext_resource type="Script" uid="uid://qkvfqddfqw8t" path="res://_Scripts/UI/decoration_inventory.gd" id="1_m4xy2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apcsc"]
-bg_color = Color(0, 0, 0, 0.5019608)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqa4h"]
+bg_color = Color(0.6, 0.6, 0.6, 0.47058824)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
-
-[sub_resource type="LabelSettings" id="LabelSettings_apcsc"]
-line_spacing = 1.0
-outline_size = 1
-outline_color = Color(0, 0, 0, 1)
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="LabelSettings" id="LabelSettings_m4xy2"]
 font_size = 12
@@ -19,16 +21,15 @@ font_size = 12
 script = ExtResource("1_m4xy2")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=417919819]
+custom_minimum_size = Vector2(0, 64)
 offset_right = 32.0
 offset_bottom = 32.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 
-[node name="Panel" type="Panel" parent="PanelContainer" unique_id=1886930285]
-custom_minimum_size = Vector2(0, 28)
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=973156898]
 layout_mode = 2
-size_flags_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_apcsc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qqa4h")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=984379793]
 layout_mode = 2
@@ -37,21 +38,11 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=19883773]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=804880810]
-texture_filter = 1
-layout_mode = 2
-text = "Inventory"
-label_settings = SubResource("LabelSettings_apcsc")
-horizontal_alignment = 1
-
-[node name="ItemContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1410315252]
+[node name="ItemContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1410315252]
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="EmptyLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1988235652]
+[node name="EmptyLabel" type="Label" parent="PanelContainer/MarginContainer" unique_id=1988235652]
 visible = false
 layout_mode = 2
 text = "Empty."

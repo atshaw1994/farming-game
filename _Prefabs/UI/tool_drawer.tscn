@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dg473m1u0cjrv"]
+
+[ext_resource type="Script" uid="uid://du3by8cf2gvcd" path="res://_Scripts/UI/tool_drawer.gd" id="1_77iu4"]
+[ext_resource type="PackedScene" uid="uid://bsvf8let423xo" path="res://_Prefabs/UI/hoe_button.tscn" id="2_tgwv3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbxwb"]
+bg_color = Color(0.6, 0.6, 0.6, 0.47058824)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="ToolDrawer" type="CanvasLayer" unique_id=723807500]
+script = ExtResource("1_77iu4")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1490154031]
+custom_minimum_size = Vector2(64, 64)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=1216118212]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rbxwb")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=383402159]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HoeButton" parent="PanelContainer/MarginContainer" unique_id=907385359 instance=ExtResource("2_tgwv3")]
+layout_mode = 2

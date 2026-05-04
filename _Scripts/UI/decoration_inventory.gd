@@ -3,27 +3,29 @@ extends CanvasLayer
 signal item_selected(type)
 
 @onready var panel_container = $PanelContainer
-@onready var item_container: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/ItemContainer
+@onready var item_container: HBoxContainer = $PanelContainer/MarginContainer/ItemContainer
 @onready var player: Node2D = $".."
 @onready var decoration_button: Button = $"../../CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton"
-@onready var empty_label: Label = $PanelContainer/MarginContainer/VBoxContainer/EmptyLabel
+@onready var empty_label: Label = $PanelContainer/MarginContainer/EmptyLabel
 
 func _ready() -> void:
 	hide()
 	panel_container.scale = Vector2.ZERO
 
-func show_at_position(plot_global_center: Vector2) -> void:
+func show_at_position(show_position: Vector2) -> void:
 	show()
-	_setup_buttons()
+	_setup_buttons() 
 	await get_tree().process_frame
-	plot_global_center = Vector2(plot_global_center.x - panel_container.size.x, plot_global_center.y)
-	var screen_pos = get_viewport().get_canvas_transform() * plot_global_center
+	var adjusted_show_position = Vector2(show_position.x - panel_container.size.x, show_position.y)
+	var screen_pos = get_viewport().get_canvas_transform() * adjusted_show_position
 	panel_container.global_position = screen_pos - panel_container.pivot_offset
 	AudioManager.play("button_click")
 	var tween = create_tween()
+	tween.set_parallel(true)
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(panel_container, "scale", Vector2.ONE, 0.3).from(Vector2.ZERO)
+	tween.tween_property(panel_container, "scale", Vector2.ONE, 0.3).from(Vector2(0,1))
+	tween.tween_property(panel_container, "position", screen_pos - panel_container.pivot_offset, 0.3).from(show_position)
 	if item_container.get_child_count() == 0: empty_label.show()
 
 func _setup_buttons() -> void:
