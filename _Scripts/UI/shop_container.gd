@@ -1,11 +1,11 @@
 extends MarginContainer
 
 @export var player: Node2D
-@onready var tab_container: TabContainer = $MainContainer/TabContainer/Buy/TabContainer
-@onready var crops_tab: TabContainer = $MainContainer/TabContainer/Buy/TabContainer/Crops/CropsTab
-@onready var current_coins_label: Label = $MainContainer/MarginContainer/HBoxContainer/CurrentCoinsLabel
-@onready var sell_items_list: VBoxContainer = $MainContainer/TabContainer/Sell/VBoxContainer/ScrollContainer/SellItemsList
-@onready var sell_all_button: Button = $MainContainer/TabContainer/Sell/VBoxContainer/MarginContainer/SellAllButton
+@onready var tab_container: TabContainer = $MainContainer/BaseTabContainer/Buy/BuyTabContainer
+@onready var crops_tab: TabContainer = $MainContainer/BaseTabContainer/Buy/BuyTabContainer/Crops/CropsTabContainer
+@onready var current_coins_label: Label = $MainContainer/CurrentCoinsMarginContainer/HBoxContainer/CurrentCoinsLabel
+@onready var sell_items_list: VBoxContainer = $MainContainer/BaseTabContainer/Sell/VBoxContainer/ScrollContainer/SellItemsList
+@onready var sell_all_button: Button = $MainContainer/BaseTabContainer/Sell/VBoxContainer/MarginContainer/SellAllButton
 
 var active_tabs = []
 

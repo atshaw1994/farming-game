@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqaietjmoy0h8" path="res://_Prefabs/UI/Crop_inventory.tscn" id="3_7k0l4"]
 [ext_resource type="Script" uid="uid://0jicf3f3aaqx" path="res://_Scripts/TileMaps/crop_tile_map_layer.gd" id="3_bi17k"]
 [ext_resource type="FontFile" uid="uid://dvg5d2i7mayti" path="res://_fonts/MaterialIconsOutlined-Regular.otf" id="3_gc0ge"]
-[ext_resource type="PackedScene" uid="uid://bpc3j22yhfat6" path="res://_Prefabs/UI/shop_container.tscn" id="4_7chwe"]
+[ext_resource type="PackedScene" uid="uid://bpc3j22yhfat6" path="res://_Prefabs/UI/shop_ui.tscn" id="4_7chwe"]
 [ext_resource type="Texture2D" uid="uid://bhhlsyxulnw7p" path="res://_Sprites/Hoe/CopperHoe.png" id="5_0k82g"]
 [ext_resource type="TileSet" uid="uid://dk3wlecukov7m" path="res://tilesets/ground.tres" id="5_2y8yv"]
 [ext_resource type="Script" uid="uid://cr60myfldk1ew" path="res://_Scripts/TileMaps/decoration_tile_map_layer.gd" id="6_gtvrt"]
