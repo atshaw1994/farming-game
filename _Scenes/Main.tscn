@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://jeoufwighocq" path="res://_Prefabs/Crops/crop_plot.tscn" id="1_asnbu"]
 [ext_resource type="Script" uid="uid://b0crde23iyc6n" path="res://_Scripts/main.gd" id="1_ep2q6"]
 [ext_resource type="PackedScene" uid="uid://bauam4o53dp5m" path="res://_Prefabs/Decorations/House/House_left.tscn" id="2_7teev"]
-[ext_resource type="PackedScene" uid="uid://bqaietjmoy0h8" path="res://_Prefabs/UI/Crop_inventory.tscn" id="3_7k0l4"]
+[ext_resource type="PackedScene" uid="uid://bqaietjmoy0h8" path="res://_Prefabs/UI/Inventory/Crop_inventory.tscn" id="3_7k0l4"]
 [ext_resource type="Script" uid="uid://0jicf3f3aaqx" path="res://_Scripts/TileMaps/crop_tile_map_layer.gd" id="3_bi17k"]
 [ext_resource type="FontFile" uid="uid://dvg5d2i7mayti" path="res://_fonts/MaterialIconsOutlined-Regular.otf" id="3_gc0ge"]
-[ext_resource type="PackedScene" uid="uid://bpc3j22yhfat6" path="res://_Prefabs/UI/shop_ui.tscn" id="4_7chwe"]
+[ext_resource type="PackedScene" uid="uid://bpc3j22yhfat6" path="res://_Prefabs/UI/Shop/shop_ui.tscn" id="4_7chwe"]
 [ext_resource type="Texture2D" uid="uid://bhhlsyxulnw7p" path="res://_Sprites/Hoe/CopperHoe.png" id="5_0k82g"]
 [ext_resource type="TileSet" uid="uid://dk3wlecukov7m" path="res://tilesets/ground.tres" id="5_2y8yv"]
 [ext_resource type="Script" uid="uid://cr60myfldk1ew" path="res://_Scripts/TileMaps/decoration_tile_map_layer.gd" id="6_gtvrt"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b85vsugp4j6d1" path="res://_Prefabs/Decorations/Fence/fence_NE.tscn" id="9_lsnup"]
 [ext_resource type="PackedScene" uid="uid://cv5hacs0gyt8c" path="res://_Prefabs/Decorations/Fence/fence_NW.tscn" id="10_ik8ss"]
 [ext_resource type="PackedScene" uid="uid://dlu3g0f73eksf" path="res://_Prefabs/Decorations/House/House_Right.tscn" id="12_7teev"]
-[ext_resource type="PackedScene" uid="uid://70hyxbvxginm" path="res://_Prefabs/UI/Decoration_inventory.tscn" id="15_ik8ss"]
+[ext_resource type="PackedScene" uid="uid://70hyxbvxginm" path="res://_Prefabs/UI/Inventory/Decoration_inventory.tscn" id="15_ik8ss"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi17k"]
 bg_color = Color(1, 1, 1, 0.47058824)

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bpc3j22yhfat6"]
 
 [ext_resource type="Script" uid="uid://dv2wuhrn7e1t2" path="res://_Scripts/UI/shop_container.gd" id="1_yxx3r"]
-[ext_resource type="PackedScene" uid="uid://c8a26opysu1u4" path="res://_Prefabs/UI/shop_hoe.tscn" id="2_t5rqa"]
-[ext_resource type="PackedScene" uid="uid://dbo4d7remp2f4" path="res://_Prefabs/UI/shop_house.tscn" id="3_7rien"]
-[ext_resource type="PackedScene" uid="uid://dhrvgsfp14pny" path="res://_Prefabs/UI/shop_fence.tscn" id="4_nrd1k"]
-[ext_resource type="PackedScene" uid="uid://rh5e648h7euo" path="res://_Prefabs/UI/shop_chicken.tscn" id="7_nrd1k"]
+[ext_resource type="PackedScene" uid="uid://c8a26opysu1u4" path="res://_Prefabs/UI/Shop/shop_hoe.tscn" id="2_t5rqa"]
+[ext_resource type="PackedScene" uid="uid://dbo4d7remp2f4" path="res://_Prefabs/UI/Shop/shop_house.tscn" id="3_7rien"]
+[ext_resource type="PackedScene" uid="uid://dhrvgsfp14pny" path="res://_Prefabs/UI/Shop/shop_fence.tscn" id="4_nrd1k"]
+[ext_resource type="PackedScene" uid="uid://rh5e648h7euo" path="res://_Prefabs/UI/Shop/shop_chicken.tscn" id="7_nrd1k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7chwe"]
 
