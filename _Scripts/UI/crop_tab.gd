@@ -9,8 +9,8 @@ signal buy_requested(type: GameManager.CropType, quantity: int, total_cost: int)
 var crop_type: GameManager.CropType
 var unit_price: int = 0
 
-func setup(type: GameManager.CropType) -> void:
-	var data = GameManager.crop_data[type]
+func setup(category: int, type: GameManager.CropType) -> void:
+	var data = ShopManager.shop_registry[category][type]
 	crop_type = type
 	unit_price = data.buy_price
 	

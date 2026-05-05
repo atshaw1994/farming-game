@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://qg2d4s6ry3f4"]
+
+[ext_resource type="Script" uid="uid://2evp2hpvjaun" path="res://_Scripts/UI/shop_decoration_item_template.gd" id="1_sk63a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2y8yv"]
+font_size = 32
+
+[node name="DecorationItemTemplate" type="MarginContainer" unique_id=1402763278]
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_sk63a")
+metadata/_tab_index = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=422629166]
+layout_mode = 2
+alignment = 1
+
+[node name="ItemImage" type="TextureRect" parent="HBoxContainer" unique_id=1320658692]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1646184918]
+layout_mode = 2
+
+[node name="MarginContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer" unique_id=453034391]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="ItemNameLabel" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=1150900473]
+unique_name_in_owner = true
+layout_mode = 2
+text = "[ name ]"
+label_settings = SubResource("LabelSettings_2y8yv")
+horizontal_alignment = 1
+uppercase = true
+
+[node name="ItemInfoLabel" type="Label" parent="HBoxContainer/VBoxContainer/MarginContainer" unique_id=427767622]
+unique_name_in_owner = true
+layout_mode = 2
+text = "[ INFO ]"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer/VBoxContainer" unique_id=316832]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 10
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="CostLabel" type="Label" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1030752462]
+layout_mode = 2
+text = "Cost:"
+
+[node name="TotalLabel" type="Label" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=527839485]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=563967308]
+layout_mode = 2
+
+[node name="BuyItemButton" type="Button" parent="HBoxContainer/VBoxContainer/GridContainer" unique_id=1142937108]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+text = "Buy"

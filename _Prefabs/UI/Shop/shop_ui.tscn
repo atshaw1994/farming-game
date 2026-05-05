@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://bpc3j22yhfat6"]
 
-[ext_resource type="Script" uid="uid://dv2wuhrn7e1t2" path="res://_Scripts/UI/shop_container.gd" id="1_yxx3r"]
+[ext_resource type="Script" uid="uid://dv2wuhrn7e1t2" path="res://_Scripts/UI/shop_ui.gd" id="1_yxx3r"]
 [ext_resource type="PackedScene" uid="uid://c8a26opysu1u4" path="res://_Prefabs/UI/Shop/shop_hoe.tscn" id="2_t5rqa"]
-[ext_resource type="PackedScene" uid="uid://dbo4d7remp2f4" path="res://_Prefabs/UI/Shop/shop_house.tscn" id="3_7rien"]
-[ext_resource type="PackedScene" uid="uid://dhrvgsfp14pny" path="res://_Prefabs/UI/Shop/shop_fence.tscn" id="4_nrd1k"]
-[ext_resource type="PackedScene" uid="uid://rh5e648h7euo" path="res://_Prefabs/UI/Shop/shop_chicken.tscn" id="7_nrd1k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7chwe"]
 
@@ -60,6 +57,7 @@ text = "Coins: "
 label_settings = SubResource("LabelSettings_yxx3r")
 
 [node name="CurrentCoinsLabel" type="Label" parent="MainContainer/CurrentCoinsMarginContainer/HBoxContainer" unique_id=2144889331]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -85,7 +83,7 @@ metadata/_tab_index = 0
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 tab_alignment = 1
-current_tab = 3
+current_tab = 4
 
 [node name="Tools" type="MarginContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer" unique_id=682957682]
 visible = false
@@ -113,18 +111,11 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 metadata/_tab_index = 1
 
-[node name="DecorationsTab" type="TabContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer/Decorations" unique_id=1546766235]
+[node name="DecorationsTabContainer" type="TabContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer/Decorations" unique_id=1546766235]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/icon_max_width = 32
 tab_alignment = 1
-current_tab = 0
-
-[node name="House" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer/Decorations/DecorationsTab" unique_id=1858929198 instance=ExtResource("3_7rien")]
-visible = true
-layout_mode = 2
-
-[node name="Fence" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer/Decorations/DecorationsTab" unique_id=1573777732 instance=ExtResource("4_nrd1k")]
-visible = false
-layout_mode = 2
 
 [node name="Crops" type="MarginContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer" unique_id=683912649]
 visible = false
@@ -136,7 +127,24 @@ theme_override_constants/margin_bottom = 16
 metadata/_tab_index = 2
 
 [node name="CropsTabContainer" type="TabContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer/Crops" unique_id=2111488573]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/icon_max_width = 32
+tab_alignment = 1
+
+[node name="Structures" type="MarginContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer" unique_id=5001987]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+metadata/_tab_index = 3
+
+[node name="StructuresTabContainer" type="TabContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer/Structures" unique_id=542638070]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/icon_max_width = 32
 tab_alignment = 1
 
 [node name="Animals" type="MarginContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer" unique_id=1480873785]
@@ -145,15 +153,13 @@ theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
-metadata/_tab_index = 3
+metadata/_tab_index = 4
 
 [node name="AnimalsTabContainer" type="TabContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer/Animals" unique_id=588724748]
+unique_name_in_owner = true
 layout_mode = 2
+theme_override_constants/icon_max_width = 32
 tab_alignment = 1
-current_tab = 0
-
-[node name="Chicken" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer/Animals/AnimalsTabContainer" unique_id=1391393130 instance=ExtResource("7_nrd1k")]
-layout_mode = 2
 
 [node name="Sell" type="MarginContainer" parent="MainContainer/BaseTabContainer" unique_id=937771297]
 visible = false
@@ -172,6 +178,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="SellItemsList" type="VBoxContainer" parent="MainContainer/BaseTabContainer/Sell/VBoxContainer/ScrollContainer" unique_id=335155831]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
@@ -179,6 +186,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="SellAllButton" type="Button" parent="MainContainer/BaseTabContainer/Sell/VBoxContainer/MarginContainer" unique_id=136483285]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(74, 0)
 layout_mode = 2
 size_flags_horizontal = 8

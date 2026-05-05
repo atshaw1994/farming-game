@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1777863620
+::res://::1778020321
 export_presets.cfg::TextFile::-1::1777663848::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::9167869998845956274::1777256890::1777256897::1::::<><><>0<>0<>31dcd3327380fdb9efcd8bc1757d062d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://_audio/::1777663725
@@ -17,7 +17,7 @@ character.tscn::PackedScene::3731487232013385604::1777792854::0::1::::<><><>0<>0
 isometric_tile.tscn::PackedScene::7483493531027132788::1777792667::0::1::::<><><>0<>0<><>::
 ::res://_Prefabs/Animals/::1777863168
 chicken.tscn::PackedScene::1837734668954836351::1777863168::0::1::::<><><>0<>0<><>::uid://cy1d66yvvawll::::res://_Scripts/Animals/chicken.gd<>uid://dawxcbroeu81s::::res://_Sprites/Chicken/Chicken_Sprite_Sheet.png
-chicken_coop.tscn::PackedScene::1432539004061164464::1777863168::0::1::::<><><>0<>0<><>::uid://b7waewlmd6gt3::::res://_Scripts/chicken_coop.gd<>uid://cudymd1h47qp3::::res://tilesheets/Tiles_Simple_Plains.png<>uid://cv5hacs0gyt8c::::res://_Prefabs/Decorations/Fence/fence_NW.tscn<>uid://b85vsugp4j6d1::::res://_Prefabs/Decorations/Fence/fence_NE.tscn<>uid://pg4krqwg8f1u::::res://_Prefabs/Decorations/Fence/fence_SE.tscn<>uid://c2gwik42nfmlx::::res://_Prefabs/Decorations/Fence/fence_SW.tscn<>uid://bauam4o53dp5m::::res://_Prefabs/Decorations/House/House_left.tscn<>uid://cl67hf8lfm6w1::::res://_Prefabs/Animals/Egg.tscn<>uid://dawxcbroeu81s::::res://_Sprites/Chicken/Chicken_Sprite_Sheet.png
+chicken_coop.tscn::PackedScene::1432539004061164464::1777863168::0::1::::<><><>0<>0<><>::uid://b7waewlmd6gt3::::res://_Scripts/Animals/chicken_coop.gd<>uid://cudymd1h47qp3::::res://tilesheets/Tiles_Simple_Plains.png<>uid://cv5hacs0gyt8c::::res://_Prefabs/Decorations/Fence/fence_NW.tscn<>uid://b85vsugp4j6d1::::res://_Prefabs/Decorations/Fence/fence_NE.tscn<>uid://pg4krqwg8f1u::::res://_Prefabs/Decorations/Fence/fence_SE.tscn<>uid://c2gwik42nfmlx::::res://_Prefabs/Decorations/Fence/fence_SW.tscn<>uid://bauam4o53dp5m::::res://_Prefabs/Decorations/House/House_left.tscn<>uid://cl67hf8lfm6w1::::res://_Prefabs/Animals/Egg.tscn<>uid://dawxcbroeu81s::::res://_Sprites/Chicken/Chicken_Sprite_Sheet.png
 Egg.tscn::PackedScene::5610870116208548562::1777863168::0::1::::<><><>0<>0<><>::uid://d1yev8kkjmybi::::res://_Scripts/Animals/egg_count_display.gd<>uid://dlpwenaveq60j::::res://_Sprites/Egg/egg.png
 ::res://_Prefabs/Crops/::1777863182
 crop_plot.tscn::PackedScene::640843154509599652::1777863182::0::1::::<><><>0<>0<><>::uid://df7xsyu0gsnt0::::res://_Scripts/Crops/crop_plot.gd<>uid://qnnlybufxjkk::::res://_Prefabs/Crops/Wheat.tscn<>uid://cmorkhwncbvut::::res://_Prefabs/Crops/Potato.tscn<>uid://bhp8vnat5nfla::::res://_Prefabs/Crops/Tomato.tscn<>uid://cudymd1h47qp3::::res://tilesheets/Tiles_Simple_Plains.png
@@ -33,22 +33,25 @@ fence_SW.tscn::PackedScene::6681677043606705621::1777793386::0::1::::<><><>0<>0<
 ::res://_Prefabs/Decorations/House/::1777839910
 House_left.tscn::PackedScene::2427731214506187740::1777839910::0::1::::<><><>0<>0<><>::uid://81kimima3d7j::::res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png
 House_Right.tscn::PackedScene::7974338999039041329::1777839908::0::1::::<><><>0<>0<><>::uid://81kimima3d7j::::res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png
-::res://_Prefabs/UI/::1777863620
-crop_tab_template.tscn::PackedScene::4414908588165755310::1777862900::0::1::::<><><>0<>0<><>::uid://dd2au8cf5onxg::::res://_Scripts/UI/crop_tab.gd<>uid://d4llmroi4f5ia::::res://_Sprites/Wheat/6 - Wheat Inventory.png
-::res://_Prefabs/UI/Inventory/::0
+::res://_Prefabs/UI/::1778020321
+hoe_button.tscn::PackedScene::3693534903014823572::1777864729::0::1::::<><><>0<>0<><>::uid://bhhlsyxulnw7p::::res://_Sprites/Hoe/CopperHoe.png<>uid://kf0gawbre2y7::::res://_Scripts/UI/hoe_button.gd
+tool_drawer.tscn::PackedScene::7642255685160417947::1777865371::0::1::::<><><>0<>0<><>::uid://du3by8cf2gvcd::::res://_Scripts/UI/tool_drawer.gd<>uid://bsvf8let423xo::::res://_Prefabs/UI/hoe_button.tscn
+::res://_Prefabs/UI/Inventory/::1777865792
 Crop_inventory.tscn::PackedScene::3509936073431169235::1777862495::0::1::::<><><>0<>0<><>::uid://d00h6tcg3onhh::::res://_Scripts/UI/crop_inventory.gd
-Decoration_inventory.tscn::PackedScene::2298121528838596326::1777862505::0::1::::<><><>0<>0<><>::uid://qkvfqddfqw8t::::res://_Scripts/UI/decoration_inventory.gd
-::res://_Prefabs/UI/Shop/::1777863620
-shop_chicken.tscn::PackedScene::1209491313616751382::1777862996::0::1::::<><><>0<>0<><>::uid://ldmp577mxupw::::res://_Scripts/UI/shop_cotainer_chicken.gd<>uid://c33jo02waaot8::::res://_Sprites/Chicken/chicken_coop_ui.png<>uid://dawxcbroeu81s::::res://_Sprites/Chicken/Chicken_Sprite_Sheet.png
+Decoration_inventory.tscn::PackedScene::2298121528838596326::1777865792::0::1::::<><><>0<>0<><>::uid://qkvfqddfqw8t::::res://_Scripts/UI/decoration_inventory.gd
+::res://_Prefabs/UI/Shop/::1778020321
+decoration_item_tab_template.tscn::PackedScene::1137054033335111399::1777934071::0::1::::<><><>0<>0<><>::uid://2evp2hpvjaun::::res://_Scripts/UI/shop_decoration_item_template.gd
+crop_tab_template.tscn::PackedScene::4414908588165755310::1777862900::0::1::::<><><>0<>0<><>::uid://dd2au8cf5onxg::::res://_Scripts/UI/crop_tab.gd<>uid://d4llmroi4f5ia::::res://_Sprites/Wheat/6 - Wheat Inventory.png
+shop_chicken.tscn::PackedScene::1209491313616751382::1777931143::0::1::::<><><>0<>0<><>::uid://ldmp577mxupw::::res://_Scripts/UI/shop_cotainer_chicken.gd<>uid://c33jo02waaot8::::res://_Sprites/Chicken/chicken_coop_icon.png<>uid://dawxcbroeu81s::::res://_Sprites/Chicken/Chicken_Sprite_Sheet.png
 shop_fence.tscn::PackedScene::7686965103837829558::1777863033::0::1::::<><><>0<>0<><>::uid://dfb7t8tu6icay::::res://_Sprites/Fences/oak_fence_right.png
 shop_hoe.tscn::PackedScene::7090768685471306413::1777863041::0::1::::<><><>0<>0<><>::uid://bhhlsyxulnw7p::::res://_Sprites/Hoe/CopperHoe.png
 shop_house.tscn::PackedScene::7260120040653392939::1777863024::0::1::::<><><>0<>0<><>::uid://81kimima3d7j::::res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png
-shop_ui.tscn::PackedScene::3445099702654486269::1777863620::0::1::::<><><>0<>0<><>::uid://dv2wuhrn7e1t2::::res://_Scripts/UI/shop_container.gd<>uid://c8a26opysu1u4::::res://_Prefabs/UI/Shop/shop_hoe.tscn<>uid://dbo4d7remp2f4::::res://_Prefabs/UI/Shop/shop_house.tscn<>uid://dhrvgsfp14pny::::res://_Prefabs/UI/Shop/shop_fence.tscn<>uid://rh5e648h7euo::::res://_Prefabs/UI/Shop/shop_chicken.tscn
-::res://_Scenes/::1777863620
-Main.tscn::PackedScene::1940744568049388738::1777863633::0::1::::<><><>0<>0<><>::uid://btftbxi5jiirs::::res://_Prefabs/character.tscn<>uid://jeoufwighocq::::res://_Prefabs/Crops/crop_plot.tscn<>uid://b0crde23iyc6n::::res://_Scripts/main.gd<>uid://bauam4o53dp5m::::res://_Prefabs/Decorations/House/House_left.tscn<>uid://bqaietjmoy0h8::::res://_Prefabs/UI/Crop_inventory.tscn<>uid://0jicf3f3aaqx::::res://_Scripts/TileMaps/crop_tile_map_layer.gd<>uid://dvg5d2i7mayti::::res://_fonts/MaterialIconsOutlined-Regular.otf<>uid://bpc3j22yhfat6::::res://_Prefabs/UI/Shop/shop_ui.tscn<>uid://bhhlsyxulnw7p::::res://_Sprites/Hoe/CopperHoe.png<>uid://dk3wlecukov7m::::res://tilesets/ground.tres<>uid://cr60myfldk1ew::::res://_Scripts/TileMaps/decoration_tile_map_layer.gd<>uid://c2gwik42nfmlx::::res://_Prefabs/Decorations/Fence/fence_SW.tscn<>uid://pg4krqwg8f1u::::res://_Prefabs/Decorations/Fence/fence_SE.tscn<>uid://b85vsugp4j6d1::::res://_Prefabs/Decorations/Fence/fence_NE.tscn<>uid://cv5hacs0gyt8c::::res://_Prefabs/Decorations/Fence/fence_NW.tscn<>uid://dlu3g0f73eksf::::res://_Prefabs/Decorations/House/House_Right.tscn<>uid://70hyxbvxginm::::res://_Prefabs/UI/Decoration_inventory.tscn
+shop_ui.tscn::PackedScene::3445099702654486269::1777936460::0::1::::<><><>0<>0<><>::uid://dv2wuhrn7e1t2::::res://_Scripts/UI/shop_ui.gd<>uid://c8a26opysu1u4::::res://_Prefabs/UI/Shop/shop_hoe.tscn<>uid://rh5e648h7euo::::res://_Prefabs/UI/Shop/shop_chicken.tscn
+::res://_Scenes/::1777865670
+Main.tscn::PackedScene::1940744568049388738::1777865670::0::1::::<><><>0<>0<><>::uid://btftbxi5jiirs::::res://_Prefabs/character.tscn<>uid://jeoufwighocq::::res://_Prefabs/Crops/crop_plot.tscn<>uid://b0crde23iyc6n::::res://_Scripts/main.gd<>uid://bauam4o53dp5m::::res://_Prefabs/Decorations/House/House_left.tscn<>uid://dg473m1u0cjrv::::res://_Prefabs/UI/tool_drawer.tscn<>uid://bqaietjmoy0h8::::res://_Prefabs/UI/Inventory/Crop_inventory.tscn<>uid://0jicf3f3aaqx::::res://_Scripts/TileMaps/crop_tile_map_layer.gd<>uid://dvg5d2i7mayti::::res://_fonts/MaterialIconsOutlined-Regular.otf<>uid://bpc3j22yhfat6::::res://_Prefabs/UI/Shop/shop_ui.tscn<>uid://dk3wlecukov7m::::res://tilesets/ground.tres<>uid://cr60myfldk1ew::::res://_Scripts/TileMaps/decoration_tile_map_layer.gd<>uid://c2gwik42nfmlx::::res://_Prefabs/Decorations/Fence/fence_SW.tscn<>uid://pg4krqwg8f1u::::res://_Prefabs/Decorations/Fence/fence_SE.tscn<>uid://b85vsugp4j6d1::::res://_Prefabs/Decorations/Fence/fence_NE.tscn<>uid://cv5hacs0gyt8c::::res://_Prefabs/Decorations/Fence/fence_NW.tscn<>uid://dlu3g0f73eksf::::res://_Prefabs/Decorations/House/House_Right.tscn<>uid://70hyxbvxginm::::res://_Prefabs/UI/Inventory/Decoration_inventory.tscn
 main_menu.tscn::PackedScene::8092688323548626682::1777862484::0::1::::<><><>0<>0<><>::uid://bfnvcwkgqwrvc::::res://_Scripts/UI/main_menu.gd<>uid://2wd1rdb2mqic::::res://_Scenes/Main.tscn
-::res://_Scripts/::1777863196
-main.gd::GDScript::4146308329497723827::1777739491::0::1::::<>Node2D<><>0<>0<><>::
+::res://_Scripts/::1777865535
+main.gd::GDScript::4146308329497723827::1777865535::0::1::::<>Node2D<><>0<>0<><>::
 player.gd::GDScript::3567534720179113791::1777840512::0::1::::<>CharacterBody2D<><>0<>0<><>::
 ::res://_Scripts/Animals/::1777863168
 chicken.gd::GDScript::6511286613175277897::1777862977::0::1::::<>CharacterBody2D<><>0<>0<><>::
@@ -57,20 +60,24 @@ egg_count_display.gd::GDScript::9033999170594128058::1777841261::0::1::::<>Node2
 ::res://_Scripts/Crops/::1777863182
 crop_growth.gd::GDScript::8268470164067050451::1777678251::0::1::::<>StaticBody2D<><>0<>0<><>::
 crop_plot.gd::GDScript::7577696285124413283::1777725458::0::1::::<>StaticBody2D<><>0<>0<><>::
-::res://_Scripts/Singletons/::1777862851
+::res://_Scripts/Singletons/::1777936196
 AudioManager.gd::GDScript::7280389529496186222::1777678251::0::1::::<>Node<><>0<>0<><>::
 GameManager.gd::GDScript::9147967513289687375::1777862851::0::1::::<>Node<><>0<>0<><>::
+ShopManager.gd::GDScript::3133783209570871451::1777936196::0::1::::<>Node<><>0<>0<><>::
 ::res://_Scripts/TileMaps/::1777863202
 crop_tile_map_layer.gd::GDScript::1773790104403158551::1777678251::0::1::::<>TileMapLayer<><>0<>0<><>::
 decoration_tile_map_layer.gd::GDScript::6031588042743273510::1777789994::0::1::::<>TileMapLayer<><>0<>0<><>::
-::res://_Scripts/UI/::1777863491
+::res://_Scripts/UI/::1778020274
 crop_inventory.gd::GDScript::8966073965785881241::1777678251::0::1::::<>CanvasLayer<><>0<>0<><>::
 crop_tab.gd::GDScript::7425604233859109048::1777678251::0::1::::<>MarginContainer<><>0<>0<><>::
-decoration_inventory.gd::GDScript::1144950106718395069::1777738668::0::1::::<>CanvasLayer<><>0<>0<><>::
+decoration_inventory.gd::GDScript::1144950106718395069::1777865197::0::1::::<>CanvasLayer<><>0<>0<><>::
+hoe_button.gd::GDScript::713738998787253260::1777864729::0::1::::<>Button<><>0<>0<><>::
 main_menu.gd::GDScript::2765481612378571904::1777678251::0::1::::<>Control<><>0<>0<><>::
-shop_container.gd::GDScript::8690337851115294601::1777863491::0::1::::<>MarginContainer<><>0<>0<><>::
 shop_cotainer_chicken.gd::GDScript::779027430707449436::1777862772::0::1::::<>MarginContainer<><>0<>0<><>::
-::res://_Sprites/::1777795839
+shop_decoration_item_template.gd::GDScript::1904659562653816301::1777936406::0::1::::<>MarginContainer<><>0<>0<><>::
+shop_ui.gd::GDScript::8690337851115294601::1778020274::0::1::::<>MarginContainer<><>0<>0<><>::
+tool_drawer.gd::GDScript::8620946813623790491::1777865079::0::1::::<>CanvasLayer<><>0<>0<><>::
+::res://_Sprites/::1777933719
 ::res://_Sprites/Buildings/::1777679587
 09---Stall---Farm---Assets-Store---Guilherme-Laso.png::CompressedTexture2D::2370527761124493877::1777678905::1777678906::1::::<><><>0<>0<>c1740ad7fa35282f379562afc26af776<>res://.godot/imported/09---Stall---Farm---Assets-Store---Guilherme-Laso.png-8c3ca3de07adccb712030b374bc78a41.ctex::
 house_icon.png::CompressedTexture2D::8546882764425169032::1777679585::1777679587::1::::<><><>0<>0<>dfc0525a03b8c890951d82c43a1817a6<>res://.godot/imported/house_icon.png-945760ccb6743ec0da58c642f437f4bb.ctex::
@@ -83,8 +90,8 @@ walk and idle.png::CompressedTexture2D::2901885127458153504::1777256579::1777257
 portrait female.png::CompressedTexture2D::372209487477618017::1777256579::1777257051::1::::<><><>0<>0<>900444e2b644fb503de20726be1cd688<>res://.godot/imported/portrait female.png-cbaa9ac877e2f4bbf56ace24d776e6a7.ctex::
 portrait male.png::CompressedTexture2D::4011545759581241664::1777256579::1777257051::1::::<><><>0<>0<>37804107c9ef8683cde49b1bfa7f1834<>res://.godot/imported/portrait male.png-8466c7522d70dbebe34b3960244ce53d.ctex::
 walk and idle.png::CompressedTexture2D::3492765973912862330::1777256579::1777257051::1::::<><><>0<>0<>2cffc7626af144d8e629f4bd81f4f0e7<>res://.godot/imported/walk and idle.png-5ffa54d995e2d4be5f45d066b7156ca4.ctex::
-::res://_Sprites/Chicken/::1777843815
-chicken_coop_ui.png::CompressedTexture2D::6796504376207418335::1777843811::1777843815::1::::<><><>0<>0<>c4bb8ebdf9c6798cdb10cd982654d7e2<>res://.godot/imported/chicken_coop_ui.png-fd6b855e5f2afe833c876a1ad802ce95.ctex::
+::res://_Sprites/Chicken/::1777931144
+chicken_coop_icon.png::CompressedTexture2D::6796504376207418335::1777843811::1777931144::1::::<><><>0<>0<>66f1d74a2573957aea7378c15f9cf565<>res://.godot/imported/chicken_coop_icon.png-24beffd4ae86adb71434802883668f4c.ctex::
 Chicken_Sprite_Sheet.png::CompressedTexture2D::7206078503517348330::1777794292::1777794292::1::::<><><>0<>0<>9776563aa3ab5fc157fa1823d4db7110<>res://.godot/imported/Chicken_Sprite_Sheet.png-dd9460baf9d6c3f4e23bb04d0d178931.ctex::
 ::res://_Sprites/Egg/::1777839816
 egg.png::CompressedTexture2D::7963648598188744503::1777795825::1777839816::1::::<><><>0<>0<>6129c538772cb8e4cea01d7868332672<>res://.godot/imported/egg.png-b5c11f5099005acef958e2860bb54c5b.ctex::
@@ -156,16 +163,18 @@ Wateringcan.png::CompressedTexture2D::8844408592528977572::1777267523::177726752
 7 - Wheat Pouch Outline.png::CompressedTexture2D::80574502316303091::1777257180::1777257213::1::::<><><>0<>0<>7da648b76597d87b154884c3c722e64c<>res://.godot/imported/7 - Wheat Pouch Outline.png-c1ea79b6008a426798e2b50039148757.ctex::
 7 - Wheat Pouch.png::CompressedTexture2D::7935886406183618080::1777257180::1777257213::1::::<><><>0<>0<>03ef6d1313ad12ccf88b6b538f1c88e9<>res://.godot/imported/7 - Wheat Pouch.png-4d4aede633c5f1bddcdc58515a7bced5.ctex::
 8 - Wheat Sign.png::CompressedTexture2D::2199362314502816853::1777257181::1777257213::1::::<><><>0<>0<>ec87723f290af6e405cd910ab101b38e<>res://.godot/imported/8 - Wheat Sign.png-dac9f2886f4afccde3e5ad2948bba6d8.ctex::
-::res://addons/::1777358011
+::res://addons/::1777866346
+::res://addons/GitGodot/::1777866445
+::res://addons/GitGodot/Save_Data/::1777866445
 ::res://addons/godot-git-plugin/::1777358011
 git_plugin.gdextension::GDExtension::1024287411611316776::1777358011::0::1::::<><><>0<>0<><>::
 THIRDPARTY.md::TextFile::-1::1777358011::0::1::::<><><>0<>0<><>::
 ::res://addons/godot-git-plugin/linux/::1777358011
 ::res://addons/godot-git-plugin/macos/::1777358011
-::res://addons/godot-git-plugin/windows/::1777862275
+::res://addons/godot-git-plugin/windows/::1778019154
 ::res://bin/::1777663848
-::res://tilesets/::1777863620
-ground.tres::TileSet::7920308696252773680::1777863633::0::1::::<><><>0<>0<><>::uid://cudymd1h47qp3::::res://tilesheets/Tiles_Simple_Plains.png<>uid://d2x032vlddt77::::res://_Sprites/Fences/oak_fence.png<>uid://81kimima3d7j::::res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png
+::res://tilesets/::1777931143
+ground.tres::TileSet::7920308696252773680::1777931143::0::1::::<><><>0<>0<><>::uid://cudymd1h47qp3::::res://tilesheets/Tiles_Simple_Plains.png<>uid://d2x032vlddt77::::res://_Sprites/Fences/oak_fence.png<>uid://81kimima3d7j::::res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png
 ::res://tilesheets/::1777669959
 fences.png::CompressedTexture2D::4187416938869547193::1777669959::1777669959::1::::<><><>0<>0<>ea89d5e2004979a443044e80b9faef9c<>res://.godot/imported/fences.png-ebdced4659378508a7e26dbb99fc08ea.ctex::
 Tiles_Simple_Plains.png::CompressedTexture2D::6184290208855326730::1777420735::1777420735::1::::<><><>0<>0<>989b5d4cce731fc1687febd910587f26<>res://.godot/imported/Tiles_Simple_Plains.png-bc31cc1a278775bf13b8f14ce0431bae.ctex::

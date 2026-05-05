@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://rh5e648h7euo"]
 
 [ext_resource type="Script" uid="uid://ldmp577mxupw" path="res://_Scripts/UI/shop_cotainer_chicken.gd" id="1_c7pp3"]
-[ext_resource type="Texture2D" uid="uid://c33jo02waaot8" path="res://_Sprites/Chicken/chicken_coop_ui.png" id="1_dd0ja"]
+[ext_resource type="Texture2D" uid="uid://c33jo02waaot8" path="res://_Sprites/Chicken/chicken_coop_icon.png" id="1_dd0ja"]
 [ext_resource type="Texture2D" uid="uid://dawxcbroeu81s" path="res://_Sprites/Chicken/Chicken_Sprite_Sheet.png" id="2_c7pp3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2y8yv"]
