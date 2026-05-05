@@ -13,6 +13,7 @@ signal plot_hoed
 
 func _ready() -> void:
 	player_decoration_inventory.item_selected.connect(_on_item_selected)
+	tool_drawer.hoe_button_pressed.connect(_on_hoe_button_pressed)
 
 func _unhandled_input(event) -> void:
 	if not (event is InputEventMouseButton and event.pressed): return
@@ -41,7 +42,7 @@ func _unhandled_input(event) -> void:
 func _on_store_button_pressed() -> void:
 	AudioManager.play("button_click")
 	GameManager.set_shop_open(true)
-	shop_container.open()
+	shop_container.show()
 
 func _on_hoe_button_pressed() -> void:
 	AudioManager.play("button_click")

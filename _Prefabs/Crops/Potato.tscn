@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dp2kq34vpew1x" path="res://_Scripts/Crops/crop_growth.gd" id="1_7ac2n"]
 [ext_resource type="Texture2D" uid="uid://1301wt04alno" path="res://_Sprites/Potato/2 - Potato Sprout.png" id="2_7ac2n"]
-[ext_resource type="Texture2D" uid="uid://qj8asuakxktk" path="res://_Sprites/Potato/3 - Potato Mid.png" id="3_sjoc0"]
-[ext_resource type="Texture2D" uid="uid://b6cptjxss6cv" path="res://_Sprites/Potato/4 - Potato Full.png" id="4_6j3bt"]
-[ext_resource type="Texture2D" uid="uid://bnpx6g7ori6xy" path="res://_Sprites/Potato/5 - Potato Wilt.png" id="5_enx5p"]
+[ext_resource type="Texture2D" uid="uid://qj8asuakxktk" path="res://_Sprites/Potato/3 - Potato Mid.png" id="3_csoyr"]
+[ext_resource type="Texture2D" uid="uid://b6cptjxss6cv" path="res://_Sprites/Potato/4 - Potato Full.png" id="4_q1mtp"]
+[ext_resource type="Texture2D" uid="uid://bnpx6g7ori6xy" path="res://_Sprites/Potato/5 - Potato Wilt.png" id="5_cvekk"]
 
 [node name="Node2D" type="StaticBody2D" unique_id=295100708]
 scale = Vector2(4, 4)
 script = ExtResource("1_7ac2n")
 sprout_texture = ExtResource("2_7ac2n")
-mid_texture = ExtResource("3_sjoc0")
-full_texture = ExtResource("4_6j3bt")
-wilted_texture = ExtResource("5_enx5p")
+mid_texture = ExtResource("3_csoyr")
+full_texture = ExtResource("4_q1mtp")
+wilted_texture = ExtResource("5_cvekk")
 crop_type = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1765406724]

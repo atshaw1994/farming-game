@@ -95,3 +95,11 @@ func _setup_audio() -> void:
 
 func _play_click() -> void:
 	AudioManager.play("button_click")
+
+func _on_close_shop_button_pressed() -> void:
+	_play_click()
+	hide()
+
+func _on_sell_all_button_pressed() -> void:
+	for sell_item:Button in sell_items_list.get_children():
+		sell_item.pressed.emit()

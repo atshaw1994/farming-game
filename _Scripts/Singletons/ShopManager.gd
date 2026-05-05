@@ -16,7 +16,8 @@ var shop_registry = {
 			"sell_price": 4,
 			"growth_time": 10.0,
 			"wilt_time": 10.0,
-			"icon": preload("res://_Sprites/Wheat/6 - Wheat Inventory.png")
+			"icon": preload("res://_Sprites/Wheat/6 - Wheat Inventory.png"),
+			"scene": load("res://_Prefabs/Crops/Wheat.tscn")
 		},
 		CropType.POTATO: {
 			"name": "potato",
@@ -24,7 +25,8 @@ var shop_registry = {
 			"sell_price": 6,
 			"growth_time": 30.0,
 			"wilt_time": 15.0,
-			"icon": preload("res://_Sprites/Potato/6 - Potato Inventory.png")
+			"icon": preload("res://_Sprites/Potato/6 - Potato Inventory.png"),
+			"scene": load("res://_Prefabs/Crops/Potato.tscn")
 		},
 		CropType.TOMATO: {
 			"name": "tomato",
@@ -32,7 +34,8 @@ var shop_registry = {
 			"sell_price": 10,
 			"growth_time": 60.0,
 			"wilt_time": 60.0,
-			"icon": preload("res://_Sprites/Tomato/6 - Tomato Inventory.png")
+			"icon": preload("res://_Sprites/Tomato/6 - Tomato Inventory.png"),
+			"scene": load("res://_Prefabs/Crops/Tomato.tscn")
 		}
 	},
 	Category.DECORATIONS: {
@@ -79,6 +82,14 @@ func _ready() -> void:
 # --- HELPER METHODS ---
 func get_items_in_category(category: Category) -> Dictionary:
 	return shop_registry.get(category, {})
+
+func create_scene_by_name(item_name: String) -> Node:
+	var data = get_data_by_name(item_name)
+	if data.has("scene"):
+		var new_item = data.scene.instantiate()
+		new_item.name = data.name
+		return new_item
+	return null
 
 func get_data_by_name(data_name: String) -> Dictionary:
 	for category in shop_registry:

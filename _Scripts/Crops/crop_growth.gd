@@ -7,7 +7,7 @@ extends StaticBody2D
 @export var wilted_texture: Texture2D
 
 @export_group("General Crop Info")
-@export var crop_type: GameManager.CropType
+@export var crop_type: ShopManager.CropType
 
 enum Stage { SPROUT, MID, FULL, WILTED }
 var current_stage = Stage.SPROUT
@@ -21,7 +21,7 @@ func _ready() -> void:
 	start_growth_cycle()
 
 func start_growth_cycle() -> void:
-	var data = GameManager.crop_data[crop_type]
+	var data = ShopManager.shop_registry[ShopManager.Category.CROPS][crop_type]
 	timer.start(data.growth_time / 3.0)
 
 func _on_timer_timeout() -> void:
@@ -29,7 +29,7 @@ func _on_timer_timeout() -> void:
 		current_stage = (current_stage + 1) as Stage
 		update_appearance()
 		if current_stage == Stage.FULL:
-			var data = GameManager.crop_data[crop_type]
+			var data = ShopManager.shop_registry[ShopManager.Category.CROPS][crop_type]
 			timer.start(data.wilt_time / 3.0) # Time until wilt
 	elif current_stage == Stage.FULL:
 		current_stage = Stage.WILTED

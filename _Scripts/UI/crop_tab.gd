@@ -1,15 +1,15 @@
 extends MarginContainer
 
-signal buy_requested(type: GameManager.CropType, quantity: int, total_cost: int)
+signal buy_requested(type: ShopManager.CropType, quantity: int, total_cost: int)
 
 @onready var qty_spin = %SeedQtySpinBox
 @onready var total_label = %SeedTotalPriceLabel
 @onready var buy_btn = %BuySeedsButton
 
-var crop_type: GameManager.CropType
+var crop_type: ShopManager.CropType
 var unit_price: int = 0
 
-func setup(category: int, type: GameManager.CropType) -> void:
+func setup(category: int, type: ShopManager.CropType) -> void:
 	var data = ShopManager.shop_registry[category][type]
 	crop_type = type
 	unit_price = data.buy_price

@@ -1,5 +1,6 @@
 extends Node
 
+var player = null
 var hoe_mode_active: bool = false
 var map_edit_mode_active: bool = false
 var shop_open: bool = false
@@ -8,49 +9,6 @@ var total_gold: int = 4:
 	set(value):
 		total_gold = value
 		money_changed.emit(total_gold)
-
-enum CropType { WHEAT, POTATO, TOMATO }
-var crop_data = {
-	CropType.WHEAT: {
-		"name": "wheat",
-		"buy_price": 2,
-		"sell_price": 4,
-		"growth_time": 10.0,
-		"wilt_time": 10.0,
-		"icon": preload("res://_Sprites/Wheat/6 - Wheat Inventory.png")
-	},
-	CropType.POTATO: {
-		"name": "potato",
-		"buy_price": 4,
-		"sell_price": 6,
-		"growth_time": 30.0,
-		"wilt_time": 15.0,
-		"icon": preload("res://_Sprites/Potato/6 - Potato Inventory.png")
-	},
-	CropType.TOMATO: {
-		"name": "tomato",
-		"buy_price": 8,
-		"sell_price": 10,
-		"growth_time": 60.0,
-		"wilt_time": 60.0,
-		"icon": preload("res://_Sprites/Tomato/6 - Tomato Inventory.png")
-	}
-}
-enum DecorationType { FENCE, HOUSE, CHICKEN_COOP }
-var decoration_data = {
-	DecorationType.FENCE: {
-		"name": "Fence",
-		"buy_price": 10,
-		"sell_price": 8,
-		"icon": preload("res://_Sprites/Fences/oak_fence_right.png")
-	},
-	DecorationType.HOUSE: {
-		"name": "House",
-		"buy_price": 100,
-		"sell_price": 80,
-		"icon": preload("res://_Sprites/Buildings/house_icon.png")
-	}
-}
 
 signal hoe_mode_switched
 signal map_edit_mode_switched
@@ -61,6 +19,7 @@ signal hoe_restored
 func flip_hoe_mode() -> void:
 	hoe_mode_active = !hoe_mode_active
 	hoe_mode_switched.emit()
+	print("hoe mode: " + str(hoe_mode_active))
 
 func flip_map_edit_mode() -> void:
 	map_edit_mode_active = !map_edit_mode_active
@@ -93,12 +52,3 @@ func lower_hoe_durability() -> void:
 func reset_hoe_durability() -> void:
 	hoe_durability = 80
 	hoe_restored.emit()
-
-func get_data_by_name(data_name: String) -> Dictionary:
-	for type in crop_data:
-		if crop_data[type].name == data_name:
-			return crop_data[type]
-	for type in decoration_data:
-		if decoration_data[type].name == data_name:
-			return decoration_data[type]
-	return {}

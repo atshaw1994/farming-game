@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @onready var panel_container: PanelContainer = $PanelContainer
 
+signal hoe_button_pressed
+
 func show_at_position(show_position: Vector2) -> void:
 	show()
 	_setup_buttons() 
@@ -19,3 +21,6 @@ func show_at_position(show_position: Vector2) -> void:
 
 func _setup_buttons() -> void:
 	pass #TODO: Make this method when more tools are added.
+
+func _on_hoe_button_pressed() -> void:
+	hoe_button_pressed.emit()

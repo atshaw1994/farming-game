@@ -1,9 +1,5 @@
 extends StaticBody2D
 
-@export var wheat_scene: PackedScene
-@export var potato_scene: PackedScene
-@export var tomato_scene: PackedScene
-
 var current_crop = null
 var clicked_location = null
 var player = null
@@ -11,11 +7,10 @@ var player_crop_inventory = null
 var player_decoration_inventory = null
 
 func _ready() -> void:
-	# 1. Find the player node in the scene tree
-	player = get_tree().root.find_child("Player", true, false)
+	player = GameManager.player
 	if player:
 		# 2. Find the Inventory child inside the Player
-		player_crop_inventory = player.find_child("Inventory", true, false)
+		player_crop_inventory = player.find_child("CropInventory", true, false)
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
 	# 1. STOP if the Hoe is active. We don't want to plant while tilling.
@@ -54,23 +49,13 @@ func _open_ui_after_move() -> void:
 		current_crop.queue_free()
 		current_crop = null
 
-func _on_seed_selected(type) -> void:
-	var new_crop = null
-	if type == "wheat":
-		new_crop = wheat_scene.instantiate()
-		new_crop.name = type
-		plant_crop(new_crop)
-	if type == "potato":
-		new_crop = potato_scene.instantiate()
-		new_crop.name = type
-		plant_crop(new_crop)
-	if type == "tomato":
-		new_crop = tomato_scene.instantiate()
-		new_crop.name = type
+func _on_seed_selected(type: String) -> void:
+	var new_crop = ShopManager.create_scene_by_name(type)
+	if new_crop:
 		plant_crop(new_crop)
 
 func plant_crop(new_crop) -> void:
-	new_crop.position.y = -48
+	new_crop.position.y = -8
 	add_child(new_crop)
 	current_crop = new_crop
 

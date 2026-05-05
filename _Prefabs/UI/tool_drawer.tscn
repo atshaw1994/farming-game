@@ -36,3 +36,5 @@ theme_override_constants/margin_bottom = 4
 
 [node name="HoeButton" parent="PanelContainer/MarginContainer" unique_id=907385359 instance=ExtResource("2_tgwv3")]
 layout_mode = 2
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/HoeButton" to="." method="_on_hoe_button_pressed"]

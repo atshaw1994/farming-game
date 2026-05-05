@@ -9,12 +9,13 @@ var last_direction = "right"
 var target_position = null
 var current_target_plot = null
 var harvested_crops = []
-var seeds = []
+var seeds = [ "wheat" ]
 var decoration_items = [ "Fence", "Fence", "Fence", "Fence", "Fence", "Fence" ]
 
 signal arrived_at_plot
 
 func _ready() -> void:
+	GameManager.player = self
 	var crop_inventory = find_child("CropInventory", true, false)
 	crop_inventory.seed_selected.connect(func(type): remove_seed(type))
 
