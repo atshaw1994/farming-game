@@ -1,23 +1,28 @@
 extends CharacterBody2D
 
 @export var speed: float = 200.0
+
 @onready var animations = $AnimatedSprite2D
 @onready var target: Panel = $"../CanvasLayer/Target"
 @onready var root_node: Node2D = $".."
+@onready var blink_timer: Timer = $BlinkTimer
 
 var last_direction = "right"
 var target_position = null
 var current_target_plot = null
-var harvested_crops = []
-var seeds = [ "wheat" ]
-var decoration_items = [ "Fence", "Fence", "Fence", "Fence", "Fence", "Fence" ]
+var harvested_crops = [ ]
+var seeds = [ ]
+var decoration_items = [ ]
 
+signal crop_harvested
 signal arrived_at_plot
 
 func _ready() -> void:
 	GameManager.player = self
 	var crop_inventory = find_child("CropInventory", true, false)
 	crop_inventory.seed_selected.connect(func(type): remove_seed(type))
+	blink_timer.wait_time = randf_range(3.0, 7.0)
+	blink_timer.start()
 
 func _process(_delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -80,26 +85,28 @@ func update_movement_target() -> void:
 
 func update_animations(direction) -> void:
 	if direction.length() > 0:
-		# We are moving
 		if direction.x != 0:
 			last_direction = "right" if direction.x > 0 else "left"
-		
 		animations.play("walk_" + last_direction)
 	else:
-		# We are standing still
-		animations.play("idle_" + last_direction)
+		if not animations.animation == "blink_left" and not animations.animation == "blink_right":
+			animations.play("idle_" + last_direction)
 
 func _on_arrival_at_random_spot() -> void:
-	pass 
+	target_position = null
 
 func harvest_crop(harvested_crop) -> void:
 	harvested_crops.append(harvested_crop.duplicate())
+	crop_harvested.emit()
 
 func remove_seed(crop_seed_to_remove:String) -> void:
 	seeds.remove_at(seeds.find(crop_seed_to_remove))
 
 func remove_decoration_item(item_to_remove:String) -> void:
 	decoration_items.remove_at(decoration_items.find(item_to_remove))
+
+func remove_harvested(item_to_remove:String) -> void:
+	harvested_crops.remove_at(harvested_crops.find(item_to_remove))
 
 func show_popup(message:String) -> void:
 	var label = Label.new()
@@ -123,3 +130,13 @@ func show_popup(message:String) -> void:
 	tween.tween_property(label, "modulate:a", 0.0, 1.0)
 	# Kill the label node once the animation is done to keep memory clean
 	tween.chain().tween_callback(label.queue_free)
+
+func _on_blink_timer_timeout() -> void:
+	if velocity.length() == 0:
+		var blink_anim = "blink_" + last_direction
+		if animations.sprite_frames.has_animation(blink_anim): 
+			animations.play(blink_anim)
+			await animations.animation_finished
+			animations.play("idle_" + last_direction)
+	blink_timer.wait_time = randf_range(3.0, 7.0)
+	blink_timer.start()

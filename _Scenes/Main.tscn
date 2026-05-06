@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cv5hacs0gyt8c" path="res://_Prefabs/Decorations/Fence/fence_NW.tscn" id="10_ik8ss"]
 [ext_resource type="PackedScene" uid="uid://dlu3g0f73eksf" path="res://_Prefabs/Decorations/House/House_Right.tscn" id="12_7teev"]
 [ext_resource type="PackedScene" uid="uid://70hyxbvxginm" path="res://_Prefabs/UI/Inventory/Decoration_inventory.tscn" id="15_ik8ss"]
+[ext_resource type="PackedScene" uid="uid://33bujh2ng8o8" path="res://_Prefabs/house.tscn" id="18_nnfb1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi17k"]
 bg_color = Color(1, 1, 1, 0.47058824)
@@ -50,7 +51,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -72.0
-offset_top = -140.0
+offset_top = -208.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/margin_right = 8
@@ -93,9 +94,7 @@ toggle_mode = true
 text = "home_repair_service"
 
 [node name="Player" parent="." unique_id=352858248 instance=ExtResource("1_8u3td")]
-y_sort_enabled = true
 position = Vector2(203, 104)
-scale = Vector2(4, 4)
 
 [node name="CropInventory" parent="Player" unique_id=705286552 instance=ExtResource("3_7k0l4")]
 visible = false
@@ -119,6 +118,10 @@ tile_map_data = PackedByteArray("AAAIABQAAAACAAoAAAAIABMAAAABAAoAAAAIABIAAAAAAAg
 tile_set = ExtResource("5_2y8yv")
 script = ExtResource("3_bi17k")
 crop_plot_scene = ExtResource("1_asnbu")
+
+[node name="House" parent="." unique_id=61212996 instance=ExtResource("18_nnfb1")]
+position = Vector2(1026, 257)
+inside_house_scene_path = "uid://bak8v24v4h5nq"
 
 [connection signal="pressed" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/StoreButton" to="." method="_on_store_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton" to="." method="_on_decoration_button_toggled"]

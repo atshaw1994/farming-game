@@ -83,7 +83,7 @@ metadata/_tab_index = 0
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 tab_alignment = 1
-current_tab = 4
+current_tab = 2
 
 [node name="Tools" type="MarginContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer" unique_id=682957682]
 visible = false
@@ -118,7 +118,6 @@ theme_override_constants/icon_max_width = 32
 tab_alignment = 1
 
 [node name="Crops" type="MarginContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer" unique_id=683912649]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
@@ -148,6 +147,7 @@ theme_override_constants/icon_max_width = 32
 tab_alignment = 1
 
 [node name="Animals" type="MarginContainer" parent="MainContainer/BaseTabContainer/Buy/BuyTabContainer" unique_id=1480873785]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16

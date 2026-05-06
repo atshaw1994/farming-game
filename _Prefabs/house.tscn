@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://33bujh2ng8o8"]
+
+[ext_resource type="Texture2D" uid="uid://cb0j8684tq315" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/chimneyTop_N.png" id="1_2nssg"]
+[ext_resource type="Script" uid="uid://k1bp7q1l7u7s" path="res://_Scripts/house.gd" id="1_52n3e"]
+[ext_resource type="Texture2D" uid="uid://c1m678vou2mfq" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallCross_W.png" id="2_01ban"]
+[ext_resource type="Texture2D" uid="uid://caa35supnmvqr" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallDoorOpen_S.png" id="2_wj0s6"]
+[ext_resource type="Texture2D" uid="uid://dhwmj64b4bv8c" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallDiagional_N.png" id="3_52n3e"]
+[ext_resource type="Texture2D" uid="uid://dqovek65k4x3h" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/planks_N.png" id="4_wj0s6"]
+[ext_resource type="Texture2D" uid="uid://cvkmuscd8idr0" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallWindowGlass_N.png" id="5_lrde3"]
+[ext_resource type="Texture2D" uid="uid://brkpe8j1fdbhh" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallWindowGlass_W.png" id="6_u4gm2"]
+[ext_resource type="Texture2D" uid="uid://duov8f2ygvk5d" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/roof_N.png" id="7_3c8bg"]
+[ext_resource type="Texture2D" uid="uid://nveww3k8qvbg" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/roof_S.png" id="8_qkrr0"]
+[ext_resource type="Texture2D" uid="uid://htk1xswxon2f" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallRoofRight_N.png" id="9_gaord"]
+[ext_resource type="Texture2D" uid="uid://dr5lpmhjmqjlf" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallDoorClosed_S.png" id="10_8moig"]
+[ext_resource type="Texture2D" uid="uid://c6b4juo3xrrou" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallRoofLeft_N.png" id="11_4im0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52n3e"]
+size = Vector2(31, 72)
+
+[node name="House" type="StaticBody2D" unique_id=1626446034]
+script = ExtResource("1_52n3e")
+door_open_texture = ExtResource("2_wj0s6")
+door_closed_texture = ExtResource("10_8moig")
+inside_house_scene_path = "uid://bak8v24v4h5nq"
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=355706791]
+polygon = PackedVector2Array(0, 32, 128, -32, 128, -76, -128, -78, -128, -32)
+
+[node name="sprites" type="Node2D" parent="." unique_id=1757863715]
+texture_filter = 1
+position = Vector2(-2.905, -237.18)
+
+[node name="ChimneyTopN" type="Sprite2D" parent="sprites" unique_id=77476625]
+position = Vector2(22, -24)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_2nssg")
+
+[node name="WoodWallCrossW" type="Sprite2D" parent="sprites" unique_id=1198822039]
+position = Vector2(-114, 72)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_01ban")
+
+[node name="PlanksN" type="Sprite2D" parent="sprites" unique_id=619735494]
+position = Vector2(-57, 110)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_wj0s6")
+
+[node name="PlanksN2" type="Sprite2D" parent="sprites" unique_id=1341061408]
+position = Vector2(60, 111)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_wj0s6")
+
+[node name="WoodWallDiagionalN" type="Sprite2D" parent="sprites" unique_id=873461695]
+position = Vector2(117, 72)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_52n3e")
+
+[node name="Sprite2D4" type="Sprite2D" parent="sprites" unique_id=359335140]
+position = Vector2(-57, 101)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_lrde3")
+
+[node name="Sprite2D2" type="Sprite2D" parent="sprites" unique_id=264788660]
+position = Vector2(60, 101)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_u4gm2")
+
+[node name="PlanksN3" type="Sprite2D" parent="sprites" unique_id=331715252]
+position = Vector2(3, 140)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_wj0s6")
+
+[node name="DoorNode" type="Sprite2D" parent="sprites" unique_id=713652010]
+position = Vector2(-56, 160)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_8moig")
+
+[node name="Sprite2D3" type="Sprite2D" parent="sprites" unique_id=1923952441]
+position = Vector2(2, 130)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_01ban")
+
+[node name="Sprite2D6" type="Sprite2D" parent="sprites" unique_id=437008649]
+position = Vector2(-57, 19)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_qkrr0")
+
+[node name="Sprite2D9" type="Sprite2D" parent="sprites" unique_id=1736007009]
+position = Vector2(-57, 22)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_gaord")
+
+[node name="Sprite2D8" type="Sprite2D" parent="sprites" unique_id=1814013679]
+position = Vector2(1, 52)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_4im0a")
+
+[node name="Sprite2D7" type="Sprite2D" parent="sprites" unique_id=1627647072]
+position = Vector2(65, 20)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_3c8bg")
+
+[node name="Sprite2D5" type="Sprite2D" parent="sprites" unique_id=1690466688]
+position = Vector2(1, 52)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_3c8bg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=630205601]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2143435054]
+position = Vector2(-32.5, -33)
+shape = SubResource("RectangleShape2D_52n3e")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

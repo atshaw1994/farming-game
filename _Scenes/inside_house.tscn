@@ -1,0 +1,159 @@
+[gd_scene format=3 uid="uid://bak8v24v4h5nq"]
+
+[ext_resource type="Script" uid="uid://b00h04qfm8wwe" path="res://_Scripts/inside_house.gd" id="1_5mgkd"]
+[ext_resource type="Texture2D" uid="uid://c1m678vou2mfq" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallCross_W.png" id="2_4pj0h"]
+[ext_resource type="PackedScene" uid="uid://bak8v24v4h5nq" path="res://_Scenes/inside_house.tscn" id="2_5qmdb"]
+[ext_resource type="Texture2D" uid="uid://dqovek65k4x3h" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/planks_N.png" id="3_6qg8v"]
+[ext_resource type="Texture2D" uid="uid://dhwmj64b4bv8c" path="res://_Sprites/kenney_isometric-miniature-farm/Isometric/woodWallDiagional_N.png" id="4_pdt0p"]
+[ext_resource type="FontFile" uid="uid://dvg5d2i7mayti" path="res://_fonts/MaterialIconsOutlined-Regular.otf" id="5_4830o"]
+[ext_resource type="Texture2D" uid="uid://cg6c0rlfaxp8i" path="res://_Sprites/Isometric Kitchen Sprites/counters/counter01_g.png" id="7_ftx5u"]
+[ext_resource type="Texture2D" uid="uid://dq2b0dn5ipt1u" path="res://_Sprites/Isometric Kitchen Sprites/counters/counter01_f.png" id="8_4q1m7"]
+[ext_resource type="Texture2D" uid="uid://bbm7hvuqh6s5e" path="res://_Sprites/Isometric Kitchen Sprites/cookers/cookerblack02a.png" id="9_8ljbi"]
+[ext_resource type="Texture2D" uid="uid://cxsqe0u7yhmgd" path="res://_Sprites/Isometric Kitchen Sprites/counters/counter01_c.png" id="10_wlmoq"]
+[ext_resource type="Texture2D" uid="uid://t48l3hkfv5tm" path="res://_Sprites/Isometric Kitchen Sprites/counters/counter01_a.png" id="11_c1nti"]
+[ext_resource type="Texture2D" uid="uid://c5tn7u7kywpvv" path="res://_Sprites/Isometric Kitchen Sprites/fridges/fridge02b.png" id="12_n28b3"]
+[ext_resource type="Texture2D" uid="uid://bbaaohnh20vpq" path="res://_Sprites/Isometric Kitchen Sprites/cookervents/cookerhood02a.png" id="13_bx2b4"]
+
+[node name="InsideHouse" type="Node2D" unique_id=285780147]
+script = ExtResource("1_5mgkd")
+
+[node name="structure" type="Node2D" parent="." unique_id=1382669200]
+texture_filter = 1
+position = Vector2(92.775, -245.1)
+scale = Vector2(5.645, 5.645)
+
+[node name="WoodWallCrossW2" type="Sprite2D" parent="structure" unique_id=886662690]
+position = Vector2(29.73639, -24.742615)
+scale = Vector2(0.49999997, 0.49999997)
+texture = ExtResource("2_4pj0h")
+
+[node name="WoodWallCrossW" type="Sprite2D" parent="structure" unique_id=443403857]
+position = Vector2(-28.991703, 4.6203313)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4pj0h")
+
+[node name="PlanksN4" type="Sprite2D" parent="structure" unique_id=1186235732]
+position = Vector2(79.45891, 16.9888)
+scale = Vector2(0.49999997, 0.49999997)
+texture = ExtResource("3_6qg8v")
+
+[node name="PlanksN" type="Sprite2D" parent="structure" unique_id=157037514]
+position = Vector2(28.008297, 42.62033)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6qg8v")
+
+[node name="WoodWallCrossW3" type="Sprite2D" parent="structure" unique_id=60951006]
+position = Vector2(-87.77777, 33.90097)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4pj0h")
+
+[node name="PlanksN5" type="Sprite2D" parent="structure" unique_id=412951067]
+position = Vector2(-22.470207, 67.73672)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6qg8v")
+
+[node name="PlanksN2" type="Sprite2D" parent="structure" unique_id=1257012311]
+position = Vector2(145.00829, 43.62033)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6qg8v")
+
+[node name="PlanksN6" type="Sprite2D" parent="structure" unique_id=308554550]
+position = Vector2(204.74396, 66.6095)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6qg8v")
+
+[node name="WoodWallDiagionalN2" type="Sprite2D" parent="structure" unique_id=859924773]
+position = Vector2(144.27579, -24.964588)
+scale = Vector2(0.49999997, 0.49999997)
+texture = ExtResource("4_pdt0p")
+
+[node name="WoodWallDiagionalN" type="Sprite2D" parent="structure" unique_id=2016898288]
+position = Vector2(202.00829, 4.6203313)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_pdt0p")
+
+[node name="WoodWallDiagionalN3" type="Sprite2D" parent="structure" unique_id=1047997080]
+position = Vector2(260.84863, 33.578907)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_pdt0p")
+
+[node name="PlanksN3" type="Sprite2D" parent="structure" unique_id=70963387]
+position = Vector2(88.00829, 72.62034)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6qg8v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1780337948]
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer" unique_id=311241713]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="GoOutsideButton" type="Button" parent="CanvasLayer/MarginContainer2" unique_id=1980906490]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_4830o")
+theme_override_font_sizes/font_size = 48
+text = "arrow_circle_left"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1109047503]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+
+[node name="WardrobeButton" type="Button" parent="CanvasLayer/MarginContainer" unique_id=290350762]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_4830o")
+theme_override_font_sizes/font_size = 48
+text = "dry_cleaning
+"
+
+[node name="Counter01G" type="Sprite2D" parent="." unique_id=1767635948]
+position = Vector2(561, 148)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_ftx5u")
+
+[node name="Counter01F" type="Sprite2D" parent="." unique_id=235113354]
+position = Vector2(670, 201)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_4q1m7")
+
+[node name="Counter01F2" type="Sprite2D" parent="." unique_id=1730690421]
+position = Vector2(776, 252)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_4q1m7")
+
+[node name="Cookerblack02a" type="Sprite2D" parent="." unique_id=1470341730]
+position = Vector2(448, 163)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_8ljbi")
+
+[node name="Counter01C" type="Sprite2D" parent="." unique_id=431348583]
+position = Vector2(330, 255)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_wlmoq")
+
+[node name="Counter01A" type="Sprite2D" parent="." unique_id=2057237924]
+position = Vector2(225, 306)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_c1nti")
+
+[node name="Fridge02b" type="Sprite2D" parent="." unique_id=1598409592]
+position = Vector2(853, 244)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_n28b3")
+
+[node name="Cookerhood02a" type="Sprite2D" parent="." unique_id=1463254345]
+position = Vector2(433, -33)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_bx2b4")
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer2/GoOutsideButton" to="." method="_on_go_outside_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/WardrobeButton" to="." method="_on_wardrobe_button_pressed"]

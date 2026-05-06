@@ -52,6 +52,7 @@ func handle_hoe_action(map_pos: Vector2i) -> bool:
 	else:
 		var new_crop = crop_plot_scene.instantiate()
 		add_child(new_crop)
+		GameManager.lower_hoe_durability()
 		# Snap exactly to the center of the isometric tile 
 		new_crop.position = map_to_local(map_pos) 
 		occupied_tiles[map_pos] = new_crop

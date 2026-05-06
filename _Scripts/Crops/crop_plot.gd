@@ -2,37 +2,30 @@ extends StaticBody2D
 
 var current_crop = null
 var clicked_location = null
-var player = null
 var player_crop_inventory = null
 var player_decoration_inventory = null
 
 func _ready() -> void:
-	player = GameManager.player
-	if player:
+	if GameManager.player:
 		# 2. Find the Inventory child inside the Player
-		player_crop_inventory = player.find_child("CropInventory", true, false)
+		player_crop_inventory = GameManager.player.find_child("CropInventory", true, false)
 
 func _on_input_event(_viewport, event, _shape_idx) -> void:
-	# 1. STOP if the Hoe is active. We don't want to plant while tilling.
-	if GameManager.hoe_mode_active: return
-	
+	if GameManager.hoe_mode_active: return # STOP if the Hoe is active. We don't want to plant while tilling.
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		# Prevent the click from "falling through" to the map or player movement
-		get_viewport().set_input_as_handled()
-		
+		get_viewport().set_input_as_handled() # Prevent the click from "falling through" to the map or player movement
 		clicked_location = get_global_mouse_position()
-		
 		if player_crop_inventory and player_crop_inventory.visible: player_crop_inventory.hide()
 		else:
-			if player:
+			if GameManager.player:
 				# Use global_position since the plot is now a child of the TileMap
-				player.target_position = global_position
-				player.current_target_plot = self 
+				GameManager.player.target_position = global_position
+				GameManager.player.current_target_plot = self 
 				
-				if player.has_signal("arrived_at_plot"):
-					if player.arrived_at_plot.is_connected(_open_ui_after_move):
-						player.arrived_at_plot.disconnect(_open_ui_after_move)
-					player.arrived_at_plot.connect(_open_ui_after_move, CONNECT_ONE_SHOT)
+				if GameManager.player.has_signal("arrived_at_plot"):
+					if GameManager.player.arrived_at_plot.is_connected(_open_ui_after_move):
+						GameManager.player.arrived_at_plot.disconnect(_open_ui_after_move)
+					GameManager.player.arrived_at_plot.connect(_open_ui_after_move, CONNECT_ONE_SHOT)
 
 func _open_ui_after_move() -> void:
 	if current_crop == null:
@@ -60,17 +53,10 @@ func plant_crop(new_crop) -> void:
 	current_crop = new_crop
 
 func harvest() -> void:
-	if player and current_crop:
+	if GameManager.player and current_crop:
 		AudioManager.play("harvest")
-		player.harvest_crop(current_crop)
-		var tween = get_tree().create_tween()
-		tween.set_parallel(true)
-		tween.tween_property(current_crop, "position", current_crop.position + Vector2(0, -40), 0.2)\
-			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-		tween.tween_property(current_crop, "modulate:a", 0.0, 0.2)
-		tween.tween_property(current_crop, "scale", Vector2(1, 1), 0.2)\
-			.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
-		tween.chain().tween_callback(current_crop.queue_free)
+		GameManager.player.harvest_crop(current_crop)
+		current_crop.play_harvest_animation()
 		current_crop = null
 
 func get_interaction_distance() -> float:

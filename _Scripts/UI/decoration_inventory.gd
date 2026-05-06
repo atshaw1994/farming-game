@@ -51,7 +51,7 @@ func _create_item_button(decoration_item: String, count: int) -> void:
 	# Create the Button
 	var btn = Button.new()
 	btn.custom_minimum_size = Vector2(48, 48)
-	var data = GameManager.get_data_by_name(decoration_item)
+	var data = ShopManager.get_data_by_name(decoration_item)
 	if not data.is_empty():
 		btn.icon = data.icon
 	btn.expand_icon = true

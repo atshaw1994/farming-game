@@ -2,6 +2,23 @@
 
 [ext_resource type="Script" uid="uid://bq3e1mu5i5epb" path="res://_Scripts/player.gd" id="1_5jxua"]
 [ext_resource type="Texture2D" uid="uid://bhlxvho1t3kmq" path="res://_Sprites/characters/main character/walk and idle.png" id="1_5qnfm"]
+[ext_resource type="Texture2D" uid="uid://buvgrop68jyvx" path="res://_Sprites/characters/female_blink.png" id="2_wvjp1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7852f"]
+atlas = ExtResource("2_wvjp1")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v2i0x"]
+atlas = ExtResource("2_wvjp1")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jty3"]
+atlas = ExtResource("2_wvjp1")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ootco"]
+atlas = ExtResource("2_wvjp1")
+region = Rect2(72, 0, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jxua"]
 atlas = ExtResource("1_5qnfm")
@@ -86,6 +103,28 @@ region = Rect2(168, 48, 24, 24)
 [sub_resource type="SpriteFrames" id="SpriteFrames_7852f"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7852f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v2i0x")
+}],
+"loop": false,
+"name": &"blink_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jty3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ootco")
+}],
+"loop": false,
+"name": &"blink_right",
+"speed": 5.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_5jxua")
 }, {
@@ -166,19 +205,23 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jxua"]
-size = Vector2(8, 2.5)
-
 [node name="Node2D" type="CharacterBody2D" unique_id=1921634558]
+y_sort_enabled = true
 script = ExtResource("1_5jxua")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1395041956]
 texture_filter = 1
-position = Vector2(0, -11)
+position = Vector2(-5, -36)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_7852f")
 animation = &"idle_right"
-frame_progress = 0.9957845
+autoplay = "idle_right"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1892766394]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_5jxua")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1746694649]
+position = Vector2(-3, 6)
+polygon = PackedVector2Array(-14, 2, 9, 2, 26, -4, 22, -18, -25, -17, -20, 0)
+
+[node name="BlinkTimer" type="Timer" parent="." unique_id=796564643]
+one_shot = true
+
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]

@@ -14,6 +14,7 @@ signal plot_hoed
 func _ready() -> void:
 	player_decoration_inventory.item_selected.connect(_on_item_selected)
 	tool_drawer.hoe_button_pressed.connect(_on_hoe_button_pressed)
+	GameManager.player = player
 
 func _unhandled_input(event) -> void:
 	if not (event is InputEventMouseButton and event.pressed): return

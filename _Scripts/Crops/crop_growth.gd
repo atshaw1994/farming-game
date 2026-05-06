@@ -41,3 +41,13 @@ func update_appearance() -> void:
 		Stage.MID:    sprite.texture = mid_texture
 		Stage.FULL:   sprite.texture = full_texture
 		Stage.WILTED: sprite.texture = wilted_texture
+
+func play_harvest_animation() -> void:
+	var tween = get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(self, "position", position + Vector2(0, -40), 0.2)\
+		.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.tween_property(self, "modulate:a", 0.0, 0.2)
+	tween.tween_property(self, "scale", Vector2(1, 1), 0.2)\
+		.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
+	tween.chain().tween_callback(self.queue_free)

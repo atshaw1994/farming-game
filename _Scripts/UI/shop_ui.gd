@@ -1,7 +1,5 @@
 extends MarginContainer
 
-@export var player: Node2D
-
 # UI References
 @onready var buy_tabs: TabContainer = $MainContainer/BaseTabContainer/Buy/BuyTabContainer
 @onready var current_coins_label: Label = %CurrentCoinsLabel
@@ -32,6 +30,8 @@ func _ready() -> void:
 	_update_affordability()
 
 func _initialize_dynamic_shop() -> void:
+	current_coins_label.text = str(GameManager.total_gold)
+	
 	# Loop through every category defined in the Model (ShopManager)
 	for category in ShopManager.shop_registry:
 		var container = category_containers.get(category)
@@ -43,6 +43,27 @@ func _initialize_dynamic_shop() -> void:
 		
 		for type in items:
 			_create_shop_item(category, type, items[type], container, template)
+	
+	await get_tree().create_timer(0.1).timeout
+	GameManager.player.crop_harvested.connect(_setup_sell_tab)
+	_setup_sell_tab()
+
+func _setup_sell_tab() -> void:
+	for child in sell_items_list.get_children(): child.queue_free()
+	for harvested_item in GameManager.player.harvested_crops:
+		var new_sell_item = Button.new()
+		var data = ShopManager.shop_registry[ShopManager.Category.CROPS][harvested_item.crop_type]
+		new_sell_item.icon = data.icon
+		new_sell_item.text = data.name + "(value: " + str(data.sell_price) + ")"
+		new_sell_item.pressed.connect(handle_sell_item.bind(data, new_sell_item))
+		new_sell_item.custom_minimum_size = Vector2(64, 48)
+		sell_items_list.add_child(new_sell_item)
+
+func handle_sell_item(data:Dictionary, sender:Button) -> void:
+	GameManager.player.remove_harvested(data.name)
+	GameManager.total_gold += data.sell_price
+	AudioManager.play("sell")
+	sender.queue_free()
 
 func _create_shop_item(category, type, data, container, template) -> void:
 	var tab = template.instantiate()
@@ -57,30 +78,27 @@ func _create_shop_item(category, type, data, container, template) -> void:
 	if tab.has_signal("buy_requested"):
 		tab.buy_requested.connect(_on_item_buy_requested.bind(category))
 	elif tab.has_signal("buy_decoration_item_requested"):
-		tab.buy_decoration_item_requested.connect(_on_item_buy_requested.bind(category))
+		tab.buy_decoration_item_requested.connect(_on_item_buy_requested)
 	
 	active_tabs.append(tab)
 
-func _on_item_buy_requested(type, qty_or_cost, maybe_cost = null, category = null) -> void:
-	var qty = qty_or_cost if maybe_cost != null else 1
-	var total_cost = maybe_cost if maybe_cost != null else qty_or_cost
-	
-	if GameManager.can_afford(total_cost):
-		var item_data = ShopManager.shop_registry[category][type]
+func _on_item_buy_requested(category, type, qty) -> void:
+	var item_data = ShopManager.shop_registry[category][type]
+	if GameManager.can_afford(item_data.buy_price * qty):
 		_handle_purchase_delivery(category, item_data.name, qty)
-		GameManager.spend_money(total_cost)
+		GameManager.spend_money(item_data.buy_price * qty)
 
 func _handle_purchase_delivery(category, item_name: String, qty: int) -> void:
 	for i in range(qty):
 		match category:
 			ShopManager.Category.CROPS:
-				player.seeds.append(item_name)
+				GameManager.player.seeds.append(item_name)
 			ShopManager.Category.DECORATIONS, ShopManager.Category.STRUCTURES:
-				player.decoration_items.append(item_name)
+				GameManager.player.decoration_items.append(item_name)
 
 # --- UI Updates ---
 func _on_player_gold_changed(_new_amount) -> void:
-	current_coins_label.text = str(_new_amount)
+	current_coins_label.text = str(GameManager.total_gold)
 	_update_affordability()
 
 func _update_affordability() -> void:

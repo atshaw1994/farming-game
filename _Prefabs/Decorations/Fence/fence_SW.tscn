@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://c2gwik42nfmlx"]
 
-[ext_resource type="Texture2D" uid="uid://d2x032vlddt77" path="res://_Sprites/Fences/oak_fence.png" id="1_ibuji"]
+[ext_resource type="Texture2D" uid="uid://bdjg4jupplkyi" path="res://_Sprites/Fences/fence.png" id="1_mi3lm"]
 
 [node name="Fence_SW" type="StaticBody2D" unique_id=788500995]
-z_index = 1
+y_sort_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=155539880]
 texture_filter = 1
-position = Vector2(-32, 32)
-texture = ExtResource("1_ibuji")
+position = Vector2(0, -32)
+texture = ExtResource("1_mi3lm")
 region_enabled = true
-region_rect = Rect2(0, 0, 64, 64)
+region_rect = Rect2(128, 0, 128, 128)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=355445839]
-position = Vector2(2.9802322e-08, 0)
-polygon = PackedVector2Array(-64, 32, -3, 64, -2.9802322e-08, 62, -61, 30)
+position = Vector2(0, -32)
+polygon = PackedVector2Array(-2.9802322e-08, 64, 3, 63, 3, 59, -61, 31, -64, 32)

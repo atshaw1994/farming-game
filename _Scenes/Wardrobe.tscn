@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dw6wguu3a75ss"]
+
+[ext_resource type="Script" uid="uid://b3n86ndqk6xyd" path="res://_Scripts/UI/character_customization_screen.gd" id="1_7d8y6"]
+[ext_resource type="PackedScene" uid="uid://dw6wguu3a75ss" path="res://_Scenes/Wardrobe.tscn" id="2_f7obx"]
+[ext_resource type="FontFile" uid="uid://dvg5d2i7mayti" path="res://_fonts/MaterialIconsOutlined-Regular.otf" id="3_o7u73"]
+
+[node name="Node2D" type="Node2D" unique_id=1300555198]
+script = ExtResource("1_7d8y6")
+
+[node name="Label" type="Label" parent="." unique_id=1675927591]
+offset_right = 1151.0
+offset_bottom = 647.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 32
+text = "Here is where the player can customize the character.
+
+COMING SOON"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1245488013]
+offset_right = 64.0
+offset_bottom = 64.0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="BackButton" type="Button" parent="MarginContainer2" unique_id=769003473]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_o7u73")
+theme_override_font_sizes/font_size = 48
+text = "arrow_circle_left"
+
+[connection signal="pressed" from="MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]
