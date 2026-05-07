@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778111427
+::res://::1778112259
 export_presets.cfg::TextFile::-1::1777663848::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::9167869998845956274::1777256890::1777256897::1::::<><><>0<>0<>31dcd3327380fdb9efcd8bc1757d062d<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://_audio/::1777663725
@@ -1183,6 +1183,12 @@ THIRDPARTY.md::TextFile::-1::1777358011::0::1::::<><><>0<>0<><>::
 ::res://addons/godot-git-plugin/macos/::1777358011
 ::res://addons/godot-git-plugin/windows/::1778111425
 ::res://bin/::1777663848
+::res://screenshots/::1778112264
+::res://screenshots/wip/::1778112299
+Inside_House.png::CompressedTexture2D::5406833635454518154::1778112300::1778112302::1::::<><><>0<>0<>dd4ad85179381808fdd12b29cbf40476<>res://.godot/imported/Inside_House.png-6928ee7144051fef181e440aa616af14.ctex::
+Main.png::CompressedTexture2D::6505753843012216330::1778112272::1778112302::1::::<><><>0<>0<>660cdd5a76439cb24d8789d6da87c6f1<>res://.godot/imported/Main.png-a3ac43399df197fb9a7e66aef16f56cd.ctex::
+Planting.png::CompressedTexture2D::2854717162008139590::1778112282::1778112302::1::::<><><>0<>0<>6dac6e7667a8d06390813c11e71e4e41<>res://.godot/imported/Planting.png-b45afc8b94f379f9347153e2152ff14b.ctex::
+ShopUI.png::CompressedTexture2D::1866050756386350228::1778112291::1778112302::1::::<><><>0<>0<>7f5ad963cab840a4b154bd3a3a767a00<>res://.godot/imported/ShopUI.png-e47e4502e6f58af6dff9374e6acca26c.ctex::
 ::res://tilesets/::1778110076
 counters.png::CompressedTexture2D::571135742570110682::1778056907::1778056907::1::::<><><>0<>0<>f6e99891bc73d1b4369c77f0603ba2d4<>res://.godot/imported/counters.png-e21cb37d65adc27a4280ae9ec533a1c3.ctex::
 ground.tres::TileSet::7920308696252773680::1778110076::0::1::::<><><>0<>0<><>::uid://cudymd1h47qp3::::res://tilesheets/Tiles_Simple_Plains.png<>uid://d2x032vlddt77::::res://_Sprites/Fences/oak_fence.png<>uid://81kimima3d7j::::res://_Sprites/Buildings/09---Stall---Farm---Assets-Store---Guilherme-Laso.png
