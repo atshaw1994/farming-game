@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cfojqu2mwcg6x" path="res://_Sprites/Wheat/5 - Wheat Wilt.png" id="5_hl7qx"]
 
 [node name="Node2D" type="StaticBody2D" unique_id=295100708]
-scale = Vector2(4, 4)
 script = ExtResource("1_8ybud")
 sprout_texture = ExtResource("2_fv8dl")
 mid_texture = ExtResource("3_x7n66")
@@ -16,8 +15,9 @@ wilted_texture = ExtResource("5_hl7qx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1765406724]
 texture_filter = 1
-position = Vector2(-8, -12)
-texture = ExtResource("2_fv8dl")
-centered = false
+position = Vector2(-2, -32)
+scale = Vector2(4, 4)
+texture = ExtResource("4_qbl5l")
+region_rect = Rect2(0, 256, 256, 256)
 
 [node name="GrowthTimer" type="Timer" parent="." unique_id=252346122]

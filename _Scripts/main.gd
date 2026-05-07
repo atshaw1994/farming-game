@@ -8,6 +8,7 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var tool_drawer: CanvasLayer = $ToolDrawer
 @onready var tools_button: Button = $CanvasLayer/ActionButtonsContainer/VBoxContainer/ToolsButton
+@onready var pause_menu: MarginContainer = $CanvasLayer/PauseMenu
 
 signal plot_hoed
 
@@ -15,6 +16,11 @@ func _ready() -> void:
 	player_decoration_inventory.item_selected.connect(_on_item_selected)
 	tool_drawer.hoe_button_pressed.connect(_on_hoe_button_pressed)
 	GameManager.player = player
+
+func _input(event) -> void:
+	if event.is_action_pressed("escape"):
+		if pause_menu.visible: pause_menu.hide()
+		else: pause_menu.show()
 
 func _unhandled_input(event) -> void:
 	if not (event is InputEventMouseButton and event.pressed): return
@@ -63,3 +69,9 @@ func _on_tools_button_toggled(toggled_on: bool) -> void:
 func _on_decoration_button_toggled(toggled_on: bool) -> void:
 	if toggled_on: player_decoration_inventory.show_at_position(decoration_button.global_position)
 	else: player_decoration_inventory.hide()
+
+func _on_resume_button_pressed() -> void:
+	pause_menu.hide()
+
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()

@@ -48,7 +48,6 @@ func _on_seed_selected(type: String) -> void:
 		plant_crop(new_crop)
 
 func plant_crop(new_crop) -> void:
-	new_crop.position.y = -8
 	add_child(new_crop)
 	current_crop = new_crop
 

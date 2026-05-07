@@ -76,7 +76,7 @@ func _create_shop_item(category, type, data, container, template) -> void:
 	
 	# Universal signal binding
 	if tab.has_signal("buy_requested"):
-		tab.buy_requested.connect(_on_item_buy_requested.bind(category))
+		tab.buy_requested.connect(_on_item_buy_requested)
 	elif tab.has_signal("buy_decoration_item_requested"):
 		tab.buy_decoration_item_requested.connect(_on_item_buy_requested)
 	

@@ -14,8 +14,8 @@ var shop_registry = {
 			"name": "wheat",
 			"buy_price": 2,
 			"sell_price": 4,
-			"growth_time": 10.0,
-			"wilt_time": 10.0,
+			"growth_time": 20.0,
+			"wilt_time": 20.0,
 			"icon": preload("res://_Sprites/Wheat/6 - Wheat Inventory.png"),
 			"scene": load("res://_Prefabs/Crops/Wheat.tscn")
 		},
@@ -24,7 +24,7 @@ var shop_registry = {
 			"buy_price": 4,
 			"sell_price": 6,
 			"growth_time": 30.0,
-			"wilt_time": 15.0,
+			"wilt_time": 30.0,
 			"icon": preload("res://_Sprites/Potato/6 - Potato Inventory.png"),
 			"scene": load("res://_Prefabs/Crops/Potato.tscn")
 		},

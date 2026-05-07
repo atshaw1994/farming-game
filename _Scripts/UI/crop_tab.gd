@@ -1,6 +1,6 @@
 extends MarginContainer
 
-signal buy_requested(type: ShopManager.CropType, quantity: int, total_cost: int)
+signal buy_requested(category: ShopManager.Category, type: ShopManager.CropType, quantity: int)
 
 @onready var qty_spin = %SeedQtySpinBox
 @onready var total_label = %SeedTotalPriceLabel
@@ -33,5 +33,5 @@ func _update_ui() -> void:
 	buy_btn.disabled = qty_spin.value <= 0
 
 func _on_buy_pressed() -> void:
-	buy_requested.emit(crop_type, int(qty_spin.value), int(total_label.text))
+	buy_requested.emit(0, crop_type, int(qty_spin.value))
 	qty_spin.value = 0 # Reset after purchase
