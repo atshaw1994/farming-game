@@ -1,17 +1,20 @@
 extends Node
 
+var player_scene: PackedScene = preload("res://_Prefabs/character.tscn") 
+var current_player_instance: CharacterBody2D
 var player = null
 var hoe_mode_active: bool = false
 var map_edit_mode_active: bool = false
 var shop_open: bool = false
 var hoe_durability: int = 80
-
 var total_gold: int = 100: #TODO: set this back to 4
 	set(value):
 		total_gold = value
 		money_changed.emit(total_gold)
-
 var scene_stack = []
+
+const MALE_FRAMES = preload("res://animations/male.tres")
+const FEMALE_FRAMES = preload("res://animations/female.tres")
 
 signal hoe_mode_switched
 signal map_edit_mode_switched
@@ -19,6 +22,12 @@ signal money_changed(new_amount)
 signal hoe_broken
 signal hoe_restored
 signal plot_hoed
+
+func spawn_player(spawn_position: Vector2, parent_node: Node):
+	if player_scene:
+		current_player_instance = player_scene.instantiate()
+		parent_node.add_child(current_player_instance)
+		current_player_instance.global_position = spawn_position
 
 func flip_hoe_mode() -> void:
 	hoe_mode_active = !hoe_mode_active
@@ -29,8 +38,8 @@ func flip_map_edit_mode() -> void:
 	map_edit_mode_switched.emit()
 
 func set_shop_open(value: bool) -> void:
+	shop_open = value
 	if value:
-		shop_open = value
 		hoe_mode_active = false
 		map_edit_mode_active = false
 		hoe_mode_switched.emit()

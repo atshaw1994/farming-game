@@ -12,6 +12,9 @@ line_spacing = 1.0
 outline_size = 1
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_8vwfl"]
+font_size = 12
+
 [node name="Inventory" type="CanvasLayer" unique_id=705286552]
 script = ExtResource("1_1xdj5")
 
@@ -47,3 +50,12 @@ horizontal_alignment = 1
 [node name="SeedContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1410315252]
 layout_mode = 2
 theme_override_constants/separation = 8
+
+[node name="EmptyLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=419730000]
+visible = false
+layout_mode = 2
+text = "No seeds. Buy some from
+the store."
+label_settings = SubResource("LabelSettings_8vwfl")
+horizontal_alignment = 1
+vertical_alignment = 1

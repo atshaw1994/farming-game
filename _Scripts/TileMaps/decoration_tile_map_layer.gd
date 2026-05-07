@@ -8,7 +8,6 @@ extends TileMapLayer
 @export var house_right_scene: PackedScene
 
 @onready var ground_layer: TileMapLayer = $"../CropPlotTileMapLayer"
-@onready var player: CharacterBody2D = $"../Player"
 
 var occupied_tiles = {} 
 var ghost_scene: Node2D 
@@ -128,7 +127,7 @@ func handle_decoration_action(map_pos: Vector2i) -> bool:
 		add_child(new_decoration)
 		new_decoration.position = map_to_local(map_pos)
 		occupied_tiles[map_pos] = new_decoration
-		player.remove_decoration_item(type)
+		GameManager.current_player_instance.remove_decoration_item(type)
 		return true
 
 func _on_map_edit_mode_switched() -> void:

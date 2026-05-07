@@ -4,8 +4,6 @@ signal item_selected(type)
 
 @onready var panel_container = $PanelContainer
 @onready var item_container: HBoxContainer = $PanelContainer/MarginContainer/ItemContainer
-@onready var player: Node2D = $".."
-@onready var decoration_button: Button = $"../../CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton"
 @onready var empty_label: Label = $PanelContainer/MarginContainer/EmptyLabel
 
 func _ready() -> void:
@@ -35,7 +33,7 @@ func _setup_buttons() -> void:
 	
 	# 2. Count the items in the player's inventory
 	var decoration_counts = {}
-	for decoration_item_type in player.decoration_items:
+	for decoration_item_type in PlayerManager.decoration_items:
 		if not decoration_counts.has(decoration_item_type):
 			decoration_counts[decoration_item_type] = 0
 		decoration_counts[decoration_item_type] += 1

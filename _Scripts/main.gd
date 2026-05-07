@@ -3,9 +3,8 @@ extends Node2D
 @onready var shop_container: MarginContainer = $CanvasLayer/ShopContainer
 @onready var crop_tile_map_layer: TileMapLayer = $CropPlotTileMapLayer
 @onready var decoration_tile_map_layer: TileMapLayer = $DecorationTileMapLayer
-@onready var player_decoration_inventory: CanvasLayer = $Player/DecorationInventory
+@onready var player_decoration_inventory: CanvasLayer
 @onready var decoration_button: Button = $CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton
-@onready var player: CharacterBody2D = $Player
 @onready var tool_drawer: CanvasLayer = $ToolDrawer
 @onready var tools_button: Button = $CanvasLayer/ActionButtonsContainer/VBoxContainer/ToolsButton
 @onready var pause_menu: MarginContainer = $CanvasLayer/PauseMenu
@@ -13,10 +12,10 @@ extends Node2D
 signal plot_hoed
 
 func _ready() -> void:
+	GameManager.spawn_player(Vector2(100, 100), self)
+	player_decoration_inventory = GameManager.current_player_instance.decoration_inventory
 	player_decoration_inventory.item_selected.connect(_on_item_selected)
 	tool_drawer.hoe_button_pressed.connect(_on_hoe_button_pressed)
-	GameManager.player = player
-
 func _input(event) -> void:
 	if event.is_action_pressed("escape"):
 		if pause_menu.visible: pause_menu.hide()

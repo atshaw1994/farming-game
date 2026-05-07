@@ -1,11 +1,9 @@
 [gd_scene format=4 uid="uid://2wd1rdb2mqic"]
 
-[ext_resource type="PackedScene" uid="uid://btftbxi5jiirs" path="res://_Prefabs/character.tscn" id="1_8u3td"]
 [ext_resource type="PackedScene" uid="uid://jeoufwighocq" path="res://_Prefabs/Crops/crop_plot.tscn" id="1_asnbu"]
 [ext_resource type="Script" uid="uid://b0crde23iyc6n" path="res://_Scripts/main.gd" id="1_ep2q6"]
 [ext_resource type="PackedScene" uid="uid://bauam4o53dp5m" path="res://_Prefabs/Decorations/House/House_left.tscn" id="2_7teev"]
 [ext_resource type="PackedScene" uid="uid://dg473m1u0cjrv" path="res://_Prefabs/UI/tool_drawer.tscn" id="2_nnfb1"]
-[ext_resource type="PackedScene" uid="uid://bqaietjmoy0h8" path="res://_Prefabs/UI/Inventory/Crop_inventory.tscn" id="3_7k0l4"]
 [ext_resource type="Script" uid="uid://0jicf3f3aaqx" path="res://_Scripts/TileMaps/crop_tile_map_layer.gd" id="3_bi17k"]
 [ext_resource type="FontFile" uid="uid://dvg5d2i7mayti" path="res://_fonts/MaterialIconsOutlined-Regular.otf" id="3_gc0ge"]
 [ext_resource type="PackedScene" uid="uid://bpc3j22yhfat6" path="res://_Prefabs/UI/Shop/shop_ui.tscn" id="4_7chwe"]
@@ -16,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://b85vsugp4j6d1" path="res://_Prefabs/Decorations/Fence/fence_NE.tscn" id="9_lsnup"]
 [ext_resource type="PackedScene" uid="uid://cv5hacs0gyt8c" path="res://_Prefabs/Decorations/Fence/fence_NW.tscn" id="10_ik8ss"]
 [ext_resource type="PackedScene" uid="uid://dlu3g0f73eksf" path="res://_Prefabs/Decorations/House/House_Right.tscn" id="12_7teev"]
-[ext_resource type="PackedScene" uid="uid://70hyxbvxginm" path="res://_Prefabs/UI/Inventory/Decoration_inventory.tscn" id="15_ik8ss"]
 [ext_resource type="PackedScene" uid="uid://33bujh2ng8o8" path="res://_Prefabs/house.tscn" id="18_nnfb1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bi17k"]
@@ -160,15 +157,6 @@ text = "Resume"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Quit"
-
-[node name="Player" parent="." unique_id=352858248 instance=ExtResource("1_8u3td")]
-position = Vector2(203, 104)
-
-[node name="CropInventory" parent="Player" unique_id=705286552 instance=ExtResource("3_7k0l4")]
-visible = false
-
-[node name="DecorationInventory" parent="Player" unique_id=191064296 instance=ExtResource("15_ik8ss")]
-visible = false
 
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=1047951660]
 y_sort_enabled = true

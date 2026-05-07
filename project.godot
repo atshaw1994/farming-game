@@ -20,10 +20,10 @@ config/icon="res://icon.svg"
 GameManager="*uid://d3llxn2h4m2pv"
 AudioManager="*uid://dbyw7mmnujbjq"
 ShopManager="*uid://bkwa7mcc62e88"
+PlayerManager="*uid://bqslqsua8cy7p"
 
 [display]
 
-window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"

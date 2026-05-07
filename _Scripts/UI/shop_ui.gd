@@ -45,12 +45,12 @@ func _initialize_dynamic_shop() -> void:
 			_create_shop_item(category, type, items[type], container, template)
 	
 	await get_tree().create_timer(0.1).timeout
-	GameManager.player.crop_harvested.connect(_setup_sell_tab)
+	PlayerManager.crop_harvested.connect(_setup_sell_tab)
 	_setup_sell_tab()
 
 func _setup_sell_tab() -> void:
 	for child in sell_items_list.get_children(): child.queue_free()
-	for harvested_item in GameManager.player.harvested_crops:
+	for harvested_item in PlayerManager.harvested_crops:
 		var new_sell_item = Button.new()
 		var data = ShopManager.shop_registry[ShopManager.Category.CROPS][harvested_item.crop_type]
 		new_sell_item.icon = data.icon
@@ -60,7 +60,7 @@ func _setup_sell_tab() -> void:
 		sell_items_list.add_child(new_sell_item)
 
 func handle_sell_item(data:Dictionary, sender:Button) -> void:
-	GameManager.player.remove_harvested(data.name)
+	PlayerManager.remove_harvested(data.name)
 	GameManager.total_gold += data.sell_price
 	AudioManager.play("sell")
 	sender.queue_free()
@@ -92,9 +92,9 @@ func _handle_purchase_delivery(category, item_name: String, qty: int) -> void:
 	for i in range(qty):
 		match category:
 			ShopManager.Category.CROPS:
-				GameManager.player.seeds.append(item_name)
+				PlayerManager.seeds.append(item_name)
 			ShopManager.Category.DECORATIONS, ShopManager.Category.STRUCTURES:
-				GameManager.player.decoration_items.append(item_name)
+				PlayerManager.decoration_items.append(item_name)
 
 # --- UI Updates ---
 func _on_player_gold_changed(_new_amount) -> void:
@@ -116,7 +116,9 @@ func _play_click() -> void:
 
 func _on_close_shop_button_pressed() -> void:
 	_play_click()
+	GameManager.set_shop_open(false)
 	hide()
+	get_viewport().gui_release_focus()
 
 func _on_sell_all_button_pressed() -> void:
 	for sell_item:Button in sell_items_list.get_children():

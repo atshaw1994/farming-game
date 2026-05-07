@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bnpx6g7ori6xy" path="res://_Sprites/Potato/5 - Potato Wilt.png" id="5_cvekk"]
 
 [node name="Node2D" type="StaticBody2D" unique_id=295100708]
+y_sort_enabled = true
 scale = Vector2(4, 4)
 script = ExtResource("1_7ac2n")
 sprout_texture = ExtResource("2_7ac2n")

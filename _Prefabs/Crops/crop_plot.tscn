@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://jeoufwighocq"]
 
 [ext_resource type="Script" uid="uid://df7xsyu0gsnt0" path="res://_Scripts/Crops/crop_plot.gd" id="1_on1nb"]
+[ext_resource type="PackedScene" uid="uid://bqaietjmoy0h8" path="res://_Prefabs/UI/Inventory/Crop_inventory.tscn" id="3_0xue6"]
 [ext_resource type="Texture2D" uid="uid://cudymd1h47qp3" path="res://tilesheets/Tiles_Simple_Plains.png" id="5_6f4ju"]
 
 [node name="Crop Plot" type="StaticBody2D" unique_id=698068622 groups=["Plots"]]
@@ -18,5 +19,8 @@ region_rect = Rect2(128, 1024, 128, 64)
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=142469874]
 position = Vector2(0, 32)
 polygon = PackedVector2Array(0, 0, -63.5, -32.5, 0, -64.5, 63.5, -32.5)
+
+[node name="CropInventory" parent="." unique_id=705286552 instance=ExtResource("3_0xue6")]
+visible = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]

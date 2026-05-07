@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bfnvcwkgqwrvc" path="res://_Scripts/UI/main_menu.gd" id="1_ob0vp"]
 [ext_resource type="PackedScene" uid="uid://2wd1rdb2mqic" path="res://_Scenes/Main.tscn" id="2_i4rf3"]
+[ext_resource type="FontFile" uid="uid://dvg5d2i7mayti" path="res://_fonts/MaterialIconsOutlined-Regular.otf" id="3_cirp4"]
+[ext_resource type="ButtonGroup" uid="uid://c2jo6qlof5jx8" path="res://animations/mainmenugenderselect.tres" id="4_j5dsp"]
+[ext_resource type="SpriteFrames" uid="uid://b66aayff5hw1h" path="res://animations/male.tres" id="5_cirp4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_i4rf3"]
 font_size = 72
@@ -56,5 +59,41 @@ custom_minimum_size = Vector2(256, 128)
 layout_mode = 2
 text = "Quit"
 
+[node name="MaleButton" type="Button" parent="CanvasLayer" unique_id=721911846]
+texture_filter = 1
+offset_left = 901.0
+offset_top = 336.0
+offset_right = 957.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("3_cirp4")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+button_pressed = true
+button_group = ExtResource("4_j5dsp")
+text = "male"
+
+[node name="FemaleButton" type="Button" parent="CanvasLayer" unique_id=285799592]
+texture_filter = 1
+offset_left = 1017.0
+offset_top = 336.0
+offset_right = 1073.0
+offset_bottom = 392.0
+theme_override_fonts/font = ExtResource("3_cirp4")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+button_group = ExtResource("4_j5dsp")
+text = "female"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1059802440]
+texture_filter = 1
+position = Vector2(983, 224)
+scale = Vector2(8, 8)
+sprite_frames = ExtResource("5_cirp4")
+animation = &"idle_right"
+autoplay = "idle_right"
+
 [connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MaleButton" to="." method="_on_male_button_pressed"]
+[connection signal="toggled" from="CanvasLayer/MaleButton" to="." method="_on_male_button_toggled"]
+[connection signal="toggled" from="CanvasLayer/FemaleButton" to="." method="_on_female_button_toggled"]

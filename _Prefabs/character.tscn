@@ -1,209 +1,8 @@
 [gd_scene format=3 uid="uid://btftbxi5jiirs"]
 
 [ext_resource type="Script" uid="uid://bq3e1mu5i5epb" path="res://_Scripts/player.gd" id="1_5jxua"]
-[ext_resource type="Texture2D" uid="uid://bhlxvho1t3kmq" path="res://_Sprites/characters/main character/walk and idle.png" id="1_5qnfm"]
-[ext_resource type="Texture2D" uid="uid://buvgrop68jyvx" path="res://_Sprites/characters/female_blink.png" id="2_wvjp1"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7852f"]
-atlas = ExtResource("2_wvjp1")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v2i0x"]
-atlas = ExtResource("2_wvjp1")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7jty3"]
-atlas = ExtResource("2_wvjp1")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ootco"]
-atlas = ExtResource("2_wvjp1")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5jxua"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(0, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvjp1"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(24, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eppnm"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(48, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8caht"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(72, 0, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7vxom"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(0, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dgwy8"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(24, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tx20w"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(48, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2jr3f"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(72, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wr7cc"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(96, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2ojc1"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(120, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0h807"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(144, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fmlyi"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(168, 24, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lncru"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(0, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mp5w1"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(24, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_48a3w"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(48, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ttbam"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(72, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hj6ac"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(96, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8ppgf"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(120, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m24my"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(144, 48, 24, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xop3t"]
-atlas = ExtResource("1_5qnfm")
-region = Rect2(168, 48, 24, 24)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7852f"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7852f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v2i0x")
-}],
-"loop": false,
-"name": &"blink_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7jty3")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ootco")
-}],
-"loop": false,
-"name": &"blink_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_5jxua")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_wvjp1")
-}],
-"loop": true,
-"name": &"idle_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_eppnm")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_8caht")
-}],
-"loop": true,
-"name": &"idle_right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7vxom")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dgwy8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tx20w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2jr3f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wr7cc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2ojc1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0h807")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fmlyi")
-}],
-"loop": true,
-"name": &"walk_left",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lncru")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mp5w1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_48a3w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ttbam")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hj6ac")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8ppgf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m24my")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xop3t")
-}],
-"loop": true,
-"name": &"walk_right",
-"speed": 15.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://kfbd8bkye6bi" path="res://animations/female.tres" id="2_wvjp1"]
+[ext_resource type="PackedScene" uid="uid://70hyxbvxginm" path="res://_Prefabs/UI/Inventory/Decoration_inventory.tscn" id="5_7vxom"]
 
 [node name="Node2D" type="CharacterBody2D" unique_id=1921634558]
 y_sort_enabled = true
@@ -213,7 +12,7 @@ script = ExtResource("1_5jxua")
 texture_filter = 1
 position = Vector2(-5, -36)
 scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_7852f")
+sprite_frames = ExtResource("2_wvjp1")
 animation = &"idle_right"
 autoplay = "idle_right"
 
@@ -223,5 +22,8 @@ polygon = PackedVector2Array(-14, 2, 9, 2, 26, -4, 22, -18, -25, -17, -20, 0)
 
 [node name="BlinkTimer" type="Timer" parent="." unique_id=796564643]
 one_shot = true
+
+[node name="DecorationInventory" parent="." unique_id=352362578 instance=ExtResource("5_7vxom")]
+visible = false
 
 [connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]

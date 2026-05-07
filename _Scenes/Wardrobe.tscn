@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://dw6wguu3a75ss"]
 
 [ext_resource type="Script" uid="uid://b3n86ndqk6xyd" path="res://_Scripts/UI/character_customization_screen.gd" id="1_7d8y6"]
-[ext_resource type="PackedScene" uid="uid://dw6wguu3a75ss" path="res://_Scenes/Wardrobe.tscn" id="2_f7obx"]
+[ext_resource type="SpriteFrames" uid="uid://b66aayff5hw1h" path="res://animations/male.tres" id="3_7d8y6"]
 [ext_resource type="FontFile" uid="uid://dvg5d2i7mayti" path="res://_fonts/MaterialIconsOutlined-Regular.otf" id="3_o7u73"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_f7obx"]
+resource_name = "MainMenuGenderSelect"
 
 [node name="Node2D" type="Node2D" unique_id=1300555198]
 script = ExtResource("1_7d8y6")
@@ -17,7 +20,6 @@ text = "Here is where the player can customize the character.
 
 COMING SOON"
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="." unique_id=1245488013]
 offset_right = 64.0
@@ -32,4 +34,39 @@ theme_override_fonts/font = ExtResource("3_o7u73")
 theme_override_font_sizes/font_size = 48
 text = "arrow_circle_left"
 
+[node name="MaleButton" type="Button" parent="." unique_id=1831087466]
+texture_filter = 1
+offset_left = 481.0
+offset_top = 569.0
+offset_right = 537.0
+offset_bottom = 625.0
+theme_override_fonts/font = ExtResource("3_o7u73")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+button_pressed = true
+button_group = SubResource("ButtonGroup_f7obx")
+text = "male"
+
+[node name="FemaleButton" type="Button" parent="." unique_id=101248563]
+texture_filter = 1
+offset_left = 597.0
+offset_top = 569.0
+offset_right = 653.0
+offset_bottom = 625.0
+theme_override_fonts/font = ExtResource("3_o7u73")
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+button_group = SubResource("ButtonGroup_f7obx")
+text = "female"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1285827877]
+texture_filter = 1
+position = Vector2(567, 379)
+scale = Vector2(16, 16)
+sprite_frames = ExtResource("3_7d8y6")
+animation = &"idle_right"
+autoplay = "idle_right"
+
 [connection signal="pressed" from="MarginContainer2/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="toggled" from="MaleButton" to="." method="_on_male_button_toggled"]
+[connection signal="toggled" from="FemaleButton" to="." method="_on_female_button_toggled"]

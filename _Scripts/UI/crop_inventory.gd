@@ -4,16 +4,14 @@ signal seed_selected(type)
 
 @onready var panel_container = $PanelContainer
 @onready var seed_container: HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/SeedContainer
-@onready var player: Node2D = $".."
+@onready var empty_label: Label = $PanelContainer/MarginContainer/VBoxContainer/EmptyLabel
 
 func _ready() -> void:
 	hide()
 	panel_container.scale = Vector2.ZERO
 
 func show_at_position(plot_global_center: Vector2) -> void:
-	if player.seeds.size() == 0:
-		player.show_popup("No seeds.")
-		return
+	#TODO: Add "no seeds" display
 	show()
 	_setup_buttons()
 	await get_tree().process_frame
@@ -24,6 +22,7 @@ func show_at_position(plot_global_center: Vector2) -> void:
 	tween.set_trans(Tween.TRANS_BACK)
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(panel_container, "scale", Vector2.ONE, 0.3).from(Vector2.ZERO)
+	empty_label.visible = seed_container.get_child_count() == 0
 
 func _setup_buttons() -> void:
 	# 1. Clear existing dynamic buttons to refresh the list
@@ -32,7 +31,7 @@ func _setup_buttons() -> void:
 	
 	# 2. Count the seeds in the player's inventory
 	var seed_counts = {}
-	for seed_type in player.seeds:
+	for seed_type in PlayerManager.seeds:
 		if not seed_counts.has(seed_type):
 			seed_counts[seed_type] = 0
 		seed_counts[seed_type] += 1
@@ -69,7 +68,7 @@ func _create_seed_button(picked_seed: String, count: int) -> void:
 func _on_seed_picked(picked_seed: String) -> void:
 	AudioManager.play("plant_seed")
 	seed_selected.emit(picked_seed)
-	player.remove_seed(picked_seed)
+	PlayerManager.remove_seed(picked_seed)
 	var tween = create_tween()
 	tween.tween_property(panel_container, "scale", Vector2.ZERO, 0.2)
 	tween.finished.connect(hide)
