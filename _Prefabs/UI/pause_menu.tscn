@@ -1,0 +1,132 @@
+[gd_scene format=3 uid="uid://bl3rhhxovn87o"]
+
+[ext_resource type="Script" uid="uid://nwo0y6ofnhrf" path="res://_Scripts/UI/pause_menu.gd" id="1_uwtnw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnfb1"]
+bg_color = Color(0, 0, 0, 0.77254903)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt360"]
+bg_color = Color(0.37111905, 0.37111905, 0.37111905, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 4
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmk3y"]
+bg_color = Color(0, 0, 0, 0.53333336)
+border_width_bottom = 2
+
+[node name="PauseMenu" type="MarginContainer" unique_id=435269759]
+custom_minimum_size = Vector2(512, 256)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uwtnw")
+
+[node name="Panel2" type="Panel" parent="." unique_id=587633909]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nnfb1")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=489617276]
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_lt360")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=255248377]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=588580972]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_wmk3y")
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer" unique_id=1330914882]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=465987797]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 16
+
+[node name="ResumeButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1200571182]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[node name="ResetButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1714636167]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Reset Farm"
+
+[node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1645753825]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="AreYouSureContainer" type="PanelContainer" parent="." unique_id=1410902456]
+visible = false
+custom_minimum_size = Vector2(512, 256)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_lt360")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AreYouSureContainer" unique_id=1486815928]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AreYouSureContainer/VBoxContainer" unique_id=684027617]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_wmk3y")
+text = "Are You Sure?"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="AreYouSureContainer/VBoxContainer" unique_id=1313822731]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AreYouSureContainer/VBoxContainer/MarginContainer" unique_id=2021128107]
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="AreYouSureContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1265087850]
+layout_mode = 2
+text = "THIS CANNOT BE UNDONE!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AreYouSureContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=221197639]
+layout_mode = 2
+
+[node name="AcceptResetButton" type="Button" parent="AreYouSureContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=775657898]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Yes"
+
+[node name="DeclineResetButton" type="Button" parent="AreYouSureContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1576937984]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "No"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="AreYouSureContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/AcceptResetButton" to="." method="_on_accept_reset_button_pressed"]
+[connection signal="pressed" from="AreYouSureContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/DeclineResetButton" to="." method="_on_decline_reset_button_pressed"]

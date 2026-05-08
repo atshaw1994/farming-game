@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dvg5d2i7mayti" path="res://_fonts/MaterialIconsOutlined-Regular.otf" id="3_gc0ge"]
 [ext_resource type="PackedScene" uid="uid://bpc3j22yhfat6" path="res://_Prefabs/UI/Shop/shop_ui.tscn" id="4_7chwe"]
 [ext_resource type="TileSet" uid="uid://dk3wlecukov7m" path="res://tilesets/ground.tres" id="5_2y8yv"]
+[ext_resource type="PackedScene" uid="uid://bl3rhhxovn87o" path="res://_Prefabs/UI/pause_menu.tscn" id="5_ni4b5"]
 [ext_resource type="Script" uid="uid://cr60myfldk1ew" path="res://_Scripts/TileMaps/decoration_tile_map_layer.gd" id="6_gtvrt"]
 [ext_resource type="PackedScene" uid="uid://c2gwik42nfmlx" path="res://_Prefabs/Decorations/Fence/fence_SW.tscn" id="7_lsnup"]
 [ext_resource type="PackedScene" uid="uid://pg4krqwg8f1u" path="res://_Prefabs/Decorations/Fence/fence_SE.tscn" id="8_ik8ss"]
@@ -22,24 +23,6 @@ corner_radius_top_left = 32
 corner_radius_top_right = 32
 corner_radius_bottom_right = 32
 corner_radius_bottom_left = 32
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnfb1"]
-bg_color = Color(0, 0, 0, 0.77254903)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lt360"]
-bg_color = Color(0.37111905, 0.37111905, 0.37111905, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 4
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wmk3y"]
-bg_color = Color(0, 0, 0, 0.53333336)
-border_width_bottom = 2
 
 [node name="Node2D" type="Node2D" unique_id=978402192]
 y_sort_enabled = true
@@ -107,56 +90,7 @@ theme_override_font_sizes/font_size = 32
 toggle_mode = true
 text = "home_repair_service"
 
-[node name="PauseMenu" type="MarginContainer" parent="CanvasLayer" unique_id=1474769545]
-visible = false
-custom_minimum_size = Vector2(512, 256)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel2" type="Panel" parent="CanvasLayer/PauseMenu" unique_id=1744459418]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_nnfb1")
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PauseMenu" unique_id=2093187933]
-custom_minimum_size = Vector2(512, 256)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_lt360")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu/PanelContainer" unique_id=2005205684]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer" unique_id=1171008502]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxFlat_wmk3y")
-text = "Menu"
-horizontal_alignment = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer" unique_id=1701863319]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_right = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer/MarginContainer" unique_id=877524432]
-layout_mode = 2
-size_flags_vertical = 6
-theme_override_constants/separation = 16
-
-[node name="ResumeButton" type="Button" parent="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=44133295]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Resume"
-
-[node name="QuitButton" type="Button" parent="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=123339679]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Quit"
+[node name="PauseMenu" parent="CanvasLayer" unique_id=435269759 instance=ExtResource("5_ni4b5")]
 
 [node name="DecorationTileMapLayer" type="TileMapLayer" parent="." unique_id=1047951660]
 y_sort_enabled = true
@@ -181,5 +115,3 @@ position = Vector2(1026, 257)
 [connection signal="pressed" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/StoreButton" to="." method="_on_store_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/DecorationButton" to="." method="_on_decoration_button_toggled"]
 [connection signal="toggled" from="CanvasLayer/ActionButtonsContainer/VBoxContainer/ToolsButton" to="." method="_on_tools_button_toggled"]
-[connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/PauseMenu/PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

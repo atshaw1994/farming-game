@@ -24,6 +24,56 @@ signal hoe_broken
 signal hoe_restored
 signal plot_hoed
 
+const SAVE_PATH = "user://savegame.json"
+
+func _ready() -> void:
+	get_tree().set_auto_accept_quit(false)
+	load_from_disk()
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		for node in get_tree().get_nodes_in_group("crop_layer"):
+			node.save_state()
+		save_to_disk()
+		get_tree().quit()
+
+func reset_crop_data() -> void:
+	for node in get_tree().get_nodes_in_group("crop_layer"):
+		node.clear_all_plots()
+	crop_layer_state.clear()
+	save_to_disk()
+
+func save_to_disk() -> void:
+	var serialized: Array = []
+	for entry in crop_layer_state:
+		var s = { "px": entry.pos.x, "py": entry.pos.y }
+		if entry.has("crop_type"):
+			s["crop_type"] = entry.crop_type
+			s["crop_stage"] = entry.crop_stage
+		serialized.append(s)
+	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if file:
+		file.store_string(JSON.stringify(serialized))
+		file.close()
+
+func load_from_disk() -> void:
+	if not FileAccess.file_exists(SAVE_PATH):
+		return
+	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	if not file:
+		return
+	var parsed = JSON.parse_string(file.get_as_text())
+	file.close()
+	if not parsed is Array:
+		return
+	crop_layer_state.clear()
+	for s in parsed:
+		var entry = { "pos": Vector2i(int(s.px), int(s.py)) }
+		if s.has("crop_type"):
+			entry["crop_type"] = int(s.crop_type)
+			entry["crop_stage"] = int(s.crop_stage)
+		crop_layer_state.append(entry)
+
 func spawn_player(spawn_position: Vector2, parent_node: Node):
 	if player_scene:
 		current_player_instance = player_scene.instantiate()

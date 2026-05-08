@@ -16,6 +16,7 @@ func _ready() -> void:
 	player_decoration_inventory = GameManager.current_player_instance.decoration_inventory
 	player_decoration_inventory.item_selected.connect(_on_item_selected)
 	tool_drawer.hoe_button_pressed.connect(_on_hoe_button_pressed)
+
 func _input(event) -> void:
 	if event.is_action_pressed("escape"):
 		if pause_menu.visible: pause_menu.hide()
@@ -68,9 +69,3 @@ func _on_tools_button_toggled(toggled_on: bool) -> void:
 func _on_decoration_button_toggled(toggled_on: bool) -> void:
 	if toggled_on: player_decoration_inventory.show_at_position(decoration_button.global_position)
 	else: player_decoration_inventory.hide()
-
-func _on_resume_button_pressed() -> void:
-	pause_menu.hide()
-
-func _on_quit_button_pressed() -> void:
-	get_tree().quit()

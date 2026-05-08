@@ -74,6 +74,11 @@ func save_state() -> void:
 			entry["crop_stage"] = plot.current_crop.current_stage
 		GameManager.crop_layer_state.append(entry)
 
+func clear_all_plots() -> void:
+	for map_pos in occupied_tiles:
+		occupied_tiles[map_pos].queue_free()
+	occupied_tiles.clear()
+
 func restore_state() -> void:
 	if GameManager.crop_layer_state.is_empty():
 		return
