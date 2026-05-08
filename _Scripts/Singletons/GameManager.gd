@@ -12,6 +12,7 @@ var total_gold: int = 100: #TODO: set this back to 4
 		total_gold = value
 		money_changed.emit(total_gold)
 var scene_stack = []
+var crop_layer_state: Array = []
 
 const MALE_FRAMES = preload("res://animations/male.tres")
 const FEMALE_FRAMES = preload("res://animations/female.tres")
@@ -70,6 +71,8 @@ func reset_hoe_durability() -> void:
 func change_scene(scene_path: String, keep_current: bool = false):
 	var current_scene = get_tree().current_scene
 	if current_scene:
+		for node in get_tree().get_nodes_in_group("crop_layer"):
+			node.save_state()
 		if keep_current:
 			scene_stack.push_back(current_scene.scene_file_path)
 		current_scene.queue_free()

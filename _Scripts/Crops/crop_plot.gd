@@ -47,6 +47,12 @@ func harvest() -> void:
 		current_crop.play_harvest_animation()
 		current_crop = null
 
+func restore_crop(p_crop_type: ShopManager.CropType, p_stage: int) -> void:
+	var data = ShopManager.shop_registry[ShopManager.Category.CROPS][p_crop_type]
+	var new_crop = data.scene.instantiate()
+	new_crop._restore_stage = p_stage
+	plant_crop(new_crop)
+
 func get_interaction_distance() -> float:
 	return (get_plot_width() / 2.0) + 4.0
 

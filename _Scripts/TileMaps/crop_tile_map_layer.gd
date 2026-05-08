@@ -6,6 +6,7 @@ var ghost_plot: Node2D
 var currently_highlighted_plot: Node2D = null 
 
 func _ready() -> void:
+	add_to_group("crop_layer")
 	if crop_plot_scene:
 		# Create the translucent "ghost" for the isometric cursor [cite: 79]
 		ghost_plot = crop_plot_scene.instantiate()
@@ -14,6 +15,7 @@ func _ready() -> void:
 		add_child(ghost_plot)
 	
 	GameManager.hoe_mode_switched.connect(_on_hoe_mode_switched)
+	restore_state()
 
 func _process(_delta) -> void:
 	if ghost_plot and GameManager.hoe_mode_active:
@@ -61,3 +63,26 @@ func handle_hoe_action(map_pos: Vector2i) -> bool:
 func _on_hoe_mode_switched() -> void:
 	if not GameManager.hoe_mode_active and ghost_plot:
 		ghost_plot.visible = false
+
+func save_state() -> void:
+	GameManager.crop_layer_state.clear()
+	for map_pos in occupied_tiles:
+		var plot = occupied_tiles[map_pos]
+		var entry = { "pos": map_pos }
+		if plot.current_crop != null:
+			entry["crop_type"] = plot.current_crop.crop_type
+			entry["crop_stage"] = plot.current_crop.current_stage
+		GameManager.crop_layer_state.append(entry)
+
+func restore_state() -> void:
+	if GameManager.crop_layer_state.is_empty():
+		return
+	for entry in GameManager.crop_layer_state:
+		var map_pos: Vector2i = entry.pos
+		var new_plot = crop_plot_scene.instantiate()
+		add_child(new_plot)
+		new_plot.position = map_to_local(map_pos)
+		occupied_tiles[map_pos] = new_plot
+		if entry.has("crop_type"):
+			new_plot.restore_crop(entry.crop_type, entry.crop_stage)
+	GameManager.crop_layer_state.clear()

@@ -11,6 +11,7 @@ extends StaticBody2D
 
 enum Stage { SPROUT, MID, FULL, WILTED }
 var current_stage = Stage.SPROUT
+var _restore_stage: int = -1
 
 @onready var sprite = $Sprite2D
 @onready var timer = $GrowthTimer
@@ -19,6 +20,9 @@ func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	update_appearance()
 	start_growth_cycle()
+	if _restore_stage >= 0:
+		restore_to_stage(_restore_stage as Stage)
+		_restore_stage = -1
 
 func start_growth_cycle() -> void:
 	var data = ShopManager.shop_registry[ShopManager.Category.CROPS][crop_type]
@@ -41,6 +45,19 @@ func update_appearance() -> void:
 		Stage.MID:    sprite.texture = mid_texture
 		Stage.FULL:   sprite.texture = full_texture
 		Stage.WILTED: sprite.texture = wilted_texture
+
+func restore_to_stage(stage: Stage) -> void:
+	timer.stop()
+	current_stage = stage
+	update_appearance()
+	var data = ShopManager.shop_registry[ShopManager.Category.CROPS][crop_type]
+	match current_stage:
+		Stage.SPROUT, Stage.MID:
+			timer.start(data.growth_time / 3.0)
+		Stage.FULL:
+			timer.start(data.wilt_time / 3.0)
+		Stage.WILTED:
+			pass  # No further growth
 
 func play_harvest_animation() -> void:
 	var tween = get_tree().create_tween()
