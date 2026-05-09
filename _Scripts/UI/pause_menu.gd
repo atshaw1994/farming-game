@@ -21,3 +21,6 @@ func _on_accept_reset_button_pressed() -> void:
 
 func _on_decline_reset_button_pressed() -> void:
 	are_you_sure_container.hide()
+
+func _on_options_button_pressed() -> void:
+	GameManager.change_scene("res://_Prefabs/UI/settings_menu.tscn", true)

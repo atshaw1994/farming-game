@@ -2,7 +2,7 @@ extends Button
 
 @onready var hoe_durability_bar: ProgressBar = $HoeDurabilityBar
 @onready var hoe_broken_overlay: Label = $HoeBrokenOverlay
-@onready var root_node: Node2D = get_tree().current_scene
+@onready var root_node: Node2D = get_tree().get("MainScene")
 
 func _ready() -> void:
 	GameManager.plot_hoed.connect(update_durability)

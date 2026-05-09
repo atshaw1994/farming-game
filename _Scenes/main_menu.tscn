@@ -50,13 +50,21 @@ size_flags_vertical = 8
 theme_override_constants/separation = 8
 
 [node name="PlayButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1110439688]
-custom_minimum_size = Vector2(256, 128)
+custom_minimum_size = Vector2(256, 96)
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Play"
 
-[node name="QuitButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1117432469]
-custom_minimum_size = Vector2(256, 128)
+[node name="OptionsButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1515772571]
+custom_minimum_size = Vector2(256, 96)
 layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Options"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1117432469]
+custom_minimum_size = Vector2(256, 96)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Quit"
 
 [node name="MaleButton" type="Button" parent="CanvasLayer" unique_id=721911846]
@@ -93,6 +101,7 @@ animation = &"idle_right"
 autoplay = "idle_right"
 
 [connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MaleButton" to="." method="_on_male_button_pressed"]
 [connection signal="toggled" from="CanvasLayer/MaleButton" to="." method="_on_male_button_toggled"]

@@ -54,7 +54,9 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer/MarginContainer" unique_id=465987797]
 layout_mode = 2
@@ -65,6 +67,11 @@ theme_override_constants/separation = 16
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Resume"
+
+[node name="OptionsButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=971275266]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
 
 [node name="ResetButton" type="Button" parent="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer" unique_id=1714636167]
 layout_mode = 2
@@ -126,6 +133,7 @@ theme_override_font_sizes/font_size = 32
 text = "No"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="AreYouSureContainer/VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/AcceptResetButton" to="." method="_on_accept_reset_button_pressed"]

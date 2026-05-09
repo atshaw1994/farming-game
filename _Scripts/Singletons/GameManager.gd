@@ -13,9 +13,12 @@ var total_gold: int = 100: #TODO: set this back to 4
 		money_changed.emit(total_gold)
 var scene_stack = []
 var crop_layer_state: Array = []
+var bkgmusic: AudioStreamPlayer
 
+const MAIN_THEME = preload("uid://bxfedinm1hfy0")
 const MALE_FRAMES = preload("res://animations/male.tres")
 const FEMALE_FRAMES = preload("res://animations/female.tres")
+const SAVE_PATH = "user://savegame.json"
 
 signal hoe_mode_switched
 signal map_edit_mode_switched
@@ -24,11 +27,15 @@ signal hoe_broken
 signal hoe_restored
 signal plot_hoed
 
-const SAVE_PATH = "user://savegame.json"
-
 func _ready() -> void:
 	get_tree().set_auto_accept_quit(false)
 	load_from_disk()
+	bkgmusic = AudioStreamPlayer.new()
+	add_child(bkgmusic)
+	bkgmusic.volume_db = -10.0
+	bkgmusic.autoplay = true
+	bkgmusic.stream = MAIN_THEME
+	bkgmusic.play()
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
@@ -79,6 +86,7 @@ func spawn_player(spawn_position: Vector2, parent_node: Node):
 		current_player_instance = player_scene.instantiate()
 		parent_node.add_child(current_player_instance)
 		current_player_instance.global_position = spawn_position
+		PlayerManager.target_position = null
 
 func flip_hoe_mode() -> void:
 	hoe_mode_active = !hoe_mode_active
@@ -137,3 +145,13 @@ func back():
 
 	var previous_scene_path = scene_stack.pop_back()
 	change_scene(previous_scene_path)
+
+func set_background_music_playing(playing: bool) -> void:
+	bkgmusic.autoplay = playing
+	if playing and not bkgmusic.playing:
+		bkgmusic.play()
+	else:
+		bkgmusic.stop()
+
+func get_background_music_playing() -> bool:
+	return bkgmusic.playing

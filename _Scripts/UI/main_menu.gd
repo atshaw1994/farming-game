@@ -11,6 +11,9 @@ func _on_play_button_pressed() -> void:
 	else:
 		push_error("Level1 scene is not assigned in the Inspector!")
 
+func _on_options_button_pressed() -> void:
+	GameManager.change_scene("res://_Prefabs/UI/settings_menu.tscn", true)
+
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
